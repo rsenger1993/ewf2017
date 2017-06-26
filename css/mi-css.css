@@ -1,0 +1,149 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: helvetica Neue;
+	font-weight: lighter;
+}
+
+
+
+body {
+  webkit-tap-highlight-color: #222222;
+    background-image: url('../img/header-pastel.jpg');
+}
+
+
+
+}
+#menu-p{
+background-color:#2d2d2d;
+
+}
+#menu-perfil {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color:#2d2d2d;
+}
+
+#menu-top {
+  position: fixed;
+
+  background-color:#2d2d2d;
+}
+
+
+#iframe-p {
+
+  background-color:#ffffff;
+}
+#ul-menu{
+
+  margin-top:150px;
+  list-style: none;
+  display: block;
+}
+#li-menu{
+  width:100%;
+  height:50px;
+  border-bottom: 1px solid #323232;
+  overflow: hidden;
+}
+p.perfil{
+	text-align: center;
+	color: white;
+}
+
+p.menu{
+
+  position: relative;
+  padding:16px;
+  padding-right: 25px;
+  
+  color: white;
+  opacity: .6;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+div.barra{
+
+  position: fixed;
+  height: 50px;
+  width: 0px;
+  background-color: #aaa;
+  opacity: .1;
+  -webkit-transition: width .2s;
+  -moz-transition: width .2s;
+  -ms-transition: width .2s;
+
+}
+li:hover div.barra{
+	width: 300px;
+
+}
+
+
+.bg-primary {
+  background-color: #F05F40;
+}
+
+.section-heading {
+  margin-top: 0;
+}
+hr.light {
+  border-color: white;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+.navbar-default {
+  background-color: white;
+  border-color: rgba(34, 34, 34, 0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+header .header-content {
+  position: relative;
+  text-align: center;
+  padding: 100px 15px 100px;
+  width: 100%;
+}
+
+
+.btn-primary {
+  color: white;
+  background-color: #F05F40;
+  border-color: #F05F40;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.button {
+ border: none;
+ background: #F05F40;
+ color: #f2f2f2;
+ padding: 10px;
+ font-size: 18px;
+ border-radius: 5px;
+ position: relative;
+ box-sizing: border-box;
+ transition: all 500ms ease;
+}
+
+.button:hover {
+ background: rgba(0,0,0,0);
+ color: #F05F40;
+ box-shadow: inset 0 0 0 3px #F05F40;
+}
+
+
+
+
