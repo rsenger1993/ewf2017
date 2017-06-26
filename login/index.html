@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/rd-mailform.css">
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-migrate-1.2.1.js"></script>
+
+	<!--[if lt IE 9]>
+	<html class="lt-ie9">
+	<div style=' clear: both; text-align:center; position: relative;'>
+		<a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+			<img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+					 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+		</a>
+	</div>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+	<script src='js/device.min.js'></script>
+</head>
+
+<body>
+<div class="page">
+	<!--==============================LOGIN==============================-->
+	<header>
+		<section class="parallax parallax01">
+			<div class="top-panel">
+				<div class="container">
+					<div class="brand">
+						<h1 class="brand_name"><a href="./">EASY WORTHY FOOD</a></h1>
+						<p class="brand_slogan">A social network for your food</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<h2>JOIN US</h2>
+				<div class="row">
+					<div class="preffix_4 grid_4">
+						<!-- SING UP -->
+						<form class='rd-mailform' method="post" action="bat/rd-mailform.php">
+							<!-- RD Mailform Type -->
+							<input type="hidden" name="form-type" value="contact"/>
+							<!-- END RD Mailform Type -->
+							<fieldset>
+								<label data-add-placeholder>
+									<input type="text"
+										   name="name"
+										   placeholder="Full name"
+										   data-constraints="@NotEmpty @LettersOnly"/>
+								</label>
+
+								<label data-add-placeholder data-add-icon>
+									<input type="date"
+										   name="date"
+										   data-placeholder="Date"
+										   data-constraints="@Date"
+											/>
+								</label>
+
+								<label data-add-placeholder>
+									<input type="text"
+										   name="email"
+										   placeholder="E-mail"
+										   data-constraints="@NotEmpty @Email"/>
+								</label>
+
+								<label data-add-placeholder>
+									<input type="text"
+										   name="phone"
+										   placeholder="Phone"
+										   data-constraints="@Phone"/>
+								</label>
+
+								<div class="mfControls btn-group">
+									<button class="btn" type="submit">Sing up</button>
+								</div>
+								<div class="mfInfo"></div>
+							</fieldset>
+							<p class="text-center"><small>Oferta tus deliciosos platillos. </small></p>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<!--==============================FOOTER==============================-->
+	<footer>
+		<div class="container">
+			<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio.</p>
+			<div class="footer-brand">
+				<div class="footer-brand_name"><a href="#">EASY WORTHY FOOD</a></div>
+				<p class="footer-brand_slogan">A social network for your food</p>
+			</div>
+			<p class="copyright">
+				© <span id="copyright-year"></span>. All Rights Reserved
+				<!-- {%FOOTER_LINK} -->
+			</p>
+		</div>
+	</footer>
+</div>
+
+<script src="js/script.js"></script>
+<!-- coded by nyan -->
+</body>
+</html>

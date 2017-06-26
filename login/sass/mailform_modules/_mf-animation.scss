@@ -1,0 +1,9 @@
+@include keyframes(fout) {
+  0% {
+    @include transform(scale(1) translateX(0));
+  }
+
+  100% {
+    @include transform(scale(0) translateX(0));
+  }
+}

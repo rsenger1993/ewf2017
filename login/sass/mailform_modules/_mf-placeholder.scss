@@ -1,0 +1,63 @@
+/*
+* MF Placeholder
+*/
+
+@mixin placeholder-fade-up() {
+  *:-webkit-autofill ~ & {
+    opacity: .4;
+    @include transform(translateY(-80%));
+  }
+
+  &.state-1 {
+    opacity: 0;
+    @include transform(translateY(-80%));
+  }
+}
+
+@mixin placeholder-fade-left() {
+  *:-webkit-autofill ~ & {
+    opacity: .4;
+    @include transform(translateX(-100%));
+  }
+
+  &.state-1 {
+    opacity: 0;
+    @include transform(translateX(-100%));
+  }
+
+  @media (max-width: 767px) {
+    @include placeholder-fade-up();
+  }
+}
+
+@mixin placeholder-fade() {
+  *:-webkit-autofill ~ & {
+    opacity: .4;
+  }
+
+  &.state-1 {
+    opacity: .0;
+  }
+
+  *:-webkit-autofill ~ &{
+    display: none;
+  }
+  .mfInput.filled &.state-1{
+    display: none;
+  }
+}
+
+.mfPlaceHolder {
+  cursor: text;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: $input-padding;
+  font-weight: $input-font-weight;
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  color: $placeholder-clr;
+  opacity: $placeholder-opacity;
+  @include placeholder-fade();
+  transition: .2s all ease;
+}

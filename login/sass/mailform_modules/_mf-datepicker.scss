@@ -1,0 +1,147 @@
+/*
+* MF Datepicker
+*/
+
+$rd-datepicker-bg: #ffffff;
+$rd-dp-item-today-bg: #fbb953;
+$rd-dp-item-selected-bg: #ffffff;
+
+@mixin rd-datepicker {
+  background: $rd-datepicker-bg;
+  color: #c6bbba;
+  border-radius: 0;
+  border: 1px solid $rd-datepicker-bg;
+}
+
+@mixin dp-item {
+}
+
+@mixin dp-item-hover {
+  color: #000;
+  background: transparent;
+}
+
+@mixin dp-item-offset {
+  color: #c6bbba;
+}
+
+@mixin dp-item-today {
+  color: #ffffff;
+  background: $rd-dp-item-today-bg;
+}
+
+@mixin dp-item-selected {
+  color: #fff;
+  background: $rd-dp-item-today-bg;
+}
+
+.mfDatePicker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 15px;
+  padding: 10px 15px;
+  opacity: 0;
+  width: 230px;
+  visibility: hidden;
+  transition: .3s all ease-in-out;
+  z-index: 99;
+  @include transform(translateY(20px));
+  @include rd-datepicker;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 15px;
+    @include triangle(top, 12px, 6px, $rd-datepicker-bg);
+  }
+
+  table {
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 3px;
+    font-size: 12px;
+
+    th {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    td {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: .3s all ease;
+
+      @include dp-item;
+      &:hover {
+        @include dp-item-hover;
+      }
+
+      &.dp-offset {
+        @include dp-item-offset;
+      }
+
+      &.dp-today {
+        @include dp-item-today;
+      }
+
+      &.dp-selected {
+        @include dp-item-selected;
+      }
+    }
+  }
+
+  &_title{
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  &_next, &_prev {
+    font: 400 22px $fa;
+    line-height: inherit;
+    text-align: center;
+    color: $rd-dp-item-today-bg;
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &_panel {
+    text-align: center;
+    padding: 0 2px;
+    line-height: 30px;
+  }
+
+  &_next {
+    float: right;
+
+    &:before {
+      content: '\f105';
+    }
+  }
+
+  &_prev {
+    float: left;
+
+    &:before {
+      content: '\f104';
+    }
+  }
+
+  &_panel + table {
+    margin-top: 5px;
+  }
+
+  &.open {
+    @include transform(translateY(0));
+    opacity: 1;
+    visibility: visible;
+  }
+}

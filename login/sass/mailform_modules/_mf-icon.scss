@@ -1,0 +1,219 @@
+/*
+* MF Icon
+*/
+@import "../_mixins.scss";
+
+$rd-icon-font: 400 25px/24px $fa;
+$rd-icon-color: #707068;
+$rd-icon: (
+  icons: (
+    phone: '\f095',
+    email: '\f0e0',
+    name: '\f007',
+    date: '\f073',
+    guests: '\f0c0',
+    message: none,
+  ),
+);
+
+@mixin mfIcon-preset-1($state0, $state1, $stage2) {
+  .mfIcon {
+    span {
+      &:before {
+        content: $state0;
+      }
+
+      &:after {
+        content: $state1;
+        @include transform(scale(0) rotate(-180deg));
+        @include animation(zoom-out .4s ease-in-out 1 forwards);
+      }
+    }
+  }
+
+  .mfIcon.state-1 {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      width: 0;
+      height: 1px;
+      background: $rd-icon-color;
+      @include animation(line 1.2s .4s infinite);
+    }
+
+    span {
+      &:before {
+        @include transform(scale(0) rotate(90deg));
+      }
+
+      &:after {
+        @include transform(scale(1) rotate(-35deg));
+        @include animation(#{zoom-in-state-1 .4s ease-in-out 1 forwards, anim-1 1.2s .3s infinite, anim-2 .6s .3s infinite});
+      }
+    }
+  }
+
+  .mfIcon.state-2 {
+    span {
+      &:before {
+        content: $stage2;
+        @include transform(scale(0) rotate(90deg));
+      }
+
+      &:after {
+        @include transform(scale(1) rotate(-210deg));
+        @include animation(#{zoom-in-state-2 .4s ease-in-out 1 forwards, anim-3 .6s .4s infinite});
+      }
+    }
+  }
+
+  @include keyframes(anim-1) {
+    0% {
+      left: 50%;
+    }
+
+    100% {
+      left: 90%;
+    }
+  }
+
+  @include keyframes(anim-2) {
+    0% {
+      @include transform(rotate(-35deg));
+    }
+
+    25% {
+      @include transform(rotate(-30deg));
+    }
+
+    50% {
+      @include transform(rotate(-35deg));
+    }
+
+    75% {
+      @include transform(rotate(-30deg));
+    }
+
+    100% {
+      @include transform(rotate(-35deg));
+    }
+  }
+
+  @include keyframes(anim-3) {
+    0% {
+      @include transform(rotate(150deg));
+      left: 50%;
+    }
+
+    50% {
+      @include transform(rotate(150deg));
+      left: 90%;
+    }
+
+    100% {
+      @include transform(rotate(150deg));
+      left: 50%;
+    }
+  }
+
+  @include keyframes(zoom-out) {
+    0% {
+      @include transform(scale(1) rotate(-35deg));
+    }
+
+    100% {
+      @include transform(scale(0) rotate(-180deg));
+    }
+  }
+
+  @include keyframes(zoom-in-state-1) {
+    0% {
+      @include transform(scale(0) rotate(-180deg));
+    }
+
+    100% {
+      @include transform(scale(1) rotate(-35deg));
+    }
+  }
+
+  @include keyframes(zoom-in-state-2) {
+    0% {
+      @include transform(scale(0) rotate(-35deg));
+    }
+
+    100% {
+      left: 50%;
+      @include transform(scale(1) rotate(150deg));
+    }
+  }
+
+  @include keyframes(line) {
+    0% {
+      left: 40%;
+    }
+
+    100% {
+      left: 40%;
+      width: 40%;
+    }
+  }
+}
+
+.mfInput[data-add-icon]{
+  input, .mfPlaceHolder{
+  }
+}
+
+.mfIcon {
+  position: absolute;
+  text-align: center;
+  top: ($input-height - 24px) / 2;
+  width: 25px;
+  height: 42px;
+  right: 10px;
+  line-height: 24px;
+  color: $rd-icon-color;
+  font: $rd-icon-font;
+  @media (min-width: 480px) {
+    right:20px;
+  }
+
+
+  span {
+    &:before, &:after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -(24px / 2);
+      margin-left: -10px;
+      transition: .4s all ease-in-out;
+      font: $rd-icon-font;
+    }
+  }
+}
+
+@include mfIcon-preset-1('\e0d8', '\f040', '\f040');
+
+.mfInput {
+  @each $property, $value in map-get($rd-icon, icons) {
+    input[name='#{$property}'] ~ .mfIcon,
+    select[name='#{$property}'] ~ .mfIcon,
+    textarea[name='#{$property}'] ~ .mfIcon {
+      @if $value == none {
+        display: none;
+      } @else {
+        span:before {
+          content: $value;
+        }
+      }
+    }
+  }
+
+  input:-webkit-autofill ~ .mfIcon span,
+  textarea:-webkit-autofill ~ .mfIcon span {
+    &:before {
+      color: #2D2D2D;
+    }
+  }
+}
