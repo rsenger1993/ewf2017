@@ -11,6 +11,19 @@ body {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+
+#h1-bienvenido{
+  color: #222222;
+  border-color: #eb3812;
+  border-width: 3px;
+}
+
+#p1-bienvenido{
+  font-size: 22px;
+  color: #222222;
+  border-color: #eb3812;
+  border-width: 5px;
+}
 hr {
   border-color: #F05F40;
   border-width: 3px;
@@ -61,6 +74,7 @@ aside {
 .no-padding {
   padding: 0;
 }
+
 .navbar-default {
   background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
@@ -155,7 +169,6 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/header.jpg');
   text-align: center;
   color: white;
 }
@@ -413,4 +426,51 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #222222;
+    background-image: url('../img/header-pastel.jpg');
+
+}
+#menu-p{
+background-color:#2d2d2d;
+
+}
+#menu-perfil {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color:#2d2d2d;
+}
+#iframe-p {
+
+  background-color:#ffffff;
+}
+#ul-menu{
+
+  margin-top:150px;
+  list-style: none;
+  display: block;
+}
+#li-menu{
+  width:100%;
+  height:50px;
+  border-bottom: 1px solid #323232;
+  overflow: hidden;
+}
+p.menup{
+
+  position: relative;
+  padding:16px;
+  padding-right: 25px;
+  float: right;
+  color: white;
+  opacity: .6;
+  font-size: 1.2em;
+}
+
+div.barrap{
+
+  position: fixed;
+  height: 50px;
+  width: 300px;
+  background-color: #aaa;
+  opacity: .1;
 }
