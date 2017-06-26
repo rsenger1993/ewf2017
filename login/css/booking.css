@@ -1,0 +1,282 @@
+/*==================== Layout ====================*/
+.booking-form .controlHolder + .controlHolder {
+  margin-top: 10px;
+}
+.booking-form * + .btn {
+  margin-top: 20px;
+}
+.booking-form * + p {
+  margin-top: 15px;
+}
+/*==================== Styles ====================*/
+.booking-form {
+  position: relative;
+  padding: 30px 30px 28px;
+  color: #707068;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+}
+.lt-ie9 .booking-form {
+  background: none;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccffffff', endColorstr='#ccffffff');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccffffff', endColorstr='#ccffffff');
+  zoom: 1;
+}
+.booking-form input {
+  height: 51px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  color: #616156;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 11px 18px 13px;
+  border: 1px solid #cccdcf;
+  border-radius: 2px;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lt-ie9 .booking-form input {
+  background: none;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cffffff', endColorstr='#8cffffff');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cffffff', endColorstr='#8cffffff');
+  zoom: 1;
+}
+.booking-form a[data-type='submit'] {
+  display: block;
+  padding: 12px 0 17px;
+  background: #c5db34;
+}
+.booking-form a[data-type='submit']:hover {
+  background: #bad125;
+}
+.booking-form a[data-type='submit']:active {
+  background: #a7bb21;
+}
+.booking-form small {
+  display: block;
+  font-size: 14px;
+  line-height: 22px;
+}
+.booking-form *::-webkit-input-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.booking-form *:-moz-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.booking-form *::-moz-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.booking-form *:-ms-input-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.tmDatepicker {
+  display: block;
+}
+.tmDatepicker input {
+  padding-right: 50px;
+}
+.tmDatepicker:after {
+  content: "\f073";
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  right: 14px;
+  font-family: FontAwesome;
+  font-size: 25px;
+  font-weight: 400;
+  color: #707068;
+}
+.controlHolder {
+  position: relative;
+}
+/* Messages */
+.error-message {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  font-weight: normal;
+  text-align: left;
+  width: 100%;
+  font-size: 10px;
+  line-height: 10px;
+  z-index: 4;
+  color: #47413c;
+}
+.success-message {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  color: #909086;
+  text-align: left;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 20px;
+  border-radius: 3px;
+}
+.lt-ie9 .success-message {
+  background: none;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccffffff', endColorstr='#ccffffff');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccffffff', endColorstr='#ccffffff');
+  zoom: 1;
+}
+/* transformSelect CSS */
+.tmSelect {
+  clear: both;
+  width: 100%;
+  margin: 0px;
+}
+.tmSelect li {
+  position: relative;
+  list-style: none;
+}
+.tmSelect span,
+.tmSelect input[type=text] {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+.tmSelect.auto {
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 20px 0;
+  line-height: 20px;
+}
+.tmSelect.auto span {
+  background: transparent;
+}
+.tmSelect.auto ul {
+  margin: 1px 0 0;
+  width: 100%;
+  background: #F9F9F9;
+}
+.tmSelect.auto > li:first-child > span {
+  padding: 7px 12px;
+  width: 35px;
+  height: 100%;
+}
+.tmSelect ul,
+.tmSelect .transformSelectDropdown {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  padding: 0;
+  background: #f1f1e6;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 35px;
+  overflow: hidden;
+  z-index: 10;
+}
+.tmSelect ul span,
+.tmSelect .transformSelectDropdown span {
+  border: 0;
+  color: #000;
+  padding: 5px 13px;
+}
+.tmSelect ul span:hover,
+.tmSelect .transformSelectDropdown span:hover {
+  background: #47413c;
+}
+.ui-datepicker {
+  padding: 10px;
+  width: 282px;
+  font-size: 13px;
+  display: none;
+  z-index: 100 !important;
+  background: #F9F9F9;
+}
+@media (max-width: 479px) {
+  .ui-datepicker {
+    width: 210px;
+  }
+}
+.ui-datepicker a {
+  color: #777;
+}
+.ui-datepicker a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  cursor: pointer;
+  float: left;
+}
+.ui-datepicker-next {
+  float: right;
+}
+.ui-datepicker-title {
+  text-align: center;
+}
+.ui-datepicker-calendar {
+  margin: 10px 11px;
+}
+.ui-datepicker-calendar td {
+  padding: 1px 10px;
+  text-align: center;
+}
+@media (max-width: 479px) {
+  .ui-datepicker-calendar td {
+    padding: 1px 4px;
+  }
+}
+.ui-datepicker-calendar .ui-datepicker-current-day {
+  padding: 3px;
+  background: #d44934 !important;
+  color: #FFF;
+}
+@media (max-width: 479px) {
+  .ui-datepicker-calendar .ui-datepicker-current-day {
+    padding: 1px 4px;
+  }
+}
+.ui-datepicker-calendar .ui-datepicker-current-day a {
+  color: #FFF;
+}
+.ui-datepicker-calendar .ui-datepicker-today {
+  padding: 3px;
+  background: #fbb953;
+  color: #FFF;
+}
+@media (max-width: 479px) {
+  .ui-datepicker-calendar .ui-datepicker-today {
+    padding: 1px 4px;
+  }
+}
+.ui-datepicker-calendar .ui-datepicker-today a {
+  color: #FFF;
+}
+button.ui-state-default {
+  padding: 4px 6px;
+  background: #d44934;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+button.ui-state-default[data-handler='today'] {
+  display: none;
+}
+.ui-datepicker-close {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  float: right;
+}

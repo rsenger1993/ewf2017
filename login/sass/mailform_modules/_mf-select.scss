@@ -1,0 +1,192 @@
+/*
+* MF Select
+*/
+
+$rd-select-dropdown-color: $input-color;
+$rd-select-dropdown-bg: $contrast;
+
+$rd-select-dropdown-item-hover-color: $white;
+$rd-select-dropdown-item-hover-bg: $primary;
+
+$rd-select-dropdown-item-selected-color: $input-color;
+$rd-select-dropdown-item-selected-bg: darken($contrast, 5%);
+
+$rd-select-icon-color: $grayscale-darken;
+
+.mfSelect {
+  position: relative;
+
+  select {
+    padding: 0px 1px 1px 0;
+    z-index: -9999999;
+    border: medium none;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    max-height: 300px;
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid #888;
+    box-shadow: $box-shadow-key-light;
+    transition: .3s all ease-in-out;
+    outline: none;
+    -webkit-appearance: none;
+    font-weight: $input-font-weight;
+    line-height: $input-line-height;
+    border: $input-border;
+    background: $rd-select-dropdown-bg;
+    color: $rd-select-dropdown-color;
+    border-radius: $input-border-radius;
+    z-index: 1;
+    @include transform(translateY(20px));
+
+    .option {
+      position: relative;
+      z-index: 1;
+      text-transform: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      overflow: hidden;
+      transition: .4s all ease-in-out;
+      transition-delay: .2s;
+      font-size: 16px;
+      line-height: 30px;
+
+      &.selected {
+        background: $rd-select-dropdown-item-selected-bg;
+        color: $rd-select-dropdown-item-selected-color;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background: $rd-select-dropdown-item-hover-bg;
+        opacity: 0;
+        z-index: -1;
+        transition: .4s all ease-in-out;
+        @include transform(translate(-20%, -50%));
+      }
+
+      &:before {
+        content: '\f00c';
+        position: absolute;
+        display: inline-block;
+        left: 15px;
+        color: $rd-select-dropdown-item-hover-color;
+        font: 400 20px $fa;
+        line-height: inherit;
+        transition: .4s all ease-in-out;
+        @include transform(scale(0) rotate(-60deg));
+      }
+
+      &:hover {
+        color: $rd-select-dropdown-item-hover-color;
+        padding-left: 40px;
+        transition-delay: 0s;
+
+        &:before {
+          transition-delay: .15s;
+          @include transform(scale(1) rotate(0deg));
+        }
+
+        &:after {
+          width: 1000px;
+          height: 500px;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 14px;
+      @include triangle(top, 14px, 8px, $input-border-color);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 15px;
+      @include triangle(top, 12px, 6px, #FFF);
+    }
+  }
+
+  .value {
+    cursor: pointer;
+    transition: .4s all ease-in-out;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    line-height: $input-line-height;
+    color: $placeholder-clr;
+    background: $input-background;
+    border: $input-border;
+    border-radius: $input-border-radius;
+
+    &:before, &:after {
+      position: absolute;
+      right: 12px;
+      top: ($input-height - 24) /2;
+      width: 24px;
+      height: 24px;
+      font: 400 20px $fa;
+      line-height: 24px;
+      color: $rd-select-icon-color;
+      text-align: center;
+      transition: .4s all ease;
+    }
+
+    &:before {
+      content: '\f0c9';
+      @include transform(rotate(0deg) scale(1));
+    }
+
+    &:after {
+      content: '\f107';
+      font-size: 24px;
+      @include transform(rotate(-180deg) scale(0));
+    }
+  }
+
+  &.show {
+    .dropdown {
+      opacity: 1;
+      visibility: visible;
+      @include transform(translateY(0));
+    }
+
+    .value {
+      background: $rd-select-dropdown-bg;
+      color: $rd-select-dropdown-color;
+      box-shadow: $box-shadow-ambient, $box-shadow-key-light;
+
+      &:before, &:after {
+        color: $rd-select-dropdown-color;
+      }
+
+      &:before {
+        @include transform(rotate(90deg) scale(0));
+      }
+
+      &:after {
+        @include transform(rotate(0deg) scale(1));
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+/*
+* MF Submit
+*/
+
+$rd-progress-bg: #111;
+$rd-progress-color: #FFF;
+
+.mfInfo,
+.mfProgress {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  padding: 17px;
+  height: 24px;
+  color: $rd-progress-color;
+  background: $rd-progress-bg;
+  border-radius: 0;
+  line-height: 20px;
+  font-size: 13px;
+  transition: .3s all ease;
+  opacity: 0;
+  visibility: hidden;
+  @include transform(translateY(54+24+5px));
+  z-index: 999;
+
+  .loader {
+    display: inline-block;
+    position: relative;
+    margin-right: 16px;
+
+    &, &:before, &:after {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:before {
+      @include animation(mfLoader 1.1s infinite linear);
+      border: 2px solid $rd-progress-color;
+      border-top-color: transparent;
+      border-radius: 50%;
+      opacity: 1;
+      visibility: visible;
+      transition: .3s all ease;
+    }
+
+    &:after {
+      opacity: 0;
+      visibility: hidden;
+      font-weight: 400;
+      font-family: $fa;
+      font-size: 20px;
+      transition: .6s all ease;
+      @include transform(rotate(-90deg) scale(0));
+    }
+  }
+
+  &.fail {
+    background: #F34234;
+
+    .loader {
+      &:after {
+        content: '\f00d';
+      }
+    }
+  }
+
+  &.success {
+    background: #2E7D32;
+
+    .loader {
+      &:after {
+        content: '\f00c';
+      }
+    }
+  }
+
+  &.fail,
+  &.success {
+    .loader {
+      &:before {
+        opacity: 0;
+        visibility: hidden;
+        @include transform(scale(0));
+      }
+
+      &:after {
+        opacity: 1;
+        visibility: visible;
+        @include transform(rotate(0deg) scale(1));
+      }
+    }
+  }
+
+  &.fail,
+  &.success,
+  &.sending {
+    opacity: 1;
+    visibility: visible;
+    @include transform(translateY(0));
+  }
+
+  @media (min-width: 768px) {
+    bottom: 24px;
+    left: 50%;
+    @include transform(translate(-50%, 54+24+5px));
+
+    &.fail,
+    &.success,
+    &.sending {
+      @include transform(translate(-50%, 0));
+    }
+  }
+}
+
+@include keyframes(mfLoader) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  100% {
+    @include transform(rotate(360deg));
+  }
+}

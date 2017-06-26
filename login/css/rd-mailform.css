@@ -1,0 +1,739 @@
+@charset "UTF-8";
+/*
+* @subsection   RD Mail Form
+*
+* @description  Describes style declarations for RD Mail Form extension
+*
+* @author       Evgeniy Gusarov
+* @link         https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      1.1.2
+*/
+@-webkit-keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+}
+@keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+}
+.rd-mailform {
+  position: relative;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 30px 28px;
+  color: #707068;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+}
+.rd-mailform .text-center {
+  text-align: center;
+}
+.rd-mailform small {
+  display: block;
+  font-size: 14px;
+  line-height: 22px;
+}
+.rd-mailform fieldset {
+  border: none;
+}
+.rd-mailform fieldset > .row + .row {
+  margin-top: 10px;
+}
+
+.rd-mailform label {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 17px;
+}
+.rd-mailform label:first-child {
+  margin-top: 0;
+}
+.rd-mailform label input, .rd-mailform label select {
+  height: 34px;
+}
+.rd-mailform label input, .rd-mailform label textarea {
+  width: calc(100% - 36px);
+  font-family: 'Roboto', sans-serif;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid #cccdcf;
+  border-radius: 2px;
+  outline: none;
+  display: block;
+  margin: 0;
+  -webkit-appearance: none;
+  font-size: 20px;
+  padding: 9px 18px 7px;
+  line-height: 34px;
+  color: #616156;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid #cccdcf;
+  border-radius: 2px;
+}
+.rd-mailform label input:-moz-placeholder, .rd-mailform label textarea:-moz-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.rd-mailform label input::-webkit-input-placeholder, .rd-mailform label textarea::-webkit-input-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.rd-mailform label input::-moz-placeholder, .rd-mailform label textarea::-moz-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.rd-mailform label input:-ms-input-placeholder, .rd-mailform label textarea:-ms-input-placeholder {
+  color: #616156;
+  opacity: 1;
+}
+.rd-mailform label textarea {
+  resize: vertical;
+  overflow: auto;
+  min-height: 34px;
+  height: 191px;
+  max-height: 286.5px;
+}
+@media (min-width: 768px) {
+  .rd-mailform label {
+    margin-top: 10px;
+  }
+}
+
+/*
+* MF Controls
+*/
+* + .mfControls {
+  margin-top: 20px;
+}
+.mfControls .btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0 17px;
+  background: #c5db34;
+  transition: all .3s ease;
+}
+.mfControls .btn:hover {
+  background: #bad125;
+}
+
+@-webkit-keyframes fout {
+  0% {
+    -webkit-transform: scale(1) translateX(0);
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    -webkit-transform: scale(0) translateX(0);
+    transform: scale(0) translateX(0);
+  }
+}
+@keyframes fout {
+  0% {
+    -webkit-transform: scale(1) translateX(0);
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    -webkit-transform: scale(0) translateX(0);
+    transform: scale(0) translateX(0);
+  }
+}
+/*
+* MF Placeholder
+*/
+.mfPlaceHolder {
+  cursor: text;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 9px 18px 7px;
+  font-weight: inherit;
+  font-size: 20px;
+  line-height: 34px;
+  color: #616156;
+  opacity: 1;
+  transition: .2s all ease;
+}
+*:-webkit-autofill ~ .mfPlaceHolder {
+  opacity: .4;
+}
+.mfPlaceHolder.state-1 {
+  opacity: .0;
+}
+*:-webkit-autofill ~ .mfPlaceHolder {
+  display: none;
+}
+.mfInput.filled .mfPlaceHolder.state-1 {
+  display: none;
+}
+
+/*
+* MF Validation
+*/
+.mfValidation {
+  position: absolute;
+  top: 0;
+  padding-left: 18px;
+  right: 7px;
+  color: #f00;
+  font-weight: inherit;
+  font-size: 9px;
+  line-height: 20px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+  pointer-events: none;
+  transition: .3s all ease;
+}
+.mfValidation.show {
+  opacity: 1;
+  visibility: visible;
+}
+.mfValidation.hide, .mfValidation.valid {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*
+* MF Submit
+*/
+.mfInfo,
+.mfProgress {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  padding: 17px;
+  height: 24px;
+  color: #FFF;
+  background: #111;
+  border-radius: 0;
+  line-height: 20px;
+  font-size: 13px;
+  transition: .3s all ease;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(83px);
+  transform: translateY(83px);
+  z-index: 999;
+}
+.mfInfo .loader,
+.mfProgress .loader {
+  display: inline-block;
+  position: relative;
+  margin-right: 16px;
+}
+.mfInfo .loader, .mfInfo .loader:before, .mfInfo .loader:after,
+.mfProgress .loader,
+.mfProgress .loader:before,
+.mfProgress .loader:after {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+.mfInfo .loader:before, .mfInfo .loader:after,
+.mfProgress .loader:before,
+.mfProgress .loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mfInfo .loader:before,
+.mfProgress .loader:before {
+  -webkit-animation: mfLoader 1.1s infinite linear;
+  animation: mfLoader 1.1s infinite linear;
+  border: 2px solid #FFF;
+  border-top-color: transparent;
+  border-radius: 50%;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s all ease;
+}
+.mfInfo .loader:after,
+.mfProgress .loader:after {
+  opacity: 0;
+  visibility: hidden;
+  font-weight: 400;
+  font-family: "FontAwesome";
+  font-size: 20px;
+  transition: .6s all ease;
+  -webkit-transform: rotate(-90deg) scale(0);
+  transform: rotate(-90deg) scale(0);
+}
+.mfInfo.fail,
+.mfProgress.fail {
+  background: #F34234;
+}
+.mfInfo.fail .loader:after,
+.mfProgress.fail .loader:after {
+  content: '\f00d';
+}
+.mfInfo.success,
+.mfProgress.success {
+  background: #2E7D32;
+}
+.mfInfo.success .loader:after,
+.mfProgress.success .loader:after {
+  content: '\f00c';
+}
+.mfInfo.fail .loader:before, .mfInfo.success .loader:before,
+.mfProgress.fail .loader:before,
+.mfProgress.success .loader:before {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.mfInfo.fail .loader:after, .mfInfo.success .loader:after,
+.mfProgress.fail .loader:after,
+.mfProgress.success .loader:after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+}
+.mfInfo.fail, .mfInfo.success, .mfInfo.sending,
+.mfProgress.fail,
+.mfProgress.success,
+.mfProgress.sending {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+@media (min-width: 768px) {
+  .mfInfo,
+  .mfProgress {
+    bottom: 24px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 83px);
+    transform: translate(-50%, 83px);
+  }
+  .mfInfo.fail, .mfInfo.success, .mfInfo.sending,
+  .mfProgress.fail,
+  .mfProgress.success,
+  .mfProgress.sending {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+
+@-webkit-keyframes mfLoader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes mfLoader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*
+* MF Icon
+*/
+@-webkit-keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+}
+@keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+}
+.mfIcon {
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 25px;
+  height: 42px;
+  right: 10px;
+  line-height: 24px;
+  color: #707068;
+  font: 400 25px/24px "FontAwesome";
+}
+@media (min-width: 480px) {
+  .mfIcon {
+    right: 20px;
+  }
+}
+.mfIcon span:before, .mfIcon span:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -12px;
+  margin-left: -10px;
+  transition: .4s all ease-in-out;
+  font: 400 25px/24px "FontAwesome";
+}
+
+.mfIcon span:before {
+  content: "";
+}
+.mfIcon span:after {
+  content: "";
+  -webkit-transform: scale(0) rotate(-180deg);
+  transform: scale(0) rotate(-180deg);
+  -webkit-animation: zoom-out 0.4s ease-in-out 1 forwards;
+  animation: zoom-out 0.4s ease-in-out 1 forwards;
+}
+
+.mfIcon.state-1:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: #707068;
+  -webkit-animation: line 1.2s 0.4s infinite;
+  animation: line 1.2s 0.4s infinite;
+}
+.mfIcon.state-1 span:before {
+  -webkit-transform: scale(0) rotate(90deg);
+  transform: scale(0) rotate(90deg);
+}
+.mfIcon.state-1 span:after {
+  -webkit-transform: scale(1) rotate(-35deg);
+  transform: scale(1) rotate(-35deg);
+  -webkit-animation: zoom-in-state-1 0.4s ease-in-out 1 forwards, anim-1 1.2s 0.3s infinite, anim-2 0.6s 0.3s infinite;
+  animation: zoom-in-state-1 0.4s ease-in-out 1 forwards, anim-1 1.2s 0.3s infinite, anim-2 0.6s 0.3s infinite;
+}
+
+.mfIcon.state-2 span:before {
+  content: "";
+  -webkit-transform: scale(0) rotate(90deg);
+  transform: scale(0) rotate(90deg);
+}
+.mfIcon.state-2 span:after {
+  -webkit-transform: scale(1) rotate(-210deg);
+  transform: scale(1) rotate(-210deg);
+  -webkit-animation: zoom-in-state-2 0.4s ease-in-out 1 forwards, anim-3 0.6s 0.4s infinite;
+  animation: zoom-in-state-2 0.4s ease-in-out 1 forwards, anim-3 0.6s 0.4s infinite;
+}
+
+@-webkit-keyframes anim-1 {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+@keyframes anim-1 {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+@-webkit-keyframes anim-2 {
+  0% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+  25% {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+  75% {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+}
+@keyframes anim-2 {
+  0% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+  25% {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+  75% {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+}
+@-webkit-keyframes anim-3 {
+  0% {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    left: 50%;
+  }
+  50% {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    left: 90%;
+  }
+  100% {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    left: 50%;
+  }
+}
+@keyframes anim-3 {
+  0% {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    left: 50%;
+  }
+  50% {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    left: 90%;
+  }
+  100% {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    left: 50%;
+  }
+}
+@-webkit-keyframes zoom-out {
+  0% {
+    -webkit-transform: scale(1) rotate(-35deg);
+    transform: scale(1) rotate(-35deg);
+  }
+  100% {
+    -webkit-transform: scale(0) rotate(-180deg);
+    transform: scale(0) rotate(-180deg);
+  }
+}
+@keyframes zoom-out {
+  0% {
+    -webkit-transform: scale(1) rotate(-35deg);
+    transform: scale(1) rotate(-35deg);
+  }
+  100% {
+    -webkit-transform: scale(0) rotate(-180deg);
+    transform: scale(0) rotate(-180deg);
+  }
+}
+@-webkit-keyframes zoom-in-state-1 {
+  0% {
+    -webkit-transform: scale(0) rotate(-180deg);
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(-35deg);
+    transform: scale(1) rotate(-35deg);
+  }
+}
+@keyframes zoom-in-state-1 {
+  0% {
+    -webkit-transform: scale(0) rotate(-180deg);
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(-35deg);
+    transform: scale(1) rotate(-35deg);
+  }
+}
+@-webkit-keyframes zoom-in-state-2 {
+  0% {
+    -webkit-transform: scale(0) rotate(-35deg);
+    transform: scale(0) rotate(-35deg);
+  }
+  100% {
+    left: 50%;
+    -webkit-transform: scale(1) rotate(150deg);
+    transform: scale(1) rotate(150deg);
+  }
+}
+@keyframes zoom-in-state-2 {
+  0% {
+    -webkit-transform: scale(0) rotate(-35deg);
+    transform: scale(0) rotate(-35deg);
+  }
+  100% {
+    left: 50%;
+    -webkit-transform: scale(1) rotate(150deg);
+    transform: scale(1) rotate(150deg);
+  }
+}
+@-webkit-keyframes line {
+  0% {
+    left: 40%;
+  }
+  100% {
+    left: 40%;
+    width: 40%;
+  }
+}
+@keyframes line {
+  0% {
+    left: 40%;
+  }
+  100% {
+    left: 40%;
+    width: 40%;
+  }
+}
+.mfInput input[name='phone'] ~ .mfIcon span:before,
+.mfInput select[name='phone'] ~ .mfIcon span:before,
+.mfInput textarea[name='phone'] ~ .mfIcon span:before {
+  content: "";
+}
+.mfInput input[name='email'] ~ .mfIcon span:before,
+.mfInput select[name='email'] ~ .mfIcon span:before,
+.mfInput textarea[name='email'] ~ .mfIcon span:before {
+  content: "";
+}
+.mfInput input[name='name'] ~ .mfIcon span:before,
+.mfInput select[name='name'] ~ .mfIcon span:before,
+.mfInput textarea[name='name'] ~ .mfIcon span:before {
+  content: "";
+}
+.mfInput input[name='date'] ~ .mfIcon span:before,
+.mfInput select[name='date'] ~ .mfIcon span:before,
+.mfInput textarea[name='date'] ~ .mfIcon span:before {
+  content: "";
+}
+.mfInput input[name='guests'] ~ .mfIcon span:before,
+.mfInput select[name='guests'] ~ .mfIcon span:before,
+.mfInput textarea[name='guests'] ~ .mfIcon span:before {
+  content: "";
+}
+.mfInput input[name='message'] ~ .mfIcon,
+.mfInput select[name='message'] ~ .mfIcon,
+.mfInput textarea[name='message'] ~ .mfIcon {
+  display: none;
+}
+.mfInput input:-webkit-autofill ~ .mfIcon span:before,
+.mfInput textarea:-webkit-autofill ~ .mfIcon span:before {
+  color: #2D2D2D;
+}
+
+/*
+* MF Datepicker
+*/
+.mfDatePicker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 15px;
+  padding: 10px 15px;
+  opacity: 0;
+  width: 230px;
+  visibility: hidden;
+  transition: .3s all ease-in-out;
+  z-index: 99;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  background: #ffffff;
+  color: #c6bbba;
+  border-radius: 0;
+  border: 1px solid #ffffff;
+}
+.mfDatePicker:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent #ffffff transparent;
+}
+.mfDatePicker table {
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 3px;
+  font-size: 12px;
+}
+.mfDatePicker table th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.mfDatePicker table td {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+.mfDatePicker table td:hover {
+  color: #000;
+  background: transparent;
+}
+.mfDatePicker table td.dp-offset {
+  color: #c6bbba;
+}
+.mfDatePicker table td.dp-today {
+  color: #ffffff;
+  background: #fbb953;
+}
+.mfDatePicker table td.dp-selected {
+  color: #fff;
+  background: #fbb953;
+}
+.mfDatePicker_title {
+  font-size: 16px;
+  line-height: 30px;
+}
+.mfDatePicker_next, .mfDatePicker_prev {
+  font: 400 22px "FontAwesome";
+  line-height: inherit;
+  text-align: center;
+  color: #fbb953;
+  cursor: pointer;
+}
+.mfDatePicker_next:hover, .mfDatePicker_prev:hover {
+  color: #000;
+}
+.mfDatePicker_panel {
+  text-align: center;
+  padding: 0 2px;
+  line-height: 30px;
+}
+.mfDatePicker_next {
+  float: right;
+}
+.mfDatePicker_next:before {
+  content: '\f105';
+}
+.mfDatePicker_prev {
+  float: left;
+}
+.mfDatePicker_prev:before {
+  content: '\f104';
+}
+.mfDatePicker_panel + table {
+  margin-top: 5px;
+}
+.mfDatePicker.open {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
