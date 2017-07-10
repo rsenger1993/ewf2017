@@ -23,8 +23,83 @@ a:focus {
   color: #eb3812;
 }
 
+div#general{
+  margin: auto;
+  margin-top: 50px;
+  width: 960px;
+  height: 655px;
+background-color: #2d2d2d;
 
 }
+h3#perfil-font{
+  /*margin-top: 20px;
+  margin: 20px;*/
+  color: white;
+   text-align: center;
+}
+div#perfil-datos{
+  float: right;
+  margin-right:10px; 
+  width: 280px;
+  height: 400px;
+background-color: white;
+border: 1px solid #323232;
+
+}
+div#perfil-foto{
+  margin-left:10px; 
+  width: 650px;
+  height: 400px;
+background-color: white;
+border: 1px solid #323232;
+}
+div#perfil-descripcion{
+ margin-top: 10px;
+ margin-bottom: 10px;
+ margin-left: 10px;
+ margin-right: 10px;
+  width: 940px;
+  height: 190px;
+background-color: white;
+border: 1px solid #323232;
+
+
+}
+p#text-platillo{
+
+ margin-top: 20px;
+ margin-left: 10px;
+}
+
+p#text-foto{
+font-size: 18px;
+  margin-top: 180px;
+ margin-left: 25px;
+text-align: center
+}
+
+p#text-platillo{
+
+  color: black;
+}
+textarea#descripcion{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 920px;
+  height: 120px;
+}
+
+input[type="text"]{
+  margin:10px;
+  width: 260px;
+  height: 35px;
+}
+input#precio{
+
+    width: 70px;
+  height: 35px;
+}
+
 #menu-p{
  
 background-color:#2d2d2d;
@@ -233,6 +308,7 @@ header .header-content {
  color: #F05F40;
  box-shadow: inset 0 0 0 3px #F05F40;
 }
+
 
 
 
