@@ -28,6 +28,9 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%; display:block;}
 /*end reset*/
+.*{
+	font-family: 'Roboto', sans-serif;
+}
 body{
 	background:#e2e1dd;
 	font-family: 'Roboto', sans-serif;	
