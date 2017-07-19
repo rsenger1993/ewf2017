@@ -178,6 +178,7 @@ textarea#area-perfil{
 }
 .header-top{
 	display:none;
+	
 }
 .header-left{
 	width:20%;
@@ -200,6 +201,7 @@ textarea#area-perfil{
 }
 .top-nav ul li {
 	list-style:none;
+
 }
 .top-nav ul li  a {
 	display:block;
@@ -210,6 +212,7 @@ textarea#area-perfil{
 	padding: 1em;
 	text-align: right;
 	background:#30383c;
+
 }
 .top-nav ul li  a.black{
 	background:#30383c;
