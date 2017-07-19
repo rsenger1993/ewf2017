@@ -43,6 +43,18 @@ body a{
 	-ms-transition: 0.5s all;
 }
 
+p#nosotros{
+	margin:5px;
+}
+
+.nosotros-content{
+	margin:5px;
+}
+
+#staff-img{
+	justify-content:center;
+}
+
 .slider{
 	width:95%; 
 	margin:auto;
@@ -137,18 +149,18 @@ header#index-header label:hover{
 		display: block;
 	}
 	div.single{
-		margin-top: 1%;
+		margin-top: 40%;
 	}
 
 		div.slider{
-		margin-top: 52%;
+		margin-top: 1%;
 	}
 
 	.menu{
 	position: absolute;
 	background: #242b2e;
 	width: 100%;
-	margin-left: -70%;
+	margin-left: -40%;
 	transition: all 0.5s;
 }
 
@@ -163,6 +175,10 @@ header#index-header label:hover{
 #btn-menu:checked ~ .menu{
 	margin:0;
 }
+
+div.nosotros-content{
+		margin-top: 27%;
+	}
 
 }
 
@@ -688,8 +704,7 @@ ul.feature-grid li i{
 }
 .staff {
   padding: 1em 0;
-  border-top: 1px solid #D5D3D3;
-    padding: 1em 0 0em;
+  padding: 1em 0 0em;
 }
 .staff h3,.skills h3,.test h3{
 	color:#000;
@@ -803,6 +818,7 @@ h4.author{
 	font-size: 1.1em;
   text-transform: uppercase;
   font-weight: 600;
+
 }
 .simple p{
 	color:#fff;
