@@ -1041,7 +1041,6 @@ div#index-login h3{
 	  text-align: center;
 }
 div#index-login{
-
 	background:#242b2e;
 }
 
@@ -1141,9 +1140,10 @@ label.arrow-in {
   margin: 1em 0 2em;
 }
 .your-single {
-  border: 1px solid #e2e2e2;
+  border:3px solid #e2e2e2;
   position: relative;
   margin: 0.8em 0;
+    
 }
 .your-single i {
     background: url(../images/img-sprite.png)no-repeat -9px -86px ;
@@ -1205,7 +1205,7 @@ label.arrow-in {
   float: left;
 }
 .grid-single {
-  margin: 0 2% 0 0;
+  margin: 0 2% 0 25%;
 }
 .archive{
 	padding:0.7em 0 0;
