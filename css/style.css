@@ -140,7 +140,7 @@ a#btn-search{
 .header-left3{
 	min-height:1618px;
 }
-/* modificando padding 2 a 5 del logo*/
+/* modificando padding 2 a 0,5 del logo*/
 .logo{
 	background:#fff;
 	padding: 0,5em;
@@ -197,8 +197,9 @@ a#btn-search{
 	background: -ms-linear-gradient(top,  rgba(50,58,62,1) 0%,rgba(46,54,58,1) 100%);
 	background: linear-gradient(to bottom,  rgba(50,58,62,1) 0%,rgba(46,54,58,1) 100%);
 }
+/*------color naranja de Menu principal----*/
 .top-nav ul li  a:hover,.top-nav ul li.active a {
-	background: #23aeac;
+	background: #f78733;
 }
 ul.social-in {
   text-align: right;
@@ -283,6 +284,7 @@ p.footer-class a:hover{
 	overflow:hidden;
 	width: 100%;
 }
+/*----letras sobre las img archivo HOME-------*/
 .b-link-stripe .b-wrapper{
 	position:absolute;
 	width:100%;
@@ -336,10 +338,11 @@ p.footer-class a:hover{
 .b-animate-go:hover .b-animate{
 	visibility:visible;
 }
+/* background color naranja sobre img del home.html */
 .b-from-left{
 	position: relative;
 	left: -100%;
-	background:rgba(45, 184, 183, 0.81);
+	background:rgba(247, 135, 51, 0.81);
 	background-size: 100% 100%;
 	top: 0px;
 	margin: 0;
