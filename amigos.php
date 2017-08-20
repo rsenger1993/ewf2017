@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kappe a Personal Portfolio Category Flat Bootstarp Responsive Website Template | Blog :: w3layouts</title>
+<title>EWF | Amigos</title>
 <!-- jQuery-->
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -27,40 +27,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="header-left header-left2">
 			<div class="logo">
-				<a href="home.html"><img src="images/logo.png" alt=""></a>
+				<a href="home.php"><img src="images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav">
 				<ul >
-					<li  ><a href="home.html" >HOME</a></li>
-					<li><a href="work.html" class="black" > MURO</a></li>	
-					<li class="active"><a href="blog.html" class="black2" > AMIGOS</a></li>
-					<li><a href="mispublicaciones.html" class="black2" > MISPUBLICACIONES</a></li>
-					<li><a href="nuevapublicacion.html" class="black4" > NUEVAPUBLICACION</a></li>
-					<li><a href="miperfil.html" class="black4" > MIPERFIL</a></li>
-					<li><a href="index.html" class="black3" > SALIR</a></li>
+					<li  ><a href="home.php" >HOME</a></li>
+					<li><a href="muro.php" class="black" > MURO</a></li>	
+					<li class="active"><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
+					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
+					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
+					<li><a href="index.php" class="black3" > SALIR</a></li>
 				</ul>
 			</div>
 			<ul class="social-in">
-				<li><a href="blog.html"><i class="facebook"> </i></a></li>
-				<li><a href="blog.html"><i class="twitter"> </i></a></li>
+				<li><a href="amigos.php"><i class="facebook"> </i></a></li>
+				<li><a href="amigos.php"><i class="twitter"> </i></a></li>
 			</ul>
 			<p class="footer-class"> Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 		</div>
 		<!---->
 		<div class="header-top">
 			<div class="logo-in">
-				<a href="home.html"><img src="images/logo.png" alt=""></a>
+				<a href="home.php"><img src="images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav-in">
 			<span class="menu"><img src="images/menu.png" alt=""> </span>
 				<ul >
-					<li><a href="home.html" >HOME</a></li>
-					<li><a href="work.html" class="black" > MURO</a></li>	
-					<li class="active"><a href="blog.html" class="black2" > AMIGOS</a></li>
-					<li><a href="mispublicaciones.html" class="black2" > MISPUBLICACIONES</a></li>
-					<li><a href="nuevapublicacion.html" class="black4" > NUEVAPUBLICACION</a></li>
-					<li><a href="miperfil.html" class="black4" > MIPERFIL</a></li>
-					<li><a href="index.html" class="black3" > SALIR</a></li>
+					<li><a href="home.php" >HOME</a></li>
+					<li><a href="muro.php" class="black" > MURO</a></li>	
+					<li class="active"><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
+					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
+					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
+					<li><a href="index.php" class="black3" > SALIR</a></li>
 				</ul>
 				<script>
 					$("span.menu").click(function(){
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </div>
 					</div>
 						<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
+							<h5><a href="amigos.php">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain </p>
 							<ul class="date">
 								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
@@ -118,10 +118,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-d">
 
-						<a  href="single.html"><img  src="images/bl2.jpg" alt="bl2"/>
+						<a  href="single.php"><img  src="images/bl2.jpg" alt="bl2"/>
 						</a>
 
-						<a  href="blog.html"><img  src="images/bl2.jpg" alt="bl2" />
+						<a  href="amigos.php"><img  src="images/bl2.jpg" alt="bl2" />
 						</a>
 
 					</div>
@@ -141,22 +141,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h5><a href="blog.html">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain  </p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-d">
 
-						<a href="single.html"><img  src="images/bl.jpg" alt="bl"/></a>
+						<a href="single.php"><img  src="images/bl.jpg" alt="bl"/></a>
 
-						<a href="blog.html"><img  src="images/bl.jpg" alt="bl" /></a>
+						<a href="muro.php"><img  src="images/bl.jpg" alt="bl" /></a>
 
 						<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
+							<h5><a href="amigos.php">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain</p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>
@@ -166,27 +166,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="blog-top">
 					<div class="col-d">
 
-						<a href="single.html"><img  src="images/bl2.jpg" alt="bl2" />
+						<a href="single.php"><img  src="images/bl2.jpg" alt="bl2" />
 						</a>
 
-						<a href="blog.html"><img  src="images/bl2.jpg"  alt="bl2"/>
+						<a href="amigos.php"><img  src="images/bl2.jpg"  alt="bl2"/>
 						</a>
 
 					</div>
 					<div class="col-d">
 						<img  src="images/bl1.jpg" alt="bl1" />
 						<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
+							<h5><a href="amigos.php">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain </p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>
 					</div>
 					
 					<div class="col-in-at">
-					<h5><a href="blog.html">Aside Post Format</a></h5>
+					<h5><a href="amigos.php">Aside Post Format</a></h5>
 					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh</p>
 					</div>
 					</div>
@@ -198,15 +198,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-d">
 
-						<a href="single.html"><img  src="images/bl.jpg" alt="bl" /></a>
+						<a href="single.php"><img  src="images/bl.jpg" alt="bl" /></a>
 
-						<a href="blog.html"><img  src="images/bl.jpg"  alt="bl"/></a>
+						<a href="amigos.php"><img  src="images/bl.jpg"  alt="bl"/></a>
 
 						<div class="blog-in">
 							<h5><a href="single.html">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain </p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>
@@ -214,10 +214,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-d">
 						<iframe src="https://player.vimeo.com/video/12879013?portrait=0" ></iframe> 
 							<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
+							<h5><a href="amigos.php">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain  </p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>
@@ -255,10 +255,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </div>
 					</div>
 						<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
+							<h5><a href="amigos.php">Gallery Post Example</a></h5>
 							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain  </p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>
@@ -266,10 +266,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-d">
 						<img  src="images/pi5.jpg" alt="pi5" />
 						<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
+							<h5><a href="amigos.php">Gallery Post Example</a></h5>
 							<p>A man who wo  rks with his hands is a laborer; a man who works with his hand s and his brain  </p>
 							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
+								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
 								<li><span><i class="date-in"></i>09-07-2013</span></li>
 							</ul>
 						</div>

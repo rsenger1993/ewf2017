@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kappe a Personal Portfolio Category Flat Bootstarp Responsive Website Template | Work :: w3layouts</title>
+<title>EWF | Quienes Somos</title>
 <!-- jQuery-->
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -30,8 +30,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="menu">
 
 				<ul>
-                    <li> <a href="registrarse.html">Registrarse</a></li>
-					<li> <a href="quienessomos.html">Nosotros</a></li>
+                    <li> <a href="registrarse.php">Registrarse</a></li>
+					<li> <a href="quienessomos.php">Nosotros</a></li>
 
 				</ul>
 
@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <div class="nosotros-content">
 			<div class="about">
 				<div class="about-top">
-					<h2><a href="quienessomos.html">Quienes Somos</a></h2>
+					<h2><a href="quienessomos.php">Quienes Somos</a></h2>
 					<div class="grid-about">
 
 						<a  href="single.html"><img src="images/integrantes/staff.jpg" alt="staff"></a>

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kappe a Personal Portfolio Category Flat Bootstarp Responsive Website Template | Work :: w3layouts</title>
+<title>EWF | Muro</title>
 <!-- jQuery-->
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -28,40 +28,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="header-left header-work">
 			<div class="logo">
-				<a href="home.html"><img src="images/logo.png" alt=""></a>
+				<a href="home.php"><img src="images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav">
 				<ul >
-					<li  ><a href="home.html" >HOME</a></li>
-					<li class="active"><a href="muro.html" class="black" > MURO</a></li>
-					<li><a href="blog.html" class="black2" > AMIGOS</a></li>
-					<li><a href="mispublicaciones.html" class="black2" > MISPUBLICACIONES</a></li>
-					<li><a href="nuevapublicacion.html" class="black4" > NUEVAPUBLICACION</a></li>
-					<li><a href="miperfil.html" class="black4" > MIPERFIL</a></li>
-					<li><a href="index.html" class="black3" > SALIR</a></li>
+					<li  ><a href="home.php" >HOME</a></li>
+					<li class="active"><a href="muro.php" class="black" > MURO</a></li>
+					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
+					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
+					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
+					<li><a href="index.php" class="black3" > SALIR</a></li>
 				</ul>
 			</div>
 			<ul class="social-in">
-				<li><a href="muro.html"><i class="facebook"> </i></a></li>
-				<li><a href="muro.html"><i class="twitter"> </i></a></li>
+				<li><a href="muro.php"><i class="facebook"> </i></a></li>
+				<li><a href="muro.php"><i class="twitter"> </i></a></li>
 			</ul>
 			<p class="footer-class"> Copyright © 2017 EWF  <!--Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> --></p>
 		</div>
 		<!---->
 		<div class="header-top">
 			<div class="logo-in">
-				<a href="home.html"><img src="images/logo.png" alt=""></a>
+				<a href="home.php"><img src="images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav-in">
 			<span class="menu"><img src="images/menu.png" alt=""> </span>
 				<ul >
-					<li><a href="home.html" >HOME</a></li>
-					<li class="active"><a href="muro.html" class="black" > MURO</a></li>
-					<li><a href="blog.html" class="black2" > AMIGOS</a></li>
-					<li><a href="mispublicaciones.html" class="black2" > MISPUBLICACIONES</a></li>
-					<li><a href="nuevapublicacion.html" class="black4" > NUEVAPUBLICACION</a></li>
-					<li><a href="miperfil.html" class="black4" > MIPERFIL</a></li>
-					<li><a href="index.html" class="black3" > SALIR</a></li>
+					<li><a href="home.php" >HOME</a></li>
+					<li class="active"><a href="muro.php" class="black" > MURO</a></li>
+					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
+					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
+					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
+					<li><a href="index.php" class="black3" > SALIR</a></li>
 				</ul>
 				<script>
 					$("span.menu").click(function(){
