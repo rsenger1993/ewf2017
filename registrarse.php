@@ -1,3 +1,6 @@
+ <?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,28 +50,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<h3>Registrarse</h3>
 				<div class="grid-single">
+					<form action="crearUsuario.php" method="post">
 					<div class="your-single">
 						<i> </i>
-						<input type="text" value="Nombre Completo" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Nombre Completo';}">								
+						<input type="text" name="nombrecompleto" value="nombrecompleto">								
 						<div class="clear"> </div>
 					</div>
 					<div class="your-single">
 						<i> </i>
-						<input type="text" value="Usuario" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Usuario';}">								
+						<input type="text" name="nombreusuario" value="nombreusuario">								
 						<div class="clear"> </div>
 					</div>
 					<div class="your-single">
 						<i class="email"> </i>
-						<input type="text" value="E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'E-mail';}">								
+						<input type="text" name="clave" value="clave">								
 						<div class="clear"> </div>
 					</div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" value="Telefono" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Telefono';}">								
+						<input type="text" name="correo" value="correo">								
 						<div class="clear"> </div>	
                     </div>
+                    <div class="your-single">
+					<i> </i>
+						<input type="text" name="edad" value="edad">								
+						<div class="clear"> </div>	
+                    </div>
+                    <div class="your-single">
+					<i> </i>
+						<input type="text" name="telefono" value="telefono">								
+						<div class="clear"> </div>	
+                    </div>
+                    <div class="your-single">
+					<i> </i>
+						<input type="text" name="descripcion" value="descripcion">								
+						<div class="clear"> </div>	
+                    </div>
+                    <input type="submit" name="Enviar">
+                    </form>
                     <div class="grid-single-in">
-					<input type="submit" value="Enviar">
+					
 				    </div>
 				</div>
 				<div class="clear"> </div>
