@@ -22,7 +22,7 @@ class categoria
      function setNombreCategoria($nombrecategoria){
        $this->nombrecategoria = $nombrecategoria;
      } 
-     function getNombreC(){
+     function getNombreCategoria(){
        return $this->nombrecategoria;
      }
 
