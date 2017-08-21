@@ -48,7 +48,10 @@ class DireccionCollector extends Collector
       
   }
 
-     
+      function insertarDireccion($nombredireccion,$descripcion) {
+    $insertrow = self::$db->insertRow("INSERT INTO direccion (nombredireccion,descripcion) VALUES (?,?)",array("{$nombredireccion}","{$descripcion}"));
+      
+  }
 
 }
 ?>
