@@ -24,7 +24,26 @@ class DireccionCollector extends Collector
     return $ObjDireccion;        
   }
 
+   
+
+
+ function showDireccionByName($nombredireccion) {
+    $row = self::$db->getRows("SELECT * FROM direccion WHERE nombredireccion= ?",array("{$nombredireccion}"));
+   $arrayUDireccion= array();        
+    foreach ($row as $c){
+      $aux = new Direccion($c{'id'},$c{'nombredireccion'},$c{'descripcion'});
+      //array_push($arrayUPersona, $aux);
+    }
+    return $aux;        
+  }
     
+
+      function updateDireccion($iddireccion,$nombredireccion,$descripcion) {
+    $insertrow = self::$db->updateRow("UPDATE public.direccion SET nombredireccion = ? , descripcion = ?WHERE id = ?", array("{$nombredireccion}", "{$descripcion}"));  
+      
+  }
+
+     
 
 }
 ?>
