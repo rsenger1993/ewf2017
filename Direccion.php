@@ -17,7 +17,6 @@ class direccion
      function setId($iddireccion){
        $this->iddireccion = $iddireccion;
      } 
-
      function getId(){
        return $this->iddireccion;
      } 
@@ -25,15 +24,13 @@ class direccion
      function setNombreDireccion($nombredireccion){
        $this->nombredireccion = $nombredireccion;
      } 
-
-     function getNombreCompleto(){
-       return $this->nombrecompleto;
+     function getNombreDireccion(){
+       return $this->nombredireccion;
      }
 
      function setDescripcion($descripcion){
        $this->descripcion = $descripcion;
      } 
-
      function getDescripcion(){
        return $descripcion->descripcion;
      } 
