@@ -30,8 +30,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="menu">
 
 				<ul>
-          <li> <a href="registrarse.php">Registrarse</a></li>
-					<li> <a href="quienessomos.php">Nosotros</a></li>
+          <li> <a href="pages/registrarse.php">Registrarse</a></li>
+					<li> <a href="pages/quienessomos.php">Nosotros</a></li>
 				</ul>
 
 			</nav>
@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clear"> </div>
 					</div>
                     <div class="grid-single-in">
-					<input onclick="location='home.php'" type="submit" value="Ingresar">
+					<input onclick="location='pages/home.php'" type="submit" value="Ingresar">
 				    </div>
 
 				</div>
