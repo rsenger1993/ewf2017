@@ -1,29 +1,34 @@
 <?php
+include_once('../direccionfiles/Direccion.php');
 
-class Persona
+class Persona extends Direccion
 {
-    private $idPersona;
+    private $idpersona;
     private $nombrecompleto;
     private $correo;
     private $edad;
     private $telefono;
-    
+    private $direccion_id;
 
 
-      function __construct($idPersona, $nombrecompleto, $correo, $edad, $telefono) {
-       $this->idPersona = $idPersona;
+      function __construct($idpersona, $nombrecompleto, $correo, $edad, $telefono, $direccion_id, $direccion_descripcion) {
+
+      parent::__construct($direccion_id, $direccion_descripcion);
+
+       $this->idpersona = $idpersona;
        $this->nombrecompleto = $nombrecompleto;
        $this->correo = $correo;
        $this->edad = $edad;
        $this->telefono = $telefono;
+       $this->direccion_id = $direccion_id;
 
      }
     
-     function setIdPersona($idPersona){
-       $this->idPersona = $idPersona;
+     function setIdPersona($idpersona){
+       $this->idpersona = $idpersona;
      } 
      function getIdPersona(){
-       return $this->idPersona;
+       return $this->idpersona;
      } 
      function setNombreCompleto($nombrecompleto){
        $this->nombrecompleto = $nombrecompleto;
@@ -31,12 +36,13 @@ class Persona
      function getNombreCompleto(){
        return $this->nombrecompleto;
      }
-     function setCorreo($correo){
+      function setCorreo($nombrecompleto){
        $this->correo = $correo;
      } 
      function getCorreo(){
-       return $correo->correo;
-     } 
+       return $this->correo;
+     }
+
      function setEdad($edad){
        $this->edad = $edad;
      } 
@@ -48,6 +54,12 @@ class Persona
      } 
      function getTelefono(){
        return $this->telefono;
+     }
+     function setIdDireccion($direccion_id){
+       $this->direccion_id = $direccion_id;
+     } 
+     function getDireccion(){
+       return $this->direccion_id;
      }
 }
 
