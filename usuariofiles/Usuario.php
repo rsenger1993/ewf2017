@@ -1,8 +1,8 @@
 <?php
 
-//include_once('../personafiles/Persona.php');
+include_once('../personafiles/Persona.php');
 
-class Usuario
+class Usuario extends Persona  
 {
     private $idusuario;
     private $nombreusuario;
@@ -10,10 +10,11 @@ class Usuario
     private $descripcion;
     private $persona_id;
     
+   
 
-      function __construct($idusuario, $nombreusuario, $clave, $descripcion,$persona_id) {
+      function __construct($idusuario, $nombreusuario, $clave, $descripcion, $persona_id, $nombrecompleto, $correo, $edad, $telefono, $direccion_id, $direccion_descripcion) {
 
-       //parent::__construct($idpersona, $nombrecompleto, $correo, $edad, $telefono);
+       parent::__construct($persona_id, $nombrecompleto, $correo, $edad, $telefono, $direccion_id, $direccion_descripcion);
 
        $this->idusuario = $idusuario;
        $this->nombreusuario = $nombreusuario;
@@ -41,10 +42,10 @@ class Usuario
      function getClave(){
        return $clave->clave;
      } 
-     function setDescripcion($descripcion){
+     function setUsuarioDescripcion($descripcion){
        $this->descripcion = $descripcion;
      } 
-     function getDescripcion(){
+     function getUsuarioDescripcion(){
        return $this->descripcion;
      }
      function setPersonaId($persona_id){

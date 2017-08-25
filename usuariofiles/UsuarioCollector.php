@@ -1,6 +1,6 @@
 <?php
 
-include_once('../usuariofiles/Usuario.php');
+include_once('Usuario.php');
 include_once('../collector/Collector.php');
 
 class UsuarioCollector extends Collector
@@ -11,27 +11,51 @@ class UsuarioCollector extends Collector
     //echo "linea 1";
     $arrayUsuario= array();        
     foreach ($rows as $c){
-      $aux = new Usuario($c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'descripcion'});
+      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'descripcion'},$c{'persona_id'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
   }
 
     function showUsuario($idusuario) {
-    $row = self::$db->getRows("SELECT * FROM usuario WHERE id= ?",array("{$id}"));
-    $ObjUsuario= new Usuario($row[0]{'persona_id'}, $row[0]{'nombrecompleto'}, $row[0]{'correo'}, $row[0]{'edad'}, $row[0]{'telefono'}, $row[0]{'idusuario'}, $row[0]{'nombreusuario'}, $row[0]{'clave'}, $row[0]{'descripcion'});
+    $row = self::$db->getRows("SELECT * FROM usuario WHERE id= ?",array("{$idusuario}"));
+    $ObjUsuario= new Usuario($row[0]{'id'}, $row[0]{'nombreusuario'}, $row[0]{'clave'}, $row[0]{'descripcion'},$row[0]{'persona_id'});
 
     return $ObjUsuario;        
   }
 
-    function showUsuarioByName($nombreusuario) {
-    $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON usuario.persona_id = persona.id WHERE usuario.nombreusuario= ? ",array("{$nombreusuario}"));
+     function showUsuarioByLogin($nombreusuario, $clave) {
+    $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
+      INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE nombreusuario= ? AND clave= ?",array("{$nombreusuario}","{$clave}"));
    $arrayUsuario= array();        
     foreach ($row as $c){
-      $aux = new Usuario($c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'descripcion'});
+      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
+      array_push($arrayUsuario, $aux);
+    }
+    return $arrayUsuario;      
+  }
+
+
+    function countUsuarioByName($nombreusuario) {
+    $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
+      INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE nombreusuario= ?",array("{$nombreusuario}"));
+   $arrayUsuario= array();        
+    foreach ($row as $c){
+      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
+  }
+
+      function showUsuarioByName($nombreusuario) {
+    $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
+      INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE nombreusuario= ?",array("{$nombreusuario}"));
+   //$arrayUsuario= array();        
+    foreach ($row as $c){
+      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
+      //array_push($arrayUsuario, $aux);
+    }
+    return $aux;        
   }
 
       function updateUsuario($idusuario,$nombrecompleto,$correo,$edad,$telefono,$clave,$descripcion) {
@@ -45,7 +69,7 @@ class UsuarioCollector extends Collector
   }
 
       function insertarUsuario($nombreusuario,$clave,$descripcion,$persona_id) {
-    $insertrow = self::$db->insertRow("INSERT INTO usuario (nombreusuario, clave, descripcion, persona_id) VALUES (?,?,?,?)",array("{$nombreusuario}","{$clave}", "{$descripcion}" ,"{$persona_id}"));
+    $insertrow = self::$db->insertRow("INSERT INTO usuario (nombreusuario, clave, usuariodescripcion, persona_id) VALUES (?,?,?,?)",array("{$nombreusuario}","{$clave}", "{$descripcion}" ,"{$persona_id}"));
       
   }
 
