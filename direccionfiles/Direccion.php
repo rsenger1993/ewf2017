@@ -18,10 +18,10 @@ class Direccion
      function getIdDireccion(){
        return $this->iddireccion;
      } 
-     function setDescripcion($descripcion){
+     function setDireccionDescripcion($descripcion){
        $this->descripcion = $descripcion;
      } 
-     function getDescripcion(){
+     function getDireccionDescripcion(){
        return $this->descripcion;
      }
 
