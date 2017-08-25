@@ -1,9 +1,9 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+ <?php
+ session_start();
+?>
+<?php
+ if (isset(($_SESSION['MiSesion']))){
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,13 +32,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="top-nav">
 				<ul >
+					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li  ><a href="home.php" >HOME</a></li>
 					<li class="active"><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
-					<li><a href="../index.php" class="black3" > SALIR</a></li>
+					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
 			</div>
 			<ul class="social-in">
@@ -55,13 +56,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="top-nav-in">
 			<span class="menu"><img src="../images/menu.png" alt=""> </span>
 				<ul >
+					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li><a href="home.php" >HOME</a></li>
 					<li class="active"><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
-					<li><a href="../index.php" class="black3" > SALIR</a></li>
+					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
 				<script>
 					$("span.menu").click(function(){
@@ -188,3 +190,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </body>
 </html>
+<?php
+ }
+ else{
+header('Location: index.php'); //REDIRECCIONA AL INDEX
+}
+ ?>
