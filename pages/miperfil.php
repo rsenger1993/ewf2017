@@ -1,3 +1,13 @@
+ <?php
+ session_start();
+?>
+<?php
+ if (isset(($_SESSION['MiSesion']))){
+include_once("../usuariofiles/UsuarioCollector.php");
+$UsuarioCollectorObj = new UsuarioCollector();
+$us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,13 +36,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="top-nav">
 				<ul >
+					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li  ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li class="active"><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
-					<li><a href="../index.php" class="black3" > SALIR</a></li>
+					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
 			</div>
 			<ul class="social-in">
@@ -50,13 +61,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="top-nav-in">
 			<span class="menu"><img src="../images/menu.png" alt=""> </span>
 				<ul >
+					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li class="active"><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
-					<li><a href="../index.php" class="black3" > SALIR</a></li>
+					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
 				<script>
 					$("span.menu").click(function(){
@@ -94,7 +106,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </div>
 					</div>
 					<h2><a href="single.html">¿QUIEN SOY?</a></h2>
-					<textarea id="area-perfil" placeholder="Escribe aquí quien eres..."></textarea>
+					
+					<textarea readonly id="area-perfil"><?php echo $us->getUsuarioDescripcion() ?></textarea>
+
 
 				<div class="projects">
 					<h3>Amigos Ewf</h3>
@@ -113,19 +127,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>Datos Generales</h3>
 						<ul class="likes">
 							<li><a><i > </i>Nombre</a>
-							<input type="text" id="nombre" name="nombre" placeholder="Ronny Sabando">
+							<a > <?php echo $us->getNombreCompleto() ?></a>
 							</li>
 							<li><span><i class="like"> </i>Nombre de usuario</span>
-							<input type="text" id="usuario" name="usuario" placeholder="www.ewf.com/rsabando">
+							<a > <?php echo $us->getNombreUsuario() ?></a>
 							</li>
 							<li><span><i class="dec"> </i>Contacto</span>
-							<input type="text" id="contacto" name="contacto" placeholder="rsabando93@hotmail.com">
+							<a > <?php print_r($us->getCorreo()); ?></a>
 							</li>
 							<li><a href="#"><i class="comment"> </i>Telefono</a>
-							<input type="text" id="telefono" name="telefono" placeholder="089851887">
+							<a > <?php echo $us->getTelefono() ?></a>
 							</li>
 							<li>
-							<a id="btn-re" href="miperfil.html" class="button">Guardar</a>
+							<a id="btn-re" href="miperfil.php" class="button">Editar</a>
 							</li>
 
 
@@ -200,3 +214,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </body>
 </html>
+<?php
+ }
+ else{
+header('Location: index.php'); //REDIRECCIONA AL INDEX
+}
+ ?>
