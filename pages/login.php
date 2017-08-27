@@ -85,7 +85,7 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
 				<div id="espacio"></div>
 				<div class="clear">
 					<center> 
-					<a href="index.php" class="button">Volver</a>
+					<a href="../index.php" class="button">Volver</a>
 					</center>					     
 				</div>
 				<div id="espacio"></div>

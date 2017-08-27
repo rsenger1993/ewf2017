@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="menu">
 
 				<ul>
-                    <li> <a href="index.php">Iniciar sesión</a></li>
+                    <li> <a href="../index.php">Iniciar sesión</a></li>
 					<li> <a href="quienessomos.php">Nosotros</a></li>
                    
 				</ul>

@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div id="espacio"></div>
 				<div class="clear">
 					<center> 
-					<a href="index.php" class="button">Salir</a>
+					<a href="../index.php" class="button">Salir</a>
 					</center>					     
 				</div>
 				<div id="espacio"></div>

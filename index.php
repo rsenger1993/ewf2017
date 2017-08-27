@@ -3,7 +3,7 @@
 ?>
 <?php
  if (isset(($_SESSION['MiSesion']))){
-	header('Location: home.php'); //REDIRECCIONA AL HOME
+	header('Location: pages/home.php'); //REDIRECCIONA AL HOME
 
  }
  else{
@@ -14,11 +14,11 @@
 <head>
 <title>EWF | index</title>
 <!-- jQuery-->
-<script src="../js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="../css/style-index2.css" rel="stylesheet" type="text/css" media="all" />
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style-index2.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
 
 <!--//theme-style-->
@@ -43,8 +43,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="menu">
 
 				<ul>
-          <li> <a href="registrarse.php">Registrarse</a></li>
-					<li> <a href="quienessomos.php">Nosotros</a></li>
+          <li> <a href="pages/registrarse.php">Registrarse</a></li>
+					<li> <a href="pages/quienessomos.php">Nosotros</a></li>
 				</ul>
 
 			</nav>
@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <div class="top-single">
 				<h3>Iniciar sesión</h3>
 				<div class="grid-single">
-					<form action="login.php" method="post">
+					<form action="pages/login.php" method="post">
 					<div class="your-single">
 						<i> </i>
 						<input type="text" name="nombreusuario"  value="Usuario" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Usuario';}">
