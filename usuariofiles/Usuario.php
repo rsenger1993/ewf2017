@@ -8,11 +8,12 @@ class Usuario extends Persona
     private $nombreusuario;
     private $clave;
     private $descripcion;
+    private $imgusuario;
     private $persona_id;
     
    
 
-      function __construct($idusuario, $nombreusuario, $clave, $descripcion, $persona_id, $nombrecompleto, $correo, $edad, $telefono, $direccion_id, $direccion_descripcion) {
+      function __construct($idusuario, $nombreusuario, $clave, $descripcion, $persona_id, $nombrecompleto, $correo, $edad, $telefono, $direccion_id, $direccion_descripcion, $imgusuario) {
 
        parent::__construct($persona_id, $nombrecompleto, $correo, $edad, $telefono, $direccion_id, $direccion_descripcion);
 
@@ -21,6 +22,7 @@ class Usuario extends Persona
        $this->clave = $clave;
        $this->descripcion = $descripcion;
        $this->persona_id = $persona_id;
+       $this->imgusuario = $imgusuario;
 
      }
     
@@ -47,6 +49,12 @@ class Usuario extends Persona
      } 
      function getUsuarioDescripcion(){
        return $this->descripcion;
+     }
+     function setImgUsuario($imgusuario){
+       $this->imgusuario = $imgusuario;
+     } 
+     function getImgUsuario(){
+       return $this->imgusuario;
      }
      function setPersonaId($persona_id){
        $this->persona_id = $persona_id;

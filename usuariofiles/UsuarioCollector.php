@@ -1,6 +1,7 @@
 <?php
 
 include_once('Usuario.php');
+include_once('../personafiles/Persona.php');
 include_once('../collector/Collector.php');
 
 class UsuarioCollector extends Collector
@@ -26,10 +27,10 @@ class UsuarioCollector extends Collector
 
      function showUsuarioByLogin($nombreusuario, $clave) {
     $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
-      INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE nombreusuario= ? AND clave= ?",array("{$nombreusuario}","{$clave}"));
+      INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE nombreusuario= ? AND clave= ?",array("{$nombreusuario}","{$clave}"));
    $arrayUsuario= array();        
     foreach ($row as $c){
-      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
+      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;      
@@ -38,10 +39,10 @@ class UsuarioCollector extends Collector
 
     function countUsuarioByName($nombreusuario) {
     $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
-      INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE nombreusuario= ?",array("{$nombreusuario}"));
+      INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE nombreusuario= ?",array("{$nombreusuario}"));
    $arrayUsuario= array();        
     foreach ($row as $c){
-      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
+      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
@@ -49,11 +50,26 @@ class UsuarioCollector extends Collector
 
       function showUsuarioByName($nombreusuario) {
     $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
-      INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE nombreusuario= ?",array("{$nombreusuario}"));
-   //$arrayUsuario= array();        
+      INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE nombreusuario= ?",array("{$nombreusuario}"));
+  // $arrayUsuario= array();        
     foreach ($row as $c){
-      $aux = new Usuario($c{'id'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
+      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});
+      //$per = new persona($c{'id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'});
+     // array_push($arrayUsuario, $aux);
+      //array_push($arrayUsuario, $per);
+    }
+    return $aux;        
+  }
+       function showUsuarioByImg($idusuario) {
+    $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.id)
+      INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE idusuario=?",array("{$idusuario}"));
+   //$arrayUsuario= array();
+
+    foreach ($row as $c){
+      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});
+      //$per = new persona($c{'id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'});
       //array_push($arrayUsuario, $aux);
+      //array_push($arrayUsuario, $per);
     }
     return $aux;        
   }
@@ -68,8 +84,8 @@ class UsuarioCollector extends Collector
       
   }
 
-      function insertarUsuario($nombreusuario,$clave,$descripcion,$persona_id) {
-    $insertrow = self::$db->insertRow("INSERT INTO usuario (nombreusuario, clave, usuariodescripcion, persona_id) VALUES (?,?,?,?)",array("{$nombreusuario}","{$clave}", "{$descripcion}" ,"{$persona_id}"));
+      function insertarUsuario($nombreusuario,$clave,$descripcion,$persona_id,$imgusuario) {
+    $insertrow = self::$db->insertRow("INSERT INTO usuario (nombreusuario, clave, usuariodescripcion, persona_id, imgusuario) VALUES (?,?,?,?,?)",array("{$nombreusuario}","{$clave}", "{$descripcion}" ,"{$persona_id}","{$imgusuario}"));
       
   }
 
