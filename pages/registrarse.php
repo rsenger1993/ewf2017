@@ -47,10 +47,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="single" id="index-login">  
                     
                <div class="top-single">
-
+               		
 				<h3>Registrarse</h3>
 				<div class="grid-single">
-					<form action="../usuariofiles/crearUsuario.php" method="post">
+					<form  action="../usuariofiles/crearUsuario.php" enctype="multipart/form-data" method="post">
 					<div class="your-single">
 						<i> </i>
 						<input type="text" name="nombrecompleto" value="nombre completo" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'nombre completo';}">								
@@ -91,8 +91,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="text" name="descripcion" value="descripcion" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'descripcion';}">								
 						<div class="clear"> </div>	
                     </div>
+                      <div class="your-single">
+					
+					
+						<input  type="file" name="imagen">
+					
+														
+						<div class="clear"> </div>	
+                    </div>
                     <div class="grid-single-in">
-  					<input type="submit" name="Enviar" value="Enviar">
+  					<input type="submit" name="Enviar" value="Enviar" >
                     </div>
                     </form>
                     <div class="grid-single-in">
