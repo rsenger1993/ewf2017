@@ -96,10 +96,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					</script>
 					<div>
+
+						<?php
+						//print_r($us->getImgUsuario());
+						?>
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
-							  <img src="../images/foto-perfil.png" alt="">
+							  <img src="<?php echo '../'.$us->getImgUsuario();?>" alt="" height="200" width="350">
 
 							</li>
 						  </ul>
@@ -107,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<h2><a href="single.html">¿QUIEN SOY?</a></h2>
 					
-					<textarea readonly id="area-perfil"><?php echo $us->getUsuarioDescripcion() ?></textarea>
+					<textarea readonly id="area-perfil"><?php echo "Soy ".$us->getUsuarioDescripcion()." y vivo en ".$us->getDireccionDescripcion() ?></textarea>
 
 
 				<div class="projects">
