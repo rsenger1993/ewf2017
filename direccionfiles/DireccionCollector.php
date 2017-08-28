@@ -56,7 +56,7 @@ class DireccionCollector extends Collector
   }
 
       function insertarDireccion($direccion) {
-    $insertrow = self::$db->insertRow("INSERT INTO direccion (direcciondescripcion) VALUES (?) RETURNING id",array("{$direccion}"));
+    $insertrow = self::$db->insertRow("INSERT INTO direccion (direcciondescripcion) VALUES (?) RETURNING iddireccion",array("{$direccion}"));
       $row = $insertrow;
     return $row;
   }

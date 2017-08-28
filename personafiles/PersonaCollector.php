@@ -35,7 +35,7 @@ class PersonaCollector extends Collector
     return $aux;        
   }
      function countPersonaByMail($correo) {
-    $row = self::$db->getRows("SELECT * FROM persona INNER JOIN direccion ON (persona.direccion_id = direccion.id) WHERE correo= ?",array("{$correo}"));
+    $row = self::$db->getRows("SELECT * FROM persona INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE correo= ?",array("{$correo}"));
    $arrayUPersona= array(); 
             
     foreach ($row as $c){

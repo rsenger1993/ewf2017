@@ -40,7 +40,10 @@ body a{
 	-ms-transition: 0.5s all;
 }
 
-
+img.resize1 {
+  width:300px;
+  height:250px;
+}
 
 #edad{
 	width: 20px;
