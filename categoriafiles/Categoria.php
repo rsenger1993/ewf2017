@@ -3,7 +3,6 @@
 class categoria
 {
     private $idcategoria;
-    
     private $categoriadescripcion;
     
      function __construct($idcategoria, $categoriadescripcion) {
@@ -17,7 +16,6 @@ class categoria
      function getId(){
        return $this->idcategoria;
      } 
-
      
      function setCategoriadescripcion($categoriadescripcion){
        $this->categoriadescripcion = $categoriadescripcion;
