@@ -3,34 +3,27 @@
 class categoria
 {
     private $idcategoria;
-    private $nombrecategoria;
-    private $descripcion;
     
-     function __construct($idcategoria, $nombrecategoria, $descripcion) {
+    private $categoriadescripcion;
+    
+     function __construct($idcategoria, $categoriadescripcion) {
        $this->idcategoria = $idcategoria;
-       $this->nombrecategoria = $nombrecategoria;
-       $this->descripcion = $descripcion;      
+       $this->categoriadescripcion = $categoriadescripcion;      
      }
     
      function setId($idcategoria){
-       $this->idcategoria = $iddireccion;
+       $this->idcategoria = $idcategoria;
      } 
      function getId(){
        return $this->idcategoria;
      } 
 
-     function setNombreCategoria($nombrecategoria){
-       $this->nombrecategoria = $nombrecategoria;
+     
+     function setCategoriadescripcion($categoriadescripcion){
+       $this->categoriadescripcion = $categoriadescripcion;
      } 
-     function getNombreCategoria(){
-       return $this->nombrecategoria;
-     }
-
-     function setDescripcion($descripcion){
-       $this->descripcion = $descripcion;
-     } 
-     function getDescripcion(){
-       return $descripcion->descripcion;
+     function getCategoriadescripcion(){
+       return $categoriadescripcion->categoriadescripcion;
      } 
      
 }
