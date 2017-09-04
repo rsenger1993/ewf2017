@@ -3,6 +3,16 @@
 ?>
 <?php
  if (isset(($_SESSION['MiSesion']))){
+include_once("../publicacionfiles/PublicacionCollector.php");
+include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../platillofiles/PlatilloCollector.php");
+$UsuarioCollectorObj = new UsuarioCollector();
+$PublicacionCollectorObj = new PublicacionCollector();
+$PlatilloCollectorObj = new PlatilloCollector();
+
+$us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
+$arrayPublicacion = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario()); //TRAIGO DATOS DE LA PUBLICACION DE ESE USUARIO
+
 	?>
 <!DOCTYPE html>
 <html>
@@ -94,174 +104,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 					<div class="comment-grid-top">
 					<h3>Mis publicaciones</h3>
+					
+					<?php
+					foreach ($arrayPublicacion as $publicacion){
+					$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
+																 
+																  ?>
+
 					<div class="comments-top-top">
 						<div class="top-comment-left">
-							<img  src="../images/inicio/1.jpg" alt="1">
+							<img  src="<?php echo '../'.($ObjPlatillo->getImgPlatillo())?>" alt="1">
 						</div>
 						<div class="top-comment-right">
 							<ul>
 
-								<li><span > <a href="#">Sandwich de jamon y queso</a></span></li>
-								<li><span>/50 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
+								<li><span > <a href="#"> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
+								<li><span>/<?php echo ($publicacion->getFechaPublicacion())?> </span> <a href="#" class="btn-publi">Editar</a></li>
 
 
 							</ul>
-							<p>Sandwichs</p>
+							<p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p>
 							
 						</div>
 						<div class="clear"> </div>
 					</div>
 
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/12.jpg" alt="12">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Cake de chocolate</a></span></li>
-								<li><span>/40 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-
-							</ul>
-							<p>Cakes</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/7.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Flan de vainilla</a></span></li>
-								<li><span>/34 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-	
-
-								
-							</ul>
-							<p>Postres</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/15.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Empanadas con relleno de mermelada</a></span></li>
-								<li><span>/31 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-
-								
-							</ul>
-							<p>Empanadas</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/14.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Torta mojada de chocolate</a></span></li>
-								<li><span>/28 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-
-								
-							</ul>
-							<p>Tortas</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/16.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Fresas bañadas en chocolate</a></span></li>
-								<li><span>/23 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-								
-							</ul>
-							<p>Micelaneas</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/9.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Helado de chocolate y vainilla</a></span></li>
-								<li><span>/21 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-
-								
-							</ul>
-							<p>Helados</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/13.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Seco de pollo</a></span></li>
-								<li><span>/20 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-
-								
-							</ul>
-							<p>Almuerzos</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
-
-					<div class="comments-top-top">
-						<div class="top-comment-left">
-							<img  src="../images/inicio/6.jpg" alt="">
-						</div>
-						<div class="top-comment-right">
-							<ul>
-
-								<li><span > <a href="#">Cheesecakes</a></span></li>
-								<li><span>/14 minutes ago</span> <a href="#" class="btn-publi">Editar</a></li>
-
-
-								
-							</ul>
-							<p>Postres</p>
-							
-						</div>
-						<div class="clear"> </div>
-					</div>
+					<?php  } ?>
 				
 				</div>
 		
