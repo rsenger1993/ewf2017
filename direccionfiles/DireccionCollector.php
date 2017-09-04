@@ -11,15 +11,15 @@ class DireccionCollector extends Collector
     //echo "linea 1";
     $arrayDireccion= array();        
     foreach ($rows as $c){
-      $aux = new Direccion($c{'id'},$c{'descripcion'});
+      $aux = new Direccion($c{'iddireccion'},$c{'descripcion'});
       array_push($arrayDireccion, $aux);
     }
     return $arrayDireccion;        
   }
 
     function showDireccion($iddireccion) {
-    $row = self::$db->getRows("SELECT * FROM direccion WHERE id= ?",array("{$iddireccion}"));
-    $ObjDireccion= new Direccion($row[0]{'id'}, $row[0]{'descripcion'});
+    $row = self::$db->getRows("SELECT * FROM direccion WHERE iddireccion= ?",array("{$iddireccion}"));
+    $ObjDireccion= new Direccion($row[0]{'iddireccion'}, $row[0]{'descripcion'});
 
     return $ObjDireccion;        
   }
@@ -29,7 +29,7 @@ class DireccionCollector extends Collector
    $arrayDireccion= array();
    //$aux = Persona;        
     foreach ($row as $c){
-      $aux = new Direccion($c{'id'},$c{'descripcion'});
+      $aux = new Direccion($c{'iddireccion'},$c{'descripcion'});
       //array_push($arrayUPersona, $aux);
     }
     return $aux;        
@@ -39,19 +39,19 @@ class DireccionCollector extends Collector
    $arrayDireccion= array(); 
             
     foreach ($row as $c){
-      $aux = new Direccion($c{'id'},$c{'descripcion'});
+      $aux = new Direccion($c{'iddireccion'},$c{'descripcion'});
       array_push($arrayDireccion, $aux);
     }
     return $arrayDireccion;        
   }
 
       function updateDireccion($iddireccion,$descripcion) {
-    $insertrow = self::$db->updateRow("UPDATE public.direccion SET descripcion = ? WHERE id = ?", array("{$descripcion}",$iddireccion));  
+    $insertrow = self::$db->updateRow("UPDATE public.direccion SET descripcion = ? WHERE iddireccion = ?", array("{$descripcion}",$iddireccion));  
       
   }
 
       function deleteDireccion($iddireccion) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.direccion WHERE id=?",array("{$iddireccion}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM public.direccion WHERE iddireccion=?",array("{$iddireccion}"));
       
   }
 
