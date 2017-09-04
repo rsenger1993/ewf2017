@@ -88,15 +88,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="descripcion" value="descripcion" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'descripcion';}">								
+					<label id ="lbl1" >Descripcion</label>
+					  <textarea id="area-perfil"  name="descripcion">Enter text here...</textarea>
 						<div class="clear"> </div>	
                     </div>
                       <div class="your-single">
-					
-					
-						<input  type="file" name="imagen">
-					
-														
+						<input  type="file" name="imagen">							
 						<div class="clear"> </div>	
                     </div>
                     <div class="grid-single-in">
