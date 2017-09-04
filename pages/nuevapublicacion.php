@@ -78,6 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!---->
 		<div class="content">
 			<div class="work">
+				<form  action="../publicacionfiles/crearPublicacion.php" enctype="multipart/form-data" method="post">
 				<div class="work-top">
 				<script src="js/responsiveslides.min.js"></script>
 					<script>
@@ -90,38 +91,65 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  });
 						});
 					</script>
-					<div>
-						<div class="callbacks_container">
-						  <ul class="rslides" id="slider">
-							<li>
-							  <img src="../images/perfil/subir-imagen.jpg" alt="">
-							  
-							</li>
-						  </ul>
-					  </div>
-					</div>
-					<h2><a href="single.html">Descripcion del Platillo</a></h2>
-					<textarea id="area-perfil" placeholder="Escribe aquí la descripcion de tu platillo..."></textarea>
-		
-		
+					
+				   <div class="your-single">
+					
+						<label>Subir Imagen</label>
+						<input  type="file" name="imagen">
+					
+														
+						<div class="clear"> </div>	
+                    </div>
+
+					<h2><a >Descripcion del Platillo</a></h2>
+					  <textarea id="area-perfil" name="platillodescripcion">Enter text here...</textarea>
 				</div>
 				<div class="work-in">
 					<div class="info">
 					<h3>Datos Platillo</h3>
 						<ul class="likes">
 							<li><a><i > </i>Platillo</a>
-							<input type="text" id="nombre" name="nombre" placeholder="Nombre del platillo">
+							<input type="text" id="nombre" name="nombreplatillo" placeholder="Nombre del platillo"></li>
+							<li><a><i > </i>Categoria</a>
+							<p>Seleccione una categoria
+							<select name="categoria">
+							<option value="postres" selected>postres</option>
+							<option value="helado">helado</option>
+							<option value="galletas">galletas</option>
+							<option value="empanadas">empanadas</option>
+							<option value="miscelanea">miscelanea</option>
+							</select>
+							</p>
 							</li>
-							<li><i class="like"> </i>Cantidad #<input type="text" id="cantidad" name="cantidad" placeholder="0"></li>
+							<p>Cantidad
+							<select name="cantidad">
+							<option value="1" selected>1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+							</p>
 							<li><i class="comment"> </i>Precio $<input type="text" id="precio" name="precio" placeholder="0"></li>
-
-							<li>
-							<a id="btn-re" href="nuevapublicacion.html" class="button">Publicar</a>
+							<li><a><i > </i>Forma de Pago</a>
+							<p>Seleccione una opcion
+							<select name="formadepago">
+							<option value="paypal" selected>Paypal</option>
+							<option value="efectivo">Efectivo</option>
+							</select>
+							</p>
 							</li>
+							<br>
+							<div class="grid-single-in">
+	
+  							<input type="submit" name="Enviar" id="btn-re"  class="button" value="Publicar" >
 
+                    		</div>
 						</ul>
 					</div>
 				</div>
+
+                    </form>
 				<div class="clear"> </div>
 			</div>
 		</div>
