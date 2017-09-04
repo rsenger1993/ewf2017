@@ -3,6 +3,17 @@
 ?>
 <?php
  if (isset(($_SESSION['MiSesion']))){
+include_once("../publicacionfiles/PublicacionCollector.php");
+include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../platillofiles/PlatilloCollector.php");
+$UsuarioCollectorObj = new UsuarioCollector();
+$PublicacionCollectorObj = new PublicacionCollector();
+$PlatilloCollectorObj = new PlatilloCollector();
+
+//$us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
+$arrayPublicacion = $PublicacionCollectorObj->showPublicaciones(); //TRAIGO DATOS DE TODAS LAS PUBLICACIONES
+
+
 	?>
 <!DOCTYPE html>
 <html>
@@ -25,8 +36,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-	<div class="header">
-		<div class="header-left header-work">
+	<div class="header" >
+		<div class="header-left header-work" >
 			<div class="logo">
 				<a href="home.php"><img src="../images/logo.png" alt=""></a>
 			</div>
@@ -46,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a href="muro.php"><i class="facebook"> </i></a></li>
 				<li><a href="muro.php"><i class="twitter"> </i></a></li>
 			</ul>
-			<p class="footer-class"> Copyright © 2017 EWF  <!--Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> --></p>
+			<p class="footer-class"> Copyright © 2017 EWF </p>
 		</div>
 		<!---->
 		<div class="header-top">
@@ -75,117 +86,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clear"> </div>
 		</div>
+
+		<div id="scroll-publi">
 			<!---->
-		<div class="content">
+			<?php
+				foreach ($arrayPublicacion as $publicacion){
+				$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
+			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
+			    ?>
+
+		
 			<div class="work">
 				<div class="work-top">
-				<script src="js/responsiveslides.min.js"></script>
-					<script>
-						$(function () {
-						  $("#slider").responsiveSlides({
-							auto: true,
-							speed: 500,
-							namespace: "callbacks",
-								pager: true,
-						  });
-						});
-					</script>
-					<!-- slider de archivo muro.html-->
-					<div class="slider">
+					<h2><a href="muro.php"><?php echo ($ObjPlatillo->getNombrePlatillo())?></a></h2>
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
-							  <img src="images/w1.jpg" alt="">
-							</li>
+							  <img id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt="">
 
-							<li>
-							  <img src="images/w2.jpg" alt="">
-							</li>
-
-							<li>
-							  <img src="images/w3.jpg" alt="">
-							</li>
-
-							<li>
-							  <img src="images/w4.jpg" alt="">
 							</li>
 						  </ul>
 					  </div>
-					</div>
-
-										<h2><a href="single.html">Sácale provecho a la cocina</a></h2>
-										<p>¿Tienes una mano especial para la cocina? Si es así y te gusta cocinar, considera ganar un poco de dinero desde tu propia casa. Si eres ama de casa, esta puede ser una genial idea porque la mayor parte del trabajo la harás en casa.
-											Puedes ofrecer diferentesplatillos de lo que más te apetezca: si tu especialidad son los pasteles y la repostería en general, anímate y échale ganas...
-										<!-- <span>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</span> --></p>
-									<div class="projects">
-										<h3>Favoritos</h3>
-										<ul>
-
-						<li><a href="single.html"><img  src="../images/wo.jpg"  alt="wo"/></a></li>
-						<li><a href="single.html"><img  src="../images/wo1.jpg"  alt="wo1"/></a></li>
-						<li><a href="single.html"><img  src="../images/wo2.jpg"  alt="wo2"/></a></li>
-					</ul>
-                    <div class="clear"> </div>
-				</div>
+					  </br>
+					  <a> Descripcion</a></br>
+ 					<div class="your-single">  </div>
+					<a> <?php echo ($ObjPlatillo->getPlatilloDescripcion())?> </a>
 				</div>
 				<div class="work-in">
 					<div class="info">
-					<h3>Project Info</h3>
+					<h3>Posteado Por: <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
 						<ul class="likes">
-							<li><a href="work.html"><i > </i>premiumlayers</a></li>
-							<li><span><i class="like"> </i>138 Likes</span></li>
-							<li><span><i class="dec"> </i>25 December, 2013</span></li>
-							<li><a href="work.html"><i class="comment"> </i>4 Comments</a></li>
+						
+							<li>Contacto<span><i class="comment"> </i>Correo: <?php echo ($ObjUsuario->getCorreo())?></span></li>
+							<li><span><i class="comment"> </i>Telefono: <?php echo ($ObjUsuario->getTelefono())?></span></li>
+							<li>Comprar<span><i class="comment"> </i>Precio: $ <?php echo ($ObjPlatillo->getPrecio())?></span></li>
+							<li><span><i class="comment"> </i>Cantidad disponible: <?php echo ($ObjPlatillo->getCantidad())?></span></li>
+							<li class="grid-single-in">   
+  							<input type="submit" name="Enviar" id="btn-re"  class="button" value="Comprar">
+                    		</li>
 						</ul>
 					</div>
-
-					<!-- <div class="tags">
-					<h3>Tags</h3>
-						<ul class="tag">
-							<li><a href="muro.html">web design</a></li>
-							<li><a href="muro.html">photography</a></li>
-							<li><a href="muro.html">development</a></li>
-							<li><a href="muro.html">php</a></li>
-							<li><a href="muro.html">ecommerce</a></li>
-							<li><a href="muro.html">graphic</a></li>
-						</ul>
-					</div> -->
+					</br>
+					</br>
 					<div class="gallery">
-					<h3>Project Gallery</h3>
+					<h3>Otras publicaciones de <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
 						<ul class="gallery-grid">
 
-							<li><a href="single.html"><img  src="../images/pi.jpg" alt="pi" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi1.jpg" alt="pi1" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi2.jpg" alt="pi2" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi3.jpg" alt="pi3" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi4.jpg" alt="pi4" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi5.jpg" alt="pi5" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi6.jpg" alt="pi6" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi7.jpg" alt="pi7" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi8.jpg" alt="pi8" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi9.jpg" alt="pi9" /></a></li>
-							<li><a href="single.html"><img  src="../images/pi5.jpg" alt="pi5" /></a></li>
-
+							<?php
+							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($ObjUsuario->getIdUsuario());
+							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
+							$ObjPlatilloUser = $PlatilloCollectorObj->showPlatilloById($publicacionporusuario->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
+			    			?>
+							<li><a href="muro.php"><img id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="pi" /></a></li>
+							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
 						</ul>
                         <div class="clear"> </div>
 					</div>
-					<!--<div class="feature">
-					<h3>Project Features</h3>
-						<ul class="feature-grid">
-							<li><a href="muro.html"><i > </i> Responsive Layout  </a></li>
-							<li><a href="muro.html"><i >  </i>Font Awesome Icons</a></li>
-							<li><a href="muro.html"><i> </i>Clean & Commented Code</a></li>
-							<li><a href="muro.html"><i >  </i> Pixel perfect Design</a></li>
-							<li><a href="muro.html"><i >  </i>Highly Customizable</a></li>
-
-						</ul>
-					</div> -->
 				</div>
 				<div class="clear"> </div>
 			</div>
+	
+					<?php  } ?> <!-- FIN DEL FOREACH TODAS LAS PUBLICACIONES -->
 		</div>
 		<div class="clear"> </div>
-				<p class="footer-class-in">Copyright © 2017 EWF  <!---<a href="http://w3layouts.com/" target="_blank">W3layouts</a>--> </p>
+				<p class="footer-class-in">Copyright © 2017 EWF </p>
 
 	</div>
 </body>
