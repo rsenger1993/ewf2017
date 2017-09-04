@@ -1,6 +1,6 @@
 <?php
 
-class categoria
+class Categoria
 {
     private $idcategoria;
     private $categoriadescripcion;
@@ -10,18 +10,18 @@ class categoria
        $this->categoriadescripcion = $categoriadescripcion;      
      }
     
-     function setId($idcategoria){
+     function setIdCategoria($idcategoria){
        $this->idcategoria = $idcategoria;
      } 
-     function getId(){
+     function getIdCategoria(){
        return $this->idcategoria;
      } 
      
-     function setCategoriadescripcion($categoriadescripcion){
+     function setCategoriaDescripcion($categoriadescripcion){
        $this->categoriadescripcion = $categoriadescripcion;
      } 
-     function getCategoriadescripcion(){
-       return $categoriadescripcion->categoriadescripcion;
+     function getCategoriaDescripcion(){
+        return $this->categoriadescripcion;
      } 
      
 }
