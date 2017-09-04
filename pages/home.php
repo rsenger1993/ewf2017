@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!---->
 		<div class="content">
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/1.jpg" alt="1" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -97,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/2.jpg" alt="2" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/3.jpg" alt="3" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/4.jpg" alt="4" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/5.jpg" alt="5" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -141,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/6.jpg" alt="6" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -152,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/7.jpg" alt="7" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -163,7 +163,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/8.jpg" alt="8" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/9.jpg" alt="9" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid grid9">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/10.jpg" alt="10" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/11.jpg"  alt="11"/>
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -207,7 +207,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/12.jpg" alt="12" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -218,7 +218,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/13.jpg"  alt="13"/>
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -229,7 +229,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/14.jpg" alt="14" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -240,7 +240,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/15.jpg"  alt="15"/>
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
@@ -251,7 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</a>
 			</div>
 			<div class="content-grid">
-				<a href="work.html" class="b-link-stripe b-animate-go  thickbox">
+				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
 					<img  src="../images/inicio/16.jpg" alt="16" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">

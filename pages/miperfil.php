@@ -4,8 +4,13 @@
 <?php
  if (isset(($_SESSION['MiSesion']))){
 include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../publicacionfiles/PublicacionCollector.php");
+include_once("../platillofiles/PlatilloCollector.php");
 $UsuarioCollectorObj = new UsuarioCollector();
+$PublicacionCollectorObj = new PublicacionCollector();
+$PlatilloCollectorObj = new PlatilloCollector();
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
+
 
 ?>
 <!DOCTYPE html>
@@ -149,34 +154,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						</ul>
 					</div>
-					<div class="tags">
-					<h3>Tags</h3>
-						<ul class="tag">
-							<li><a href="miperfil.html">ewf</a></li>
-							<li><a href="miperfil.html">food</a></li>
-							<li><a href="miperfil.html">easy</a></li>
-							<li><a href="miperfil.html">worthy</a></li>
-							<li><a href="miperfil.html">php</a></li>
-							<li><a href="miperfil.html">proyect</a></li>
-						</ul>
-					</div>
+
 					<div class="gallery">
 					<h3>Mis Platillos</h3>
 						<ul class="gallery-grid">
+								<?php
+							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario());
+							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
+							$ObjPlatilloUser = $PlatilloCollectorObj->showPlatilloById($publicacionporusuario->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
+			    			?>
+							<li><a href="miperfil.php"><img  id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="3" /></a></li>
 
-							<li><a href="single.html"><img  src="../images/inicio/3.jpg" alt="3" /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/4.jpg" alt="4"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/1.jpg" alt="1"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/7.jpg" alt="7"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/5.jpg" alt="5"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/9.jpg" alt="9"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/8.jpg" alt="8"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/10.jpg" alt="10"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/12.jpg" alt="12"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/13.jpg" alt="13"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/14.jpg" alt="14"  /></a></li>
-
-
+							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
 						</ul>
                         <div class="clear"> </div>
 					</div>
