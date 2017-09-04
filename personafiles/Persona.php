@@ -36,7 +36,7 @@ class Persona extends Direccion
      function getNombreCompleto(){
        return $this->nombrecompleto;
      }
-      function setCorreo($nombrecompleto){
+      function setCorreo($correo){
        $this->correo = $correo;
      } 
      function getCorreo(){
@@ -55,10 +55,10 @@ class Persona extends Direccion
      function getTelefono(){
        return $this->telefono;
      }
-     function setIdDireccion($direccion_id){
+     function setDireccionId($direccion_id){
        $this->direccion_id = $direccion_id;
      } 
-     function getDireccion(){
+     function getDireccionId(){
        return $this->direccion_id;
      }
 }
