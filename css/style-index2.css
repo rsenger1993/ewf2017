@@ -74,6 +74,19 @@ p#nosotros{
 	margin:5px;
 }
 
+#lbl1{
+  font-family: 'Roboto', sans-serif;
+  background: none;
+  width: 66%;
+  outline: none;
+  border: none;
+  padding:1em 0.8em;
+  font-size: 1em;
+  color: #e2e2e2;
+  margin: 0 0 0 2%;
+  float:left;  
+}
+
 .nosotros-content{
 	margin:5px;
 }

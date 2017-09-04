@@ -44,9 +44,29 @@ img.resize1 {
   width:300px;
   height:250px;
 }
+#scroll-publi{
+	  width:auto; /*manten el ancho que necesitas*/
+    /*y elimina el height, de esta manera el div ira creciendo en base a la cantidad de fotos*/
+    max-height:800px;
+    overflow-x: scroll;
+    margin-top:5px;
+
+}
+#img-publicacion {
+  width:100%;
+  height:250px;
+}
+#mini-publicacion{
+	  width:100%;
+  height:35px;
+}
 
 #edad{
 	width: 20px;
+}
+
+#descri-publi{
+border: 1px solid #F05F40;
 }
 
 textarea#area-perfil{
@@ -1330,6 +1350,7 @@ p.footer-class {
 }
 .header-work {
   min-height: 933px;
+
 }
 h4.author {
   width: 78%;
