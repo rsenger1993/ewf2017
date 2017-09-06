@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>Comprar<span><i class="comment"> </i>Precio: $ <?php echo ($ObjPlatillo->getPrecio())?></span></li>
 							<li><span><i class="comment"> </i>Cantidad disponible: <?php echo ($ObjPlatillo->getCantidad())?></span></li>
 							<li class="grid-single-in">
-						    <?php echo "<a id='btn-re' class='button' href='../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Comprar </a>"; ?>
+						    <?php echo "<a id='btn-re' class='button' href='../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Comprar </a>"; ?>
   							
                     		</li>
 						</ul>
@@ -138,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
 							$ObjPlatilloUser = $PlatilloCollectorObj->showPlatilloById($publicacionporusuario->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
 			    			?>
-							<li><a href="<?php echo "formulariocomprar.php?idpublicacion=".$publicacionporusuario->getIdPublicacion(); ?>"><img id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="pi" /></a></li>
+							<li><a href="<?php echo "formularioComprar.php?idpublicacion=".$publicacionporusuario->getIdPublicacion(); ?>"><img id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="pi" /></a></li>
 							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
 
 

@@ -3,6 +3,12 @@
 ?>
 <?php
  if (isset(($_SESSION['MiSesion']))){
+include_once("../categoriafiles/CategoriaCollector.php");
+include_once("../formadepagofiles/FormaDePagoCollector.php");
+$CategoriaCollectorObj = new CategoriaCollector();
+$FormaDePagoCollectorObj = new FormaDePagoCollector();
+$ArrayCategorias = $CategoriaCollectorObj->showCategorias();//OBTENGO DATOS DE LA FORMA DE PAGO
+$ArrayFormaDePago = $FormaDePagoCollectorObj->showFormaDePagos();//OBTENGO DATOS DE LA FORMA DE PAGO
 	?>
 <!DOCTYPE html>
 <html>
@@ -102,26 +108,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
 
 					<h2><a >Descripcion del Platillo</a></h2>
-					  <textarea id="area-perfil" name="platillodescripcion">Enter text here...</textarea>
+					  <textarea id="area-perfil" name="platillodescripcion">Escriba aqui...</textarea>
 				</div>
 				<div class="work-in">
 					<div class="info">
 					<h3>Datos Platillo</h3>
 						<ul class="likes">
-							<li><a><i > </i>Platillo</a>
+							<li><p><i > </i>Platillo</p>
 							<input type="text" id="nombre" name="nombreplatillo" placeholder="Nombre del platillo"></li>
-							<li><a><i > </i>Categoria</a>
-							<p>Seleccione una categoria
-							<select name="categoria">
-							<option value="postres" selected>postres</option>
-							<option value="helado">helado</option>
-							<option value="galletas">galletas</option>
-							<option value="empanadas">empanadas</option>
-							<option value="miscelanea">miscelanea</option>
-							</select>
-							</p>
-							</li>
-							<p>Cantidad
+							<li><i class="comment"> </i>Precio $<input type="text" id="precio" name="precio" placeholder="0"> Ejemplo: 1 ó 1.50</li>
+							<li><p><i > </i>Cantidad</p>
+							<p>Seleccione la cantidad
 							<select name="cantidad">
 							<option value="1" selected>1</option>
 							<option value="2">2</option>
@@ -130,12 +127,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<option value="5">5</option>
 							</select>
 							</p>
-							<li><i class="comment"> </i>Precio $<input type="text" id="precio" name="precio" placeholder="0"></li>
-							<li><a><i > </i>Forma de Pago</a>
+							</li>
+							<li><p><i > </i>Categoria</p>
+							<p>Seleccione una opcion
+							<select name="categoria">
+							<?php
+							foreach ($ArrayCategorias as $categoria){
+							?>
+							<option value="<?php echo $categoria->getCategoriaDescripcion() ?>"><?php echo $categoria->getCategoriaDescripcion() ?></option><!--CARGAR LAS FORMAS DE PAGO DE LA BASE-->
+							<?php } ?>
+							</select>
+							</p>
+							</li>
+							<li><p><i > </i>Forma de Pago</p>
 							<p>Seleccione una opcion
 							<select name="formadepago">
-							<option value="paypal" selected>Paypal</option>
-							<option value="efectivo">Efectivo</option>
+							<?php
+							foreach ($ArrayFormaDePago as $formadepago){
+							?>
+							<option value="<?php echo $formadepago->getFormaDePagoDescripcion() ?>"><?php echo $formadepago->getFormaDePagoDescripcion() ?></option><!--CARGAR LAS FORMAS DE PAGO DE LA BASE-->
+							<?php } ?>
 							</select>
 							</p>
 							</li>

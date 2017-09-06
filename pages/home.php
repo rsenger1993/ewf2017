@@ -100,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    ?>
 
 			<div class="content-grid">
-<?php echo "<a class='b-link-stripe b-animate-go  thickbox' href='../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>"; ?>
+<?php echo "<a class='b-link-stripe b-animate-go  thickbox' href='../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>"; ?>
 
 					<img  id="img-muro" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt="1" />
 						<div class="b-wrapper">
