@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="scroll-publi">
 			<!---->
 			<?php
-				foreach ($arrayPublicacion as $publicacion){
+				foreach ($arrayPublicacion as $publicacion){ //TODAS LAS PUBLICACIONES
 				$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
 			    ?>
@@ -121,8 +121,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><span><i class="comment"> </i>Telefono: <?php echo ($ObjUsuario->getTelefono())?></span></li>
 							<li>Comprar<span><i class="comment"> </i>Precio: $ <?php echo ($ObjPlatillo->getPrecio())?></span></li>
 							<li><span><i class="comment"> </i>Cantidad disponible: <?php echo ($ObjPlatillo->getCantidad())?></span></li>
-							<li class="grid-single-in">   
-  							<input type="submit" name="Enviar" id="btn-re"  class="button" value="Comprar">
+							<li class="grid-single-in">
+						    <?php echo "<a id='btn-re' class='button' href='../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Comprar </a>"; ?>
+  							
                     		</li>
 						</ul>
 					</div>
@@ -133,12 +134,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul class="gallery-grid">
 
 							<?php
-							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($ObjUsuario->getIdUsuario());
+							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($ObjUsuario->getIdUsuario()); //PUBLICACIONES POR USUARIO
 							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
 							$ObjPlatilloUser = $PlatilloCollectorObj->showPlatilloById($publicacionporusuario->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
 			    			?>
-							<li><a href="muro.php"><img id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="pi" /></a></li>
+							<li><a href="<?php echo "formulariocomprar.php?idpublicacion=".$publicacionporusuario->getIdPublicacion(); ?>"><img id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="pi" /></a></li>
 							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
+
+
 						</ul>
                         <div class="clear"> </div>
 					</div>

@@ -135,17 +135,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="info">
 					<h3>Datos Generales</h3>
 						<ul class="likes">
-							<li><a><i > </i>Nombre</a>
-							<a > <?php echo $us->getNombreCompleto() ?></a>
+							<li><p><i > </i>Nombre</p>
+							<p > <?php echo $us->getNombreCompleto() ?></p>
 							</li>
-							<li><span><i class="like"> </i>Nombre de usuario</span>
-							<a > <?php echo $us->getNombreUsuario() ?></a>
+							<li><p><i class="like"> </i>Nombre de usuario</p>
+							<p > <?php echo $us->getNombreUsuario() ?></p>
 							</li>
-							<li><span><i class="dec"> </i>Contacto</span>
-							<a > <?php print_r($us->getCorreo()); ?></a>
+							<li><p><i class="dec"> </i>Contacto</p>
+							<p > <?php print_r($us->getCorreo()); ?></p>
 							</li>
-							<li><a href="#"><i class="comment"> </i>Telefono</a>
-							<a > <?php echo $us->getTelefono() ?></a>
+							<li><p href="#"><i class="comment"> </i>Telefono</p>
+							<p > <?php echo $us->getTelefono() ?></p>
 							</li>
 							<li>
 							<a id="btn-re" href="miperfil.php" class="button">Editar</a>

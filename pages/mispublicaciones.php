@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul>
 
 								<li><span > <a href="#"> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
-								<li><span>/<?php echo ($publicacion->getFechaPublicacion())?> </span> <a href="#" class="btn-publi">Editar</a></li>
+								<li><span>/<?php echo ($publicacion->getFechaPublicacion())?> </span> <a href="#"   class="btn-search">Editar</a></li>
 
 
 							</ul>
