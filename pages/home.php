@@ -4,6 +4,14 @@
 
 <?php
  if (isset(($_SESSION['MiSesion']))){
+include_once("../publicacionfiles/PublicacionCollector.php");
+include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../platillofiles/PlatilloCollector.php");
+$UsuarioCollectorObj = new UsuarioCollector();
+$PublicacionCollectorObj = new PublicacionCollector();
+$PlatilloCollectorObj = new PlatilloCollector();
+$arrayPublicacion = $PublicacionCollectorObj->showPublicaciones(); //TRAIGO DATOS DE TODAS LAS PUBLICACIONES
+
 	?>
 	<!DOCTYPE html>
 <html>
@@ -84,192 +92,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clear"> </div>
 		</div>
 			<!---->
-		<div class="content">
+		<div id="scroll-publi">
+				<?php
+				foreach ($arrayPublicacion as $publicacion){ //TODAS LAS PUBLICACIONES
+				$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
+			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
+			    ?>
+
 			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/1.jpg" alt="1" />
+<?php echo "<a class='b-link-stripe b-animate-go  thickbox' href='../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>"; ?>
+
+					<img  id="img-muro" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt="1" />
 						<div class="b-wrapper">
 							<h2 class="b-animate b-from-left    b-delay03 ">
 								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
+								<i> </i><?php echo $ObjPlatillo->getNombrePlatillo();?>
 							</h2>
 						</div>
 				</a>
 			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/2.jpg" alt="2" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/3.jpg" alt="3" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/4.jpg" alt="4" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/5.jpg" alt="5" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/6.jpg" alt="6" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/7.jpg" alt="7" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/8.jpg" alt="8" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/9.jpg" alt="9" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid grid9">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/10.jpg" alt="10" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/11.jpg"  alt="11"/>
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/12.jpg" alt="12" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/13.jpg"  alt="13"/>
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/14.jpg" alt="14" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/15.jpg"  alt="15"/>
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="content-grid">
-				<a href="home.php" class="b-link-stripe b-animate-go  thickbox">
-					<img  src="../images/inicio/16.jpg" alt="16" />
-						<div class="b-wrapper">
-							<h2 class="b-animate b-from-left    b-delay03 ">
-								<span>Easy Worthy Food</span>
-								<i> </i>Como hecho en casa
-							</h2>
-						</div>
-				</a>
-			</div>
-			<div class="clear"> </div>
-			<!--<div class="arrow">
-				<img  src="images/ic.png" />
-				<ul class="social ">
-					<li><span><i> </i>9930 1234 5679</span></li>
-					<li><a href="mailto:info@example.com"><i class="mes"> </i>info@example.com</a></li>
-					<li><span><i class="down"> </i>street address example</span></li>
-				</ul>
-			</div>-->
+							<?php  } ?> <!-- FIN DEL FOREACH TODAS LAS PUBLICACIONES -->
+
+
+
+		
 		</div>
 		<div class="clear"> </div>
 		<!--modificado copyright a ewf-2017-->
