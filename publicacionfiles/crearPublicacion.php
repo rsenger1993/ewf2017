@@ -51,8 +51,8 @@ else {
 		//RUTA QUE SE GUARDARA EN LA BASE
 		$rutabase = 'imgpublicacion/'.$us->getNombreUsuario().'-'.$urlimg['imagen']['name'];
 
- 		$aObjFormaDePago= $FormaDePagoCollectorObj->showFormaDePagobyName($formadepago); //BUSCO LA CATEGORIA QUE SE HA SELECCIONADO
- 		$aObjCategoria = $CategoriaCollectorObj->showCategoriaByName($categoria); //BUSCO LA FORMA DE PAGO QUE SE HA SELECCIONADO
+ 		$aObjFormaDePago= $FormaDePagoCollectorObj->showFormaDePagobyName($formadepago); //BUSCO LA FORMA DE PAGO QUE SE HA SELECCIONADO
+ 		$aObjCategoria = $CategoriaCollectorObj->showCategoriaByName($categoria); //BUSCO LA CATEGORIA QUE SE HA SELECCIONADO
 
  		$PlaId =$PlatilloCollectorObj->insertarPlatillo($nombreplatillo,$platillodescripcion,$cantidad,$precio,$rutabase,$aObjCategoria->getIdCategoria());
  		$PublicacionCollectorObj->insertarPublicacion($fecha,$estado, $us->getIdUsuario(), $PlaId["idplatillo"],$aObjFormaDePago->getIdFormaDePago());

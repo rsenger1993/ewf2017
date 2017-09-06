@@ -33,17 +33,21 @@ class PlatilloCollector extends Collector
     return $arrayPlatillo;        
   }
 
-      function updatePlatillo($idplatillo,$nombreplatillo,$platillodescripcion,$cantidad,$precio,$imgplatillo,$categoria_id,$categoriadescripcion) {
+    function updatePlatillo($idplatillo,$nombreplatillo,$platillodescripcion,$cantidad,$precio,$imgplatillo,$categoria_id,$categoriadescripcion) {
     $insertrow = self::$db->updateRow("UPDATE public.platillo SET nombreplatillo = ? , platillodescripcion = ? , cantidad = ? , precio = ?  , imgplatillo = ? , categoria_id = ? , categoriadescripcion = ?  WHERE idplatillo = ?", array("{$nombreplatillo}", "{$platillodescripcion}", "{$cantidad}", "{$precio}", "{$imgplatillo}", "{$categoria_id}", "{$categoriadescripcion}",$idplatillo));  
       
   }
+    function updatePlatilloById($idplatillo, $cantidad) {
+    $insertrow = self::$db->updateRow("UPDATE platillo SET cantidad = cantidad -? WHERE idplatillo = ?",array("{$cantidad}","{$idplatillo}"));  
+      
+  }
 
-      function deletePlatillo($idplatillo) {
+    function deletePlatillo($idplatillo) {
     $insertrow = self::$db->deleteRow("DELETE FROM public.platillo WHERE idplatillo=?",array("{$idplatillo}"));
       
   }
 
-      function insertarPlatillo($nombreplatillo,$platillodescripcion,$cantidad,$precio,$imgplatillo,$categoria_id) {
+    function insertarPlatillo($nombreplatillo,$platillodescripcion,$cantidad,$precio,$imgplatillo,$categoria_id) {
         
         $insertrow = self::$db->insertRow("INSERT INTO platillo (nombreplatillo, platillodescripcion, cantidad, precio, imgplatillo, categoria_id) VALUES (?,?,?,?,?,?) RETURNING idplatillo", array("{$nombreplatillo}","{$platillodescripcion}", "{$cantidad}", "{$precio}", "{$imgplatillo}", "{$categoria_id}"));
         $row = $insertrow;

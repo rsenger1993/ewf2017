@@ -7,7 +7,7 @@ class PublicacionCollector extends Collector
 {
   
   function showPublicaciones() {
-    $rows = self::$db->getRows("SELECT * FROM publicacion ");        
+    $rows = self::$db->getRows("SELECT * FROM publicacion INNER JOIN platillo ON (publicacion.platillo_id = platillo.idplatillo)  where platillo.cantidad> 0");        
     //echo "linea 1";
     $arrayPublicacion= array();        
     foreach ($rows as $c){
@@ -17,7 +17,7 @@ class PublicacionCollector extends Collector
     return $arrayPublicacion;        
   }
 
-    function showPublicacion($idpublicacion) {
+    function showPublicacionById($idpublicacion) {
     $row = self::$db->getRows("SELECT * FROM publicacion WHERE idpublicacion= ?",array("{$idpublicacion}"));
     $ObjPublicacion= new Publicacion($row[0]{'idpublicacion'}, $row[0]{'fechapublicacion'}, $row[0]{'estado'}, $row[0]{'usuario_id'}, $row[0]{'platillo_id'}, $row[0]{'formapago_id'});
 
