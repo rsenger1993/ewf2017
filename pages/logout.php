@@ -33,13 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<ul>
 				<li> <a >Log-Out Con Exito</a></li>
 			</ul>
-<?php
- }
- else{
- 	header('Location: index.php'); //REDIRECCIONA AL INDEX
- 	} 
- ?>		
-			</nav>
+						</nav>
 		</header>
 	 <div class="container">
         <div class="single" id="index-login">
@@ -47,12 +41,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                <div class="top-single">
 				<h3> Desconectado</h3>
 				<div class="grid-single">
-					
 				<div id="espacio"></div>
 				<div class="clear">
+					</br>
 					<center> 
 					<a href="../index.php" class="button">Salir</a>
-					</center>					     
+					</center>
+					</br>				     
 				</div>
 				<div id="espacio"></div>
 				</div>
@@ -62,5 +57,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </body>
 </html>
+
+<?php
+ }
+ else{
+ 	header('Location: ../index.php'); //REDIRECCIONA AL INDEX
+ 	} 
+ ?>		
+
 
 

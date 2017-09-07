@@ -54,9 +54,11 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">
+					</br>
 					<center> 
 					<a href="home.php" class="button">Continuar</a>
-					</center>					     
+					</center>
+					</br>				     
 				</div>
 				<div id="espacio"></div>
 				</div>

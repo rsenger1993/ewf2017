@@ -1,5 +1,7 @@
  <?php
  session_start();
+ ?>
+ <?php
  include_once("../usuariofiles/UsuarioCollector.php");
  include_once("../platillofiles/PlatilloCollector.php");
  include_once("../categoriafiles/CategoriaCollector.php");
@@ -15,7 +17,6 @@
  $platillodescripcion= $_POST["platillodescripcion"];
  $urlimg= $_FILES;
  $fecha = getdate()['year'].'-'.getdate()['mon'].'-'.getdate()['mday'];
- //$fecha= "1993-04-17";
  $estado="disponible";
  $formadepago= $_POST["formadepago"];
 
@@ -24,19 +25,135 @@
  $CategoriaCollectorObj = new CategoriaCollector();
  $PlatilloCollectorObj = new PlatilloCollector();
  $FormaDePagoCollectorObj = new FormaDePagoCollector();
+ ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>EWF | Creacion de Publicacion</title>
+<!-- jQuery-->
+<script src="../js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="../css/style-index2.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+</head>
+<body>
+		<header id="index-header">
+			<input type="checkbox" id ="btn-menu">
+			<label for="btn-menu"> <img src="../images/menu.png" alt="menu"></label>
+			<nav class="menu">
+
+
+ <?php
 
  if ($nombreplatillo=="" or $categoria=="" or $cantidad=="" or  $precio=="" or $platillodescripcion=="" or $fecha=="" or $formadepago=="")
  {
- 	echo "Porfavor llenar todos los campos </br>";
+ 	 	 ?>
+ 						<ul>
+					<li> <a >Error</a></li>
+				</ul>
+			</nav>
+		</header>
+	 <div class="container">
+        <div class="single" id="index-login">
+               <div class="top-single">
+				<h3> Porfavor llenar todos los campos </h3>
+				<div class="grid-single">	
+				<div id="espacio"></div>
+				<div class="clear">
+					</br>
+					<center> 
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
+					</center>
+					</br>				     
+				</div>
+				<div id="espacio"></div>
+				</div>
+
+				<div class="clear"> </div>
+			</div>
+           </div>
+
+    </div>
+</body>
+</html>
+ 		<?php	
  }
  elseif ($urlimg['imagen']['name']=="")
  {
- 	echo "Porfavor selecciona una imagen para el platillo </br>";
+ 	 	 ?>
+ 						<ul>
+					<li> <a >Error</a></li>
+				</ul>
+			</nav>
+		</header>
+	 <div class="container">
+        <div class="single" id="index-login">
+               <div class="top-single">
+				<h3> Porfavor selecciona una imagen para el platillo </h3>
+				<div class="grid-single">	
+				<div id="espacio"></div>
+				<div class="clear">
+					</br>
+					<center> 
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
+					</center>
+					</br>				     
+				</div>
+				<div id="espacio"></div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+           </div>
+
+    </div>
+</body>
+</html>
+ 		<?php	
  }
  elseif (!is_numeric($precio))
  {
-	echo "Porfavor Ingresa un valor correcto para el precio </br>";
-	echo "ejemplo: 1 o 1.50</br>";
+ 	 	?>
+ 						<ul>
+					<li> <a >Error</a></li>
+				</ul>
+			</nav>
+		</header>
+	 <div class="container">
+        <div class="single" id="index-login">
+               <div class="top-single">
+				<h3> Porfavor Ingresa un valor correcto para el precio </h3>
+				<h3> Ejemplo: 1 o 1.50 </h3>
+				<div class="grid-single">	
+				<div id="espacio"></div>
+				<div class="clear">
+					</br>
+					<center> 
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
+					</center>
+					</br>				     
+				</div>
+				<div id="espacio"></div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+           </div>
+
+    </div>
+</body>
+</html>
+ 		<?php
  }
 
 else {
@@ -56,18 +173,71 @@ else {
 
  		$PlaId =$PlatilloCollectorObj->insertarPlatillo($nombreplatillo,$platillodescripcion,$cantidad,$precio,$rutabase,$aObjCategoria->getIdCategoria());
  		$PublicacionCollectorObj->insertarPublicacion($fecha,$estado, $us->getIdUsuario(), $PlaId["idplatillo"],$aObjFormaDePago->getIdFormaDePago());
- 		echo "Publicacion creada exitosamente</br>";
+ 		?>
+				<ul>
+					<li> <a >Publicacion Con Exito</a></li>
+				</ul>
+			</nav>
+		</header>
+	 <div class="container">
+        <div class="single" id="index-login">
+               <div class="top-single">
+				<h3> Publicacion creada correctamente </h3>
+				<div class="grid-single">	
+				<div id="espacio"></div>
+				<div class="clear">
+					</br>
+					<center> 
+					<a href="../pages/muro.php" class="button">Continuar</a>
+					</center>
+					</br>				     
+				</div>
+				<div id="espacio"></div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+           </div>
+
+    </div>
+</body>
+</html>
+
+ 		<?php
  		}
  	else{
- 		echo "Solo se permiten imagenes jpg, png y con un peso menor a 200kb </br>";
- 			
- 	}
+ 		?>
+ 						<ul>
+					<li> <a >Error</a></li>
+				</ul>
+			</nav>
+		</header>
+	 <div class="container">
+        <div class="single" id="index-login">
+               <div class="top-single">
+				<h3> Solo se permiten imagenes jpg, png y con un peso menor a 200kb </h3>
+				<div class="grid-single">	
+				<div id="espacio"></div>
+				<div class="clear">
+					</br>
+					<center> 
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
+					</center>
+					</br>				     
+				</div>
+				<div id="espacio"></div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+           </div>
 
-     }
-		
-	
-
-
-
+    </div>
+</body>
+</html>
+ 		<?php
+ 		}
+     }	
  ?>
- <a href="../pages/nuevapublicacion.php">Volver</a>
+
+
+
+
