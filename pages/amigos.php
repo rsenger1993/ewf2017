@@ -3,6 +3,11 @@
 ?>
 <?php
  if (isset(($_SESSION['MiSesion']))){
+include_once("../amigofiles/AmigoCollector.php");
+include_once("../usuariofiles/UsuarioCollector.php");
+$AmigoCollectorObj = new AmigoCollector();
+$UsuarioCollectorObj = new UsuarioCollector();
+$ArrayAmigo=$AmigoCollectorObj->showAmigosByUser($_SESSION['MiSesion']);
 	?>
 <!DOCTYPE html>
 <html>
@@ -77,211 +82,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!---->
 		<div class="content">
 			<div class="blog">
-				<div class="blog-top">
-					<div class="col-d">
-						<script src="js/responsiveslides.min.js"></script>
-					<script>
-						$(function () {
-						  $("#slider1").responsiveSlides({
-							auto: true,
-							speed: 500,
-							namespace: "callbacks",
-							pager: false,
-							 nav:true,
-						  });
-						});
-					</script>
-					<div class="slider1">
-						<div class="callbacks_container">
-						  <ul class="rslides" id="slider1">
-							<li>
-							  <img src="images/bl.jpg" alt="">
-							  
-							</li>
-							<li>
-							  <img src="images/bl1.jpg" alt="">
-								
-							</li>
-							<li>
-							  <img src="images/bl2.jpg" alt="">
-							  
-							</li>
-						  </ul>
-					  </div>
-					</div>
-						<div class="blog-in">
-							<h5><a href="amigos.php">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain </p>
-							<ul class="date">
-								<li><span><a href="blog.html"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-d">
 
-						<a  href="single.php"><img  src="../images/bl2.jpg" alt="bl2"/>
-						</a>
-
-						<a  href="amigos.php"><img  src="../images/bl2.jpg" alt="bl2" />
-						</a>
-
-					</div>
-					<div class="col-in">
-						<p>Another Post where you can put a link</p>
-<a href="http://w3layouts.com/" target="_blank">W3layouts.com</a>					
-</div>
-					</div>
-					<div class="blog-top">
-					<div class="col-in">
-						<p>Another Post where you can put a link</p>
-						<a href="http://w3layouts.com/" target="_blank">W3layouts.com</a>					
-						</div>
-					<div class="col-d">
-						<iframe src="https://player.vimeo.com/video/66087280?color=ffffff&title=0&byline=0&portrait=0"  ></iframe> 
-						<div class="blog-in">
-							<h5><a href="blog.html">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain  </p>
-							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-d">
-
-						<a href="single.php"><img  src="../images/bl.jpg" alt="bl"/></a>
-
-						<a href="muro.php"><img  src="../images/bl.jpg" alt="bl" /></a>
-
-						<div class="blog-in">
-							<h5><a href="amigos.php">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain</p>
-							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
-							</ul>
-						</div>
-					</div>
+				<?php
+				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
+			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
+			    ?>
 					
-					</div>
 					<div class="blog-top">
 					<div class="col-d">
-
-						<a href="single.php"><img  src="../images/bl2.jpg" alt="bl2" />
-						</a>
-
-						<a href="amigos.php"><img  src="../images/bl2.jpg"  alt="bl2"/>
-						</a>
-
-					</div>
-					<div class="col-d">
-						<img  src="../images/bl1.jpg" alt="bl1" />
+						<img  src="<?php echo '../'.$ObjUsuario->getImgUsuario();?>" alt="pi5" />
 						<div class="blog-in">
-							<h5><a href="amigos.php">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain </p>
+							<h5><a href="amigos.php"><?php echo ($ObjUsuario->getNombreUsuario())?></a></h5>
+							<p><?php echo ($ObjUsuario->getUsuarioDescripcion())?></p>
 							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
+								<p><?php echo "Telefono: " . ($ObjUsuario->getTelefono())?></p>
 							</ul>
-						</div>
-					</div>
-					
-					<div class="col-in-at">
-					<h5><a href="amigos.php">Aside Post Format</a></h5>
-					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh</p>
-					</div>
-					</div>
-					<div class="blog-top">
-					<div class="col-on">
-						<p>Logic will get you from A to B. Imagination will.</p>
-						<img  src="images/qu.png" alt="qu" />
-						<span>Albert Einstein</span>
-					</div>
-					<div class="col-d">
-
-						<a href="single.php"><img  src="../images/bl.jpg" alt="bl" /></a>
-
-						<a href="amigos.php"><img  src="../images/bl.jpg"  alt="bl"/></a>
-
-						<div class="blog-in">
-							<h5><a href="single.html">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain </p>
 							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
+								<p><?php echo "Correo: " .($ObjUsuario->getCorreo())?></p>
 							</ul>
-						</div>
-					</div>
-					<div class="col-d">
-						<iframe src="https://player.vimeo.com/video/12879013?portrait=0" ></iframe> 
-							<div class="blog-in">
-							<h5><a href="amigos.php">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain  </p>
-							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
-							</ul>
-						</div>
-					</div>
-					</div>
-					<div class="blog-top">
-					<div class="col-d">
-					<script>
-						$(function () {
-						  $("#slider2").responsiveSlides({
-							auto: true,
-							speed: 500,
-							namespace: "callbacks",
-							pager: false,
-							 nav:true,
-						  });
-						});
-					</script>
-					<div class="slider2">
-						<div class="callbacks_container">
-						  <ul class="rslides" id="slider2">
+							</br>
+							<ul >
 							<li>
-							  <img src="../images/bl2.jpg" alt="">
-							  
+								<center>
+								<?php echo "<a id='btn-eliminaramigo' href='amigos.php'>Eliminar amigo </a>"; ?>
+								</center>
 							</li>
-							<li>
-							  <img src="../images/bl1.jpg" alt="">
-								
-							</li>
-							<li>
-							  <img src="../images/bl.jpg" alt="">
-							  
-							</li>
-						  </ul>
-					  </div>
-					</div>
-						<div class="blog-in">
-							<h5><a href="amigos.php">Gallery Post Example</a></h5>
-							<p>A man who works with his hands is a laborer; a man who works with his hand s and his brain  </p>
-							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
-							</ul>
+							</ul>	
 						</div>
 					</div>
-					<div class="col-d">
-						<img  src="../images/pi5.jpg" alt="pi5" />
-						<div class="blog-in">
-							<h5><a href="amigos.php">Gallery Post Example</a></h5>
-							<p>A man who wo  rks with his hands is a laborer; a man who works with his hand s and his brain  </p>
-							<ul class="date">
-								<li><span><a href="amigos.php"><i ></i>12 Comments</a></span></li>
-								<li><span><i class="date-in"></i>09-07-2013</span></li>
-							</ul>
-						</div>
 					</div>
-					
-					</div>
+					<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
+
 				<div class="clear"> </div>
 				</div>
 			<div class="arrow arrow-at">
-				<img  src="../images/ic.png" alt="ic" />
 				
 			</div>
 			</div>

@@ -11,7 +11,25 @@ class AmigoCollector extends Collector
     //echo "linea 1";
     $arrayAmigo= array();        
     foreach ($rows as $c){
-      $aux = new Amigo($c{'id'},$c{'$usuario_id'});
+      $aux = new Amigo($c{'idamigo'},$c{'$a_usuario'},$c{'$usuario_id'});
+      array_push($arrayAmigo, $aux);
+    }
+    return $aux;        
+  }
+    function showAmigosByIdandUser($a_usuario, $usuario_id) {
+    $rows = self::$db->getRows("SELECT * FROM amigo WHERE a_usuario= ? AND usuario_id= ?",array("{$a_usuario}","{$usuario_id}"));        
+    $arrayAmigo= array();        
+    foreach ($rows as $c){
+      $aux = new Amigo($c{'idamigo'},$c{'a_usuario'},$c{'usuario_id'});
+      array_push($arrayAmigo, $aux);
+    }
+    return $arrayAmigo;        
+  }
+    function showAmigosByUser($a_usuario) {
+    $rows = self::$db->getRows("SELECT * FROM amigo WHERE a_usuario= ?",array("{$a_usuario}"));        
+    $arrayAmigo= array();
+    foreach ($rows as $c){
+      $aux = new Amigo($c{'idamigo'},$c{'a_usuario'},$c{'usuario_id'});
       array_push($arrayAmigo, $aux);
     }
     return $arrayAmigo;        
@@ -21,11 +39,11 @@ class AmigoCollector extends Collector
     $row = self::$db->getRows("SELECT * FROM amigo WHERE id= ?",array("{$idamigo}"));
     $ObjAmigo= new Amigo($row[0]{'id'},$row[0]{'$usuario_id'});
 
-    return $ObjAmigo
+    return $ObjAmigo;
 
-
-      function updateAmigo($idamigo,$usuario_id) {
-    $insertrow = self::$db->updateRow("UPDATE public.amigo SET nombrecompleto = ? , correo = ? , edad = ? , telefono = ? , clave = ? , descripcion = ?  WHERE id = ?", array("{$nombrecompleto}", "{$correo}", "{$edad}", "{$telefono}", "{$clave}", "{$descripcion}",$idamigo));  
+  }
+      function updateAmigo($usuario,$idamigo) {
+    $insertrow = self::$db->updateRow("UPDATE amigo SET arrayusuario_id = arrayusuario_id || ?  WHERE usuarioamigo = ?", array("{$idamigo}","{$usuario}"));  
       
   }
 
@@ -34,10 +52,12 @@ class AmigoCollector extends Collector
       
   }
 
-      function insertarAmigo($usuario_id) {
-    $insertrow = self::$db->insertRow("INSERT INTO public.amigo (usuario_id) VALUES (?)",array("{$usuario_id}"));
+      function insertarAmigo($a_usuario,$idusuario) {
+
+    $insertrow = self::$db->insertRow("INSERT INTO amigo (a_usuario, usuario_id) VALUES (?,?)",array("{$a_usuario}","{$idusuario}"));
       
   }
 
 }
+
 ?>
