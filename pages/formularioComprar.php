@@ -168,11 +168,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</p>
 							</li>
 							<br>
-							<div class="grid-single-in">
-	
-  							<input href="<?php '../publicacionfiles/realizarCompra.php?idpublicacion='.$publicacion->getIdPublicacion() ?>" type="submit" name="Enviar" id="btn-re"  class="button" value="Comprar" >
+							<?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) { ?> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE COMPRAR A TODOS MENOS AL USUARIO ACTIVO -->
 
+							<div class="grid-single-in">
+  							<input href="<?php '../publicacionfiles/realizarCompra.php?idpublicacion='.$publicacion->getIdPublicacion() ?>" type="submit" name="Enviar" id="btn-re"  class="button" value="Comprar" >
                     		</div>
+                    		<?php } ?>
 						</ul>
 					</div>
 				</div>
