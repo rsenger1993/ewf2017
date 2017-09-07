@@ -4,12 +4,15 @@
 <?php
  if (isset(($_SESSION['MiSesion']))){
 include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../amigofiles/AmigoCollector.php");
 include_once("../publicacionfiles/PublicacionCollector.php");
 include_once("../platillofiles/PlatilloCollector.php");
 $UsuarioCollectorObj = new UsuarioCollector();
+$AmigoCollectorObj = new AmigoCollector();
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
+$ArrayAmigo=$AmigoCollectorObj->showAmigosByUser($_SESSION['MiSesion']);
 
 
 ?>
@@ -122,11 +125,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="projects">
 					<h3>Amigos Ewf</h3>
 					<ul>
+				<?php
+				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
+			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
+			    ?>
 
-						<li><a href="single.html"><img  src="../images/wo.jpg" alt="wo"/></a></li>
-						<li><a href="single.html"><img  src="../images/wo1.jpg" alt="wo1" /></a></li>
-						<li><a href="single.html"><img  src="../images/wo2.jpg" alt="wo2" /></a></li>
+						<li><a href="miperfil.php"><img  id="img-perfilamigo" src="<?php echo '../'.$ObjUsuario->getImgUsuario();?>" alt="wo"/></a></li>
 
+				<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
 					</ul>
                     <div class="clear"> </div>
 				</div>
@@ -170,7 +176,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="clear"> </div>
 					</div>
 					<div class="feature">
-					<h3>Platillos Favoritos</h3>
+					<h3>Publicaciones Favoritas</h3>
 							<ul class="gallery-grid">
 
 							<li><a href="single.html"><img  src="../images/inicio/9.jpg" alt="9"  /></a></li>
@@ -210,6 +216,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php
  }
  else{
-header('Location: index.php'); //REDIRECCIONA AL INDEX
+header('Location: ../index.php'); //REDIRECCIONA AL INDEX
 }
  ?>
