@@ -12,6 +12,21 @@
 <link href="../css/style-index2.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
+<!--VALIDAR INGRESAR SOLO NUMEROS-->
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+</script>
+
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -49,60 +64,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                <div class="top-single">
                		
 				<h3>Registrarse</h3>
+
 				<div class="grid-single">
 					<form  action="../usuariofiles/crearUsuario.php" enctype="multipart/form-data" method="post">
 					<div class="your-single">
 						<i> </i>
-						<input type="text" name="nombrecompleto" value="nombre completo" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'nombre completo';}">								
+						<input type="text" name="nombrecompleto" placeholder="nombre completo">								
 						<div class="clear"> </div>
 					</div>
 					<div class="your-single">
 						<i> </i>
-						<input type="text" name="nombreusuario" value="nombre de Usuario" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'nombre de usuario';}">								
+						<input type="text" name="nombreusuario" placeholder="nombre de usuario">								
 						<div class="clear"> </div>
 					</div>
 					<div class="your-single">
-						<i class="email"> </i>
-						<input type="text" name="clave" value="clave" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'clave';}">								
+						<i> </i>
+						<input type="password" name="clave" placeholder="clave">								
 						<div class="clear"> </div>
 					</div>
                     <div class="your-single">
-					<i> </i>
-						<input type="text" name="correo" value="correo" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'correo';}">								
+					<i class="email"> </i>
+						<input type="text" name="correo" placeholder="correo - ejemplo@hotmail.com">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="edad" value="edad" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'edad';}">								
+						<input type="text" name="edad" placeholder="edad" maxlength="2" onkeypress="return valida(event)">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="telefono" value="telefono" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'telefono';}">								
+						<input type="text" name="telefono" placeholder="telefono - 8 digitos sin contar el 0" maxlength="8" onkeypress="return valida(event)">								
 						<div class="clear"> </div>	
                     </div>
                         <div class="your-single">
 					<i> </i>
-						<input type="text" name="direccion" value="direccion" onfocus="this.value=''" onblur="if (this.value == '') {this.value = 'direccion';}">								
+						<input type="text" name="direccion" placeholder="direccion">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">
 					<i> </i>
-					<label id ="lbl1" >Descripcion</label>
-					  <textarea id="area-perfil"  name="descripcion">Enter text here...</textarea>
+					<a id ="lbl1" >descripcion</a>
+					  <textarea id="area-perfil"  name="descripcion">Ejemplo: Me llamo Juan vivo en Guayaquil, soy ayudante de chef en el restaurante "La Milanesa"...</textarea>
 						<div class="clear"> </div>	
                     </div>
+                    <p id="label-login">Imagen de Perfil</p>
                       <div class="your-single">
-						<input  type="file" name="imagen">							
-						<div class="clear"> </div>	
+                      	<a id="label-login">Seleccione su imagen de perfil - solo imagenes jpg o png menor a 200kb </a>
+						<input id="label-login" type="file" name="imagen">							
+						<div class="clear"> </div>
                     </div>
+
                     <div class="grid-single-in">
-  					<input type="submit" name="Enviar" value="Enviar" >
+  					<input  type="submit" name="Enviar" value="Enviar" >
                     </div>
                     </form>
-                    <div class="grid-single-in">
-					
-				    </div>
+       
 				</div>
 				<div class="clear"> </div>
 			</div>
