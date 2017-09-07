@@ -98,11 +98,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 			<div class="work">
 				<div class="work-top">
-					<h2><a href="muro.php"><?php echo ($ObjPlatillo->getNombrePlatillo())?></a></h2>
+					<h2><a><?php echo ($ObjPlatillo->getNombrePlatillo())?></a></h2>
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
-							  <img id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt="">
+							  <a href="<?php echo "../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion() ?>"><img href="muro.php" id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt=""></a>
 
 							</li>
 						  </ul>
@@ -113,22 +113,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a> <?php echo ($ObjPlatillo->getPlatilloDescripcion())?> </a>
 				</div>
 				<div class="work-in">
-					<div class="info">
-					<h3>Posteado Por: <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
+					<div class="info"> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE AGREGAR AMIGO A TODOS MENOS AL USUARIO ACTIVO -->
+					<h3>Posteado Por: <?php echo ($ObjUsuario->getNombreUsuario())?> <?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) {echo "<a id='btn-agregar' class='button' href='../amigofiles/agregaramigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'>Agregar amigo</a>"; }?></h3>
+
 						<ul class="likes">
-						
+
 							<li>Contacto<span><i class="comment"> </i>Correo: <?php echo ($ObjUsuario->getCorreo())?></span></li>
 							<li><span><i class="comment"> </i>Telefono: <?php echo ($ObjUsuario->getTelefono())?></span></li>
 							<li>Comprar<span><i class="comment"> </i>Precio: $ <?php echo ($ObjPlatillo->getPrecio())?></span></li>
 							<li><span><i class="comment"> </i>Cantidad disponible: <?php echo ($ObjPlatillo->getCantidad())?></span></li>
+							 <?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) { ?> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE COMPRAR A TODOS MENOS AL USUARIO ACTIVO -->
 							<li class="grid-single-in">
 						    <?php echo "<a id='btn-re' class='button' href='../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Comprar </a>"; ?>
-  							
                     		</li>
+                    		</br>
+							</br>
+                    		<?php } ?>
 						</ul>
 					</div>
-					</br>
-					</br>
+					
 					<div class="gallery">
 					<h3>Otras publicaciones de <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
 						<ul class="gallery-grid">
