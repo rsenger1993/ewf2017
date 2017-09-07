@@ -58,14 +58,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>Iniciar sesión</h3>
 				<div class="grid-single">
 					<form action="pages/login.php" method="post">
+					<p id="label-login">Usuario</p>
 					<div class="your-single">
 						<i> </i>
-						<input type="text" name="nombreusuario"  value="Usuario" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Usuario';}">
+						<input type="text" name="nombreusuario">
 						<div class="clear"> </div>
 					</div>
+					<p id="label-login">Password</p>
 					<div class="your-single">
 						<i> </i>
-						<input type="text" name="clave"  value="Contraseña" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Usuario';}">
+
+						<input type="password" name="clave">
 						<div class="clear"> </div>
 					</div>
                     <div class="grid-single-in">
