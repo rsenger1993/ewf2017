@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li  ><a href="home.php" >HOME</a></li>
 					<li class="active"><a href="muro.php" class="black" > MURO</a></li>
-					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li><a href="home.php" >HOME</a></li>
 					<li class="active"><a href="muro.php" class="black" > MURO</a></li>
-					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="work-in">
 					<div class="info"> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE AGREGAR AMIGO A TODOS MENOS AL USUARIO ACTIVO -->
-					<h3>Posteado Por: <?php echo ($ObjUsuario->getNombreUsuario())?> <?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) {echo "<a id='btn-agregar' class='button' href='../amigofiles/agregaramigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'>Agregar amigo</a>"; }?></h3>
+					<h3>Posteado Por: <?php echo ($ObjUsuario->getNombreUsuario())?> <?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) {echo "<a id='btn-agregar' class='button' href='../amigofiles/agregaramigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'>Agregar EWF</a>"; }?></h3>
 
 						<ul class="likes">
 
@@ -133,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					
 					<div class="gallery">
-					<h3>Otras publicaciones de <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
+					<h3>Publicaciones de <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
 						<ul class="gallery-grid">
 
 							<?php
