@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul >
 					<li ><a href="home.html" >HOME</a></li>
 					<li><a href="work.html" class="black" > MURO</a></li>	
-					<li><a href="blog.html" class="black2" > AMIGOS</a></li>
+					<li><a href="blog.html" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.html" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.html" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.html" class="black4" > MIPERFIL</a></li>
@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul >
 					<li class="active" ><a href="home.html" >HOME</a></li>
 					<li><a href="work.html" class="black" > MURO</a></li>	
-					<li><a href="blog.html" class="black2" > AMIGOS</a></li>
+					<li><a href="blog.html" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="blog.html" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.html" class="black4" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.html" class="black4" > NUEVAPUBLICACION</a></li>

@@ -6,9 +6,7 @@
 if (isset(($_SESSION['MiSesion']))){
 $idusuario= $_GET["idusuario"]; //ID DEL USUARIO QUE QUIERO AGREGAR
 include_once("../amigofiles/AmigoCollector.php");
-include_once("../usuariofiles/UsuarioCollector.php");
 $AmigoCollectorObj = new AmigoCollector();
-$UsuarioCollectorObj = new UsuarioCollector();
 $ArrayAmigo=$AmigoCollectorObj->showAmigosByIdandUser($_SESSION['MiSesion'],$idusuario);
  ?>
 
@@ -52,7 +50,7 @@ if (count($ArrayAmigo)>0){
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Ya tienes ese amigo agregado</h3>
+				<h3>Ya tienes ese usuario agregado</h3>
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">
@@ -78,14 +76,14 @@ else{
 	$AmigoCollectorObj->insertarAmigo($_SESSION['MiSesion'],$idusuario); //ENVIO MI USUARIO Y EL ID DEL USUARIO AMIGO
 		 ?>
  						<ul>
-					<li> <a >Agregacion de amigo con exito</a></li>
+					<li> <a >Agregacion de usuario con exito</a></li>
 				</ul>
 			</nav>
 		</header>
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Amigo Agregado</h3>
+				<h3>Usuario Agregado</h3>
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">

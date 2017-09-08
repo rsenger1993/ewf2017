@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li  ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
-					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li class="active"><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
-					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li class="active"><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -121,20 +121,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 					<textarea readonly id="area-perfil"><?php echo "Soy ".$us->getUsuarioDescripcion()." y vivo en ".$us->getDireccionDescripcion() ?></textarea>
 
-
+				<div id="scroll-publi"> <!-- DIV SCROLL -->
 				<div class="projects">
-					<h3>Amigos Ewf</h3>
+					<h3>Ewf Favoritos</h3>
 					<ul>
 				<?php
 				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
 			    ?>
+			    			    <?php echo "<li><a href='../pages/publicacionesamigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'> <img id='img-perfilamigo' src='../".$ObjUsuario->getImgUsuario()."' alt='wo' /></a></li>"; ?>
 
-						<li><a href="miperfil.php"><img  id="img-perfilamigo" src="<?php echo '../'.$ObjUsuario->getImgUsuario();?>" alt="wo"/></a></li>
+
 
 				<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
 					</ul>
                     <div class="clear"> </div>
+				</div>
 				</div>
 				</div>
 				<div class="work-in">

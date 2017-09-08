@@ -47,8 +47,8 @@ class AmigoCollector extends Collector
       
   }
 
-      function deleteAmigo($idamigo) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.amigo WHERE id=?",array("{$idamigo}"));
+      function deleteAmigo($a_usuario, $usuario_id) {
+    $insertrow = self::$db->deleteRow("DELETE FROM amigo WHERE a_usuario=? AND usuario_id=?",array("{$a_usuario}", "{$usuario_id}"));
       
   }
 

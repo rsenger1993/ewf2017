@@ -61,14 +61,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p id="label-login">Usuario</p>
 					<div class="your-single">
 						<i> </i>
-						<input type="text" name="nombreusuario">
+						<input type="text" name="nombreusuario" placeholder="nombre de usuario">
 						<div class="clear"> </div>
 					</div>
-					<p id="label-login">Password</p>
+					<p id="label-login">Clave</p>
 					<div class="your-single">
 						<i> </i>
 
-						<input type="password" name="clave">
+						<input type="password" name="clave" placeholder="clave">
 						<div class="clear"> </div>
 					</div>
                     <div class="grid-single-in">
