@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li  ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
-					<li class="active"><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li class="active"><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -63,7 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
-					<li class="active"><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li class="active"><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -80,9 +80,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clear"> </div>
 		</div>
 			<!---->
-		<div class="content">
+		<div id="scroll-publi">
 			<div class="blog">
-
 				<?php
 				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
@@ -101,13 +100,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<p><?php echo "Correo: " .($ObjUsuario->getCorreo())?></p>
 							</ul>
 							</br>
-							<ul >
-							<li>
+							<ul><li>
 								<center>
-								<?php echo "<a id='btn-eliminaramigo' href='amigos.php'>Eliminar amigo </a>"; ?>
+								<?php echo "<a id='btn-eliminaramigo' href='../pages/publicacionesamigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'>Ver publicaciones </a>"; ?>
 								</center>
-							</li>
-							</ul>	
+							</li></ul>
+							</br>
+							<ul><li>
+								<center>
+								<?php echo "<a id='btn-eliminaramigo' href='../amigofiles/eliminaramigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'>Eliminar EWF </a>"; ?>
+								</center>
+							</li></ul>
 						</div>
 					</div>
 					</div>
