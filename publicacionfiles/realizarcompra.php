@@ -1,19 +1,30 @@
-<?php
+ <?php
  session_start();
+
+
+ $idpublicacion= $_POST["idpublicacion"];
+ $cantidad= $_POST["cantidad"];
+ $formadepago= $_POST["formadepago"];
 ?>
+
 <?php
 
 if (isset(($_SESSION['MiSesion']))){
-$idpublicacion= $_GET["idpublicacion"]; //ID DEL USUARIO QUE QUIERO AGREGAR
-include_once("../favoritofiles/FavoritoCollector.php");
-$FavoritoCollectorObj = new FavoritoCollector();
-$ArrayFavorito=$FavoritoCollectorObj->showFavoritoByIdandPubli($_SESSION['MiSesion'],$idpublicacion);
+include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../platillofiles/PlatilloCollector.php");
+include_once("../categoriafiles/CategoriaCollector.php");
+include_once("../formadepagofiles/FormaDePagoCollector.php");
+include_once("PublicacionCollector.php");
+$PublicacionCollectorObj = new PublicacionCollector();
+$PlatilloCollectorObj = new PlatilloCollector();
+$publicacion = $PublicacionCollectorObj->showPublicacionById($idpublicacion);
+$PlatilloCollectorObj->updatePlatilloById($publicacion->getPlatilloId(), $cantidad);
  ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>EWF | Creacion de Publicacion</title>
+<title>EWF | Realizar Compra</title>
 <!-- jQuery-->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -36,21 +47,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<input type="checkbox" id ="btn-menu">
 			<label for="btn-menu"> <img src="../images/menu.png" alt="menu"></label>
 			<nav class="menu">
-
-
- <?php
-
-if (count($ArrayFavorito)>0){
-	 	 ?>
- 						<ul>
-					<li> <a >Error</a></li>
+ 					<ul>
+					<li> <a >Compra con exito</a></li>
 				</ul>
 			</nav>
 		</header>
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Ya tienes esa publicacion agregada</h3>
+				<h3>Has realizado una compra</h3>
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">
@@ -71,41 +76,6 @@ if (count($ArrayFavorito)>0){
 </body>
 </html>
  	  <?php
-}
-else{
-	$FavoritoCollectorObj->insertarFavorito($_SESSION['MiSesion'],$idpublicacion); //ENVIO MI USUARIO Y EL ID DEL USUARIO AMIGO
-		 ?>
- 						<ul>
-					<li> <a >Agregacion de favorito con exito</a></li>
-				</ul>
-			</nav>
-		</header>
-	 <div class="container">
-        <div class="single" id="index-login">
-               <div class="top-single">
-				<h3>Publicacion Agregada como favorita</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/muro.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
-				</div>
-
-				<div class="clear"> </div>
-			</div>
-           </div>
-
-    </div>
-</body>
-</html>
- 	  <?php
-}	
-
 
 }
 else{
@@ -113,4 +83,5 @@ header('Location: ../index.php'); //REDIRECCIONA AL INDEX
 }
 
 ?>
+
 
