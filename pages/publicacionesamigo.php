@@ -18,7 +18,7 @@ $arrayPublicacion = $PublicacionCollectorObj->showPublicacionByIdUser($idusuario
 <!DOCTYPE html>
 <html>
 <head>
-<title>EWF | Muro</title>
+<title>EWF | Publicaciones Amigos</title>
 <!-- jQuery-->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -47,6 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2"> PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -54,8 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-				<li><a href="muro.php"><i class="facebook"> </i></a></li>
-				<li><a href="muro.php"><i class="twitter"> </i></a></li>
+
 			</ul>
 			<p class="footer-class"> Copyright © 2017 EWF </p>
 		</div>
@@ -71,6 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2"> PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
