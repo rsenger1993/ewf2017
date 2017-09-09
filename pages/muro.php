@@ -100,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="work">
 				<div class="work-top">
 					<?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) { 
-					echo "<h2><a href='../publicacionfiles/agregarpublicacion.php?idpublicacion=".$publicacion->getIdPublicacion()."'><button id='btn-favorite'> <img id='mini-favorite' src='../img/star-favorite.png'></button>".$ObjPlatillo->getNombrePlatillo()."</a> </h2>";
+					echo "<h2><a href='../publicacionfiles/agregarpublicacionfavorita.php?idpublicacion=".$publicacion->getIdPublicacion()."'><button id='btn-favorite'> <img id='mini-favorite' src='../img/star-favorite.png'></button>".$ObjPlatillo->getNombrePlatillo()."</a> </h2>";
 							}
 							else{
 					echo "<h2><a>".$ObjPlatillo->getNombrePlatillo()."</a> </h2>";
@@ -171,6 +171,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php
  }
  else{
-header('Location: index.php'); //REDIRECCIONA AL INDEX
+header('Location: ../index.php'); //REDIRECCIONA AL INDEX
 }
  ?>

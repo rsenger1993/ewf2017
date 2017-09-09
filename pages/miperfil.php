@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 
 					<div class="gallery">
-					<h3>Mis Platillos</h3>
+					<h3>Mis Publicaciones</h3>
 						<ul class="gallery-grid">
 								<?php
 							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario());
@@ -178,34 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
                         <div class="clear"> </div>
 					</div>
-					<div class="feature">
-					<h3>Publicaciones Favoritas</h3>
-							<ul class="gallery-grid">
 
-							<li><a href="single.html"><img  src="../images/inicio/9.jpg" alt="9"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/16.jpg" alt="16"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/14.jpg" alt="14"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/7.jpg" alt="7"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/8.jpg" alt="8"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/2.jpg" alt="2"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/3.jpg" alt="3"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/1.jpg" alt="1"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/4.jpg" alt="4"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/15.jpg" alt="15"  /></a></li>
-							<li><a href="single.html"><img  src="../images/inicio/11.jpg" alt="11"  /></a></li>
-
-						</ul>
-                        <div class="clear"> </div>
-
-						<!--ul class="feature-grid">
-							<li><a href="single.html"><i > </i> Responsive Layout  </a></li>
-							<li><a href="single.html"><i >  </i>Font Awesome Icons</a></li>
-							<li><a href="single.html"><i> </i>Clean & Commented Code</a></li>
-							<li><a href="single.html"><i >  </i> Pixel perfect Design</a></li>
-							<li><a href="single.html"><i >  </i>Highly Customizable</a></li>
-
-						</ul>-->
-					</div>
 				</div>
 				<div class="clear"> </div>
 			</div>

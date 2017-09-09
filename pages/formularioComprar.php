@@ -20,13 +20,7 @@ $ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatillo
 $ArrayFormaDePago = $FormaDePagoCollectorObj->showFormaDePagos();//OBTENGO DATOS DE LA FORMA DE PAGO
 
 
-if ($ObjPlatillo->getCantidad()==0){
-print_r("Ese platillo esta agotado");
-echo"<br>";
-echo "<a href='../pages/muro.php'>Volver</a>";
-}
-else{
-$ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
+
 	?>
 <!DOCTYPE html>
 <html>
@@ -60,6 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li  ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2" > PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -83,6 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2" > PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -100,10 +96,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 			<!---->
 
+<?php 
+if ($ObjPlatillo->getCantidad()==0){
+?>
+				<div id="scroll-publi">
+					<div class="work">
+					<p>Ese platillo esta agotado</p>
+					</div>
+				</div>
+			
+	</div>
+<?php
+
+}
+else{
+$ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
+?>
+
 		<div class="content">
 
 			<div class="work">
-			<a href="muro.php" id="btn-regresar"  class="button" value="regresar" >regresar</a>
+			<a href="muro.php" id="btn-regresar"  class="button" value="regresar" >Ir al Muro</a>
 				<form  action="../publicacionfiles/realizarcompra.php" enctype="multipart/form-data" method="post">
 				<div class="work-top">
 				<script src="js/responsiveslides.min.js"></script>
@@ -167,10 +180,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</p>
 							</li>
 							<br>
+
 							<?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) { ?> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE COMPRAR A TODOS MENOS AL USUARIO ACTIVO -->
 
 							<div class="grid-single-in">
-  							<input href="<?php '../publicacionfiles/realizarCompra.php?idpublicacion='.$publicacion->getIdPublicacion() ?>" type="submit" name="Enviar" id="btn-re"  class="button" value="Comprar" >
+  							<input href="<?php '../publicacionfiles/realizarcompra.php?idpublicacion='.$publicacion->getIdPublicacion() ?>" type="submit" name="Enviar" id="btn-re"  class="button" value="Comprar" >
+
                     		</div>
                     		<?php } ?>
 						</ul>
@@ -181,6 +196,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clear"> </div>
 			</div>
 		</div>
+
+	<?php } ?>
 		<div class="clear"> </div>
 				<p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
 
@@ -188,9 +205,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 </html>
 <?php
- }
+ 
  }
  else{
-header('Location: index.php'); //REDIRECCIONA AL INDEX
+header('Location: ../index.php'); //REDIRECCIONA AL INDEX
 }
  ?>

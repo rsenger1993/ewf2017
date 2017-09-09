@@ -143,6 +143,6 @@ else{
 <?php
  }
  else{
-header('Location: index.php'); //REDIRECCIONA AL INDEX
+header('Location: ../index.php'); //REDIRECCIONA AL INDEX
 }
  ?>
