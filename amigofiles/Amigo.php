@@ -17,10 +17,10 @@ class Amigo
 
      }
     
-     function setId($idamigo){
+     function setIdAmigo($idamigo){
        $this->idamigo = $idamigo;
      } 
-     function getId(){
+     function getIdAmigo(){
        return $this->idamigo;
      }
      function setUsuarioId($usuario_id){
@@ -29,11 +29,11 @@ class Amigo
      function getUSuarioId(){
        return $this->usuario_id;
      } 
-     function setUsuarioAmigo($a_usuario){
+     function setAUsuario($a_usuario){
        $this->a_usuario = $a_usuario;
      } 
 
-     function getUSuarioAmigo(){
+     function getAusuario(){
        return $this->a_usuario;
      } 
 }

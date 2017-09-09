@@ -67,10 +67,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-				<li><a href="nuevapublicacion.php"><i class="facebook"> </i></a></li>
-				<li><a href="nuevapublicacion.php"><i class="twitter"> </i></a></li>
+
 			</ul>
-			<p class="footer-class"> Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			<p class="footer-class"> Copyright © 2017 Easy Worthy Food </p>
 		</div>
 		<!---->
 		<div class="header-top">
@@ -183,7 +182,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<div class="clear"> </div>
-				<p class="footer-class-in">Copyright © 2015 Kappe Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+				<p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
 
 	</div>
 </body>

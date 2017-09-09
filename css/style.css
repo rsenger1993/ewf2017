@@ -68,6 +68,16 @@ img.resize1 {
 	  width:100%;
   height:35px;
 }
+#mini-favorite{
+  width:45px;
+  height:20px;
+}
+#btn-favorite{
+width:45px;
+height:40px;
+float: right;
+}
+
 
 #edad{
 	width: 20px;

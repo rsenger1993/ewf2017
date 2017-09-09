@@ -52,9 +52,9 @@ class AmigoCollector extends Collector
       
   }
 
-      function insertarAmigo($a_usuario,$idusuario) {
+      function insertarAmigo($a_usuario,$usuario_id) {
 
-    $insertrow = self::$db->insertRow("INSERT INTO amigo (a_usuario, usuario_id) VALUES (?,?)",array("{$a_usuario}","{$idusuario}"));
+    $insertrow = self::$db->insertRow("INSERT INTO amigo (a_usuario, usuario_id) VALUES (?,?)",array("{$a_usuario}","{$usuario_id}"));
       
   }
 

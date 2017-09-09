@@ -46,9 +46,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul >
 
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
-					<li class="active" ><a href="home.php" >HOME</a></li>
+					<li class="active"><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2" > PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -56,12 +57,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-				<li><a href="home.php"><i class="facebook"> </i></a></li>
-				<li><a href="home.php"><i class="twitter"> </i></a></li>
 
 			</ul>
 			<!--modificado copyright a ewf-2017-->
-			<p class="footer-class">Copyright © 2017 EWF  <!--Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> --> </p>
+			<p class="footer-class">Copyright © 2017 Easy Worthy Food </p>
 		</div>
 		<!---->
 		<!---->
@@ -76,6 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class="active" ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2" > PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="clear"> </div>
 		<!--modificado copyright a ewf-2017-->
-		<p class="footer-class-in">Copyright © 2017 EWF  <!---<a href="http://w3layouts.com/" target="_blank">W3layouts</a>-->  </p>
+		<p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
 	</div>
 
 </body>
