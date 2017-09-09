@@ -42,6 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li  ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2"> PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li class="active"><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -49,10 +50,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-				<li><a href="nuevapublicacion.php"><i class="facebook"> </i></a></li>
-				<li><a href="nuevapublicacion.php"><i class="twitter"> </i></a></li>
+
 			</ul>
-			<p class="footer-class"> Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			<p class="footer-class"> Copyright © 2017 Easy Worthy Food</p>
 		</div>
 		<!---->
 		<div class="header-top">
@@ -66,6 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
+					<li><a href="publicacionesfavoritas.php" class="black2"> PUBLICACIONES FAVORITAS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li class="active"><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
@@ -165,7 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<div class="clear"> </div>
-				<p class="footer-class-in">Copyright © 2015 Kappe Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+				<p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
 
 	</div>
 </body>
