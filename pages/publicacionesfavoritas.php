@@ -100,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 			<div class="work">
 				<div class="work-top">
-					<?php echo "<h2><a>".$ObjPlatillo->getNombrePlatillo()."</a> </h2>"; ?>
+					<?php echo "<h2><a href='../publicacionfiles/eliminarpublicacionfavorita.php?idpublicacion=".$publicacion->getIdPublicacion()."'><button id='btn-favorite'> <img id='mini-favorite' src='../img/boton-eliminar1.png'></button>".$ObjPlatillo->getNombrePlatillo()."</a> </h2>";?>
 
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
@@ -175,6 +175,6 @@ else{
 <?php
  }
  else{
-header('Location: index.php'); //REDIRECCIONA AL INDEX
+header('Location: ../index.php'); //REDIRECCIONA AL INDEX
 }
  ?>
