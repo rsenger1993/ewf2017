@@ -314,7 +314,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		 if((($urlimg["imagen"]["type"] == "image/png") || ($urlimg["imagen"]["type"] == "image/jpg") || ($urlimg["imagen"]["type"] == "image/jpeg")) && ($urlimg["imagen"]["size"] < 200000))
  		 {
- 		 		
  		 //SI TODO ESTA CORRECTO PASAMOS A CREAR EL USUARIO
 		
 		//GUARDAR IMAGEN EN LA RUTA ESTABLECIDA  "imgperfil/"
@@ -323,10 +322,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		//RUTA QUE SE GUARDARA EN LA BASE
 		 $rutabase= 'imgperfil/'.$nombreusuario.'-'.$urlimg['imagen']['name'];
-
-	 	 echo "</br>";
 	 	 $dirId = $DireccionCollectorObj->insertarDireccion($direccion); //INSERTO DIRECCION
-	 	 print_r($dirId["iddireccion"]);
 	 	 $perId = $PersonaCollectorObj->insertarPersona($nombrecompleto,$correo,$edad,$telefono,$dirId["iddireccion"]); //INSERTO PERSONA
 	 	 $UsuarioCollectorObj->insertarUsuario($nombreusuario,$clave,$descripcion,$perId["idpersona"],$rutabase); //INSERTO USUARIO
 	 	  ?>

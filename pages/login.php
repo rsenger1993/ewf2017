@@ -83,6 +83,7 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> Usuario o contraseña Incorrecta </h3>
+				</br>
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">
@@ -90,6 +91,7 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
 					<a href="../index.php" class="button">Volver</a>
 					</center>					     
 				</div>
+				</br>
 				<div id="espacio"></div>
 				</div>
 				<div class="clear"> </div>

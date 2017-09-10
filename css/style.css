@@ -52,6 +52,9 @@ img.resize1 {
     margin-top:5px;
 
 }
+#lbl-descrip{
+	color: black;
+}
 #img-publicacion {
   width:100%;
   height:250px;

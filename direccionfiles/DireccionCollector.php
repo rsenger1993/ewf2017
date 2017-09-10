@@ -45,8 +45,8 @@ class DireccionCollector extends Collector
     return $arrayDireccion;        
   }
 
-      function updateDireccion($iddireccion,$descripcion) {
-    $insertrow = self::$db->updateRow("UPDATE public.direccion SET descripcion = ? WHERE iddireccion = ?", array("{$descripcion}",$iddireccion));  
+      function updateDireccion($iddireccion,$direcciondescripcion) {
+    $insertrow = self::$db->updateRow("UPDATE direccion SET direcciondescripcion = ? WHERE iddireccion = ?", array("{$direcciondescripcion}",$iddireccion));  
       
   }
 
