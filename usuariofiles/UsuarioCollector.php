@@ -82,13 +82,17 @@ class UsuarioCollector extends Collector
     return $aux;        
   }
 
-      function updateUsuario($idusuario,$nombrecompleto,$correo,$edad,$telefono,$clave,$descripcion) {
-    $insertrow = self::$db->updateRow("UPDATE public.usuario SET nombrecompleto = ? , correo = ? , edad = ? , telefono = ? , clave = ? , descripcion = ?  WHERE idusuario = ?", array("{$nombrecompleto}", "{$correo}", "{$edad}", "{$telefono}", "{$clave}", "{$descripcion}",$idusuario));  
+      function updateUsuario($nombreusuario,$clave,$usuariodescripcion,$imgusuario) {
+    $insertrow = self::$db->updateRow("UPDATE usuario SET clave = ? , usuariodescripcion = ? , imgusuario = ? WHERE nombreusuario = ?", array("{$clave}", "{$usuariodescripcion}", "{$imgusuario}",$nombreusuario));  
+      
+  }
+      function updateUsuarioNoImg($nombreusuario,$clave,$usuariodescripcion) {
+    $insertrow = self::$db->updateRow("UPDATE usuario SET clave = ? , usuariodescripcion = ?  WHERE nombreusuario = ?", array("{$clave}", "{$usuariodescripcion}",$nombreusuario));  
       
   }
 
       function deleteUsuario($idusuario) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.usuario WHERE idusuario=?",array("{$idusuario}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM usuario WHERE idusuario=?",array("{$idusuario}"));
       
   }
 

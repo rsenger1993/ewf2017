@@ -42,7 +42,7 @@ class Usuario extends Persona
        $this->clave = $clave;
      } 
      function getClave(){
-       return $clave->clave;
+       return $this->clave;
      } 
      function setUsuarioDescripcion($descripcion){
        $this->descripcion = $descripcion;

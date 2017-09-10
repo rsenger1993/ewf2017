@@ -13,28 +13,33 @@ $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
 $ArrayAmigo=$AmigoCollectorObj->showAmigosByUser($_SESSION['MiSesion']);
-
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>EWF | Mi Perfil</title>
-<!-- jQuery-->
+<title>EWF | Editar Mi Perfil</title>
 <script src="../js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-
+<!--VALIDAR INGRESAR SOLO NUMEROS-->
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+</script>
 </head>
 <body>
 	<div class="header">
@@ -56,9 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-
 			</ul>
-			<!--modificado copyright a ewf-2017-->
 			<p class="footer-class">Copyright © 2017 Easy Worthy Food</p>
 		</div>
 		<!---->
@@ -85,112 +88,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					});
 			</script>
-
 			</div>
 			<div class="clear"> </div>
 		</div>
-			<!---->
 		<div class="content">
 			<div class="work">
+				<form  action="../usuariofiles/editarUsuario.php" enctype="multipart/form-data" method="post">
 				<div class="work-top">
-				<script src="js/responsiveslides.min.js"></script>
-					<script>
-						$(function () {
-						  $("#slider").responsiveSlides({
-							auto: true,
-							speed: 500,
-							namespace: "callbacks",
-								pager: true,
-						  });
-						});
-					</script>
 					<div>
-
-						<?php
-						//print_r($us->getImgUsuario());
-						?>
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
 							  <img src="<?php echo '../'.$us->getImgUsuario();?>" alt="" height="200" width="350">
-
 							</li>
 						  </ul>
 					  </div>
+                      <div class="your-single">
+                      	  <a id="label-login">Cambiar Imagen de Perfil</a>
+                      	</br>
+                      	<a id="label-login">Seleccione su nueva imagen de perfil - solo imagenes jpg o png menor a 200kb </a>
+						<input id="label-login" type="file" name="imagen">							
+						<div class="clear"> </div>
+                    </div>
 					</div>
 					<h2><a href="single.html">¿QUIEN SOY?</a></h2>
-					
-					<p id="lbl-descrip"><?php echo $us->getUsuarioDescripcion()?></p>
-
-				<div id="scroll-publi"> <!-- DIV SCROLL -->
-				<div class="projects">
-					<h3>Ewf Favoritos</h3>
-					<ul>
-				<?php
-				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
-			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
-			    ?>
-			    			    <?php echo "<li><a href='../pages/publicacionesamigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'> <img id='img-perfilamigo' src='../".$ObjUsuario->getImgUsuario()."' alt='wo' /></a></li>"; ?>
-
-
-
-				<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
-					</ul>
-                    <div class="clear"> </div>
-				</div>
-				</div>
+					<textarea name="descripcion" id="area-perfil"><?php echo $us->getUsuarioDescripcion()?></textarea>
 				</div>
 				<div class="work-in">
 					<div class="info">
 					<h3>Datos Generales</h3>
 						<ul class="likes">
 							<li><p><i > </i>Nombre</p>
-							<p > <?php echo $us->getNombreCompleto() ?></p>
+							<input type="text" name="nombrecompleto" value="<?php echo $us->getNombreCompleto() ?>" >
 							</li>
-							<li><p><i class="like"> </i>Nombre de usuario</p>
-							<p > <?php echo $us->getNombreUsuario() ?></p>
+							<li><p><i > </i>Edad</p>
+							<input type="text" name="edad" maxlength="2" onkeypress="return valida(event)" value="<?php echo $us->getEdad() ?>" >
 							</li>
-							<li><p><i class="like"> </i>Edad</p>
-							<p > <?php echo $us->getEdad() ?></p>
-							</li>
-							<li><p><i class="dec"> </i>Correo</p>
-							<p > <?php print_r($us->getCorreo()); ?></p>
+							<li><p href="#"><i class="comment"> </i>Clave</p>
+							<input type="text" name="clave" value="<?php echo $us->getClave() ?>" >
 							</li>
 							<li><p href="#"><i class="comment"> </i>Telefono</p>
-							<p > <?php echo $us->getTelefono() ?></p>
+							<input type="text" name="telefono" maxlength="8" onkeypress="return valida(event)" value="<?php echo $us->getTelefono() ?>" >
 							</li>
 							<li><p href="#"><i class="comment"> </i>Direccion</p>
-							<p > <?php echo $us->getDireccionDescripcion() ?></p>
+							<input type="text" name="direccion" value="<?php echo $us->getDireccionDescripcion() ?>" >
 							</li>
 							<li>
-							<a id="btn-re" href="formularioeditarusuario.php" class="button">Editar</a>
-							</li>
-
-
+							</br>
+							<div class="grid-single-in">
+  							<input  type="submit" name="Enviar" value="Actualizar" >
+                    		</div>
+                    		</li>
 						</ul>
-					</div>
-
-					<div class="gallery">
-					<h3>Mis Publicaciones</h3>
-						<ul class="gallery-grid">
-								<?php
-							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario());
-							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
-							$ObjPlatilloUser = $PlatilloCollectorObj->showPlatilloById($publicacionporusuario->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
-			    			?>
-							<li><a href="miperfil.php"><img  id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="3" /></a></li>
-
-							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
-						</ul>
-                        <div class="clear"> </div>
 					</div>
 
 				</div>
+				 </form>
 				<div class="clear"> </div>
 			</div>
 		</div>
 		<div class="clear"> </div>
-		<!--modificado copyright a ewf-2017-->
 		<p class="footer-class-in">Copyright © 2017 Easy Worthy Food</p>
 	</div>
 </body>

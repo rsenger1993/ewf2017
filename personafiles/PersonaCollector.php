@@ -25,11 +25,11 @@ class PersonaCollector extends Collector
   }
 
     function showPersonaByMail($correo) {
-    $row = self::$db->getRows("SELECT * FROM persona WHERE correo= ?",array("{$correo}"));
-   $arrayUPersona= array();
+    $row = self::$db->getRows("SELECT * FROM persona INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE correo= ?",array("{$correo}"));
+   //$arrayUPersona= array();
    //$aux = Persona;        
     foreach ($row as $c){
-      $aux = new Persona($c{'idpersona'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'});
+      $aux = new Persona($c{'idpersona'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'});
       //array_push($arrayUPersona, $aux);
     }
     return $aux;        
@@ -45,13 +45,13 @@ class PersonaCollector extends Collector
     return $arrayUPersona;        
   }
 
-      function updatePersona($idpersona,$nombrecompleto,$correo,$edad,$telefono,$direccion) {
-    $insertrow = self::$db->updateRow("UPDATE public.persona SET nombrecompleto = ? , correo = ? , edad = ? , telefono = ? , direccion = ? WHERE idpersona = ?", array("{$nombrecompleto}", "{$correo}", "{$edad}", "{$telefono}", "{$descripcion}",$idpersona));  
+      function updatePersona($idpersona,$nombrecompleto,$edad,$telefono) {
+    $insertrow = self::$db->updateRow("UPDATE persona SET nombrecompleto = ? , edad = ? , telefono = ?  WHERE idpersona = ?", array("{$nombrecompleto}", "{$edad}", "{$telefono}",$idpersona));  
       
   }
 
       function deletePersona($idpersona) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.persona WHERE idpersona=?",array("{$idpersona}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM persona WHERE idpersona=?",array("{$idpersona}"));
       
   }
 
