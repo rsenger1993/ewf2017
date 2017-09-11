@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="edad" placeholder="edad" maxlength="2" onkeypress="return valida(event)">								
+						<input type="text" name="edad" placeholder="edad" minlength="2" maxlength="2" onkeypress="return valida(event)">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">

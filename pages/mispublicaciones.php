@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="header-left header-left3">
 			<div class="logo">
-				<a href="home.php"><img src="../images/logo.png" alt=""></a>
+				<a href="index.php"><img src="../images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav">
 				<ul >
@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php if(count($arrayPublicacion)>0) { ?>  <!-- Busco si existen mis publicaciones -->
 		<div id="scroll-publi">
 			<div class="single">
-				<div class="single-top">
+		
 					<script src="js/responsiveslides.min.js"></script>
 					<script>
 						$(function () {
@@ -115,14 +115,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					<div class="comments-top-top">
 						<div class="top-comment-left">
-							<img  src="<?php echo '../'.($ObjPlatillo->getImgPlatillo())?>" alt="1">
+							<img id="mis-publicaciones" src="<?php echo '../'.($ObjPlatillo->getImgPlatillo())?>">
 						</div>
 						<div class="top-comment-right">
 							<ul>
 
-								<li><span > <a href="#"> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
-								<li><span>/<?php echo ($publicacion->getFechaPublicacion())?> </span> <a href="../publicacionfiles/editarPublicacion.php"   class="btn-search">Editar</a></li>
-
+								<li><span > <a> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
+								 <li><a><?php echo ($publicacion->getFechaPublicacion())?></a></li>
+							  <?php echo "<li> <a class='btn-search' href='../pages/formularioPublicacionEditar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Editar </a></li>"; ?>
+							  <?php echo "<li> <a class='btn-search' href='../publicacionfiles/eliminarmiPublicacion.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Eliminar </a></li>"; ?>
 
 							</ul>
 							<p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p>
@@ -135,18 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				</div>
 		
-				</div>
-				<div class="single-in">
-					<div class="info">
-					<h3>Buscar platillo</h3>
-
-							<input id="search-in" type="text" class="form-control" placeholder="Search">
-							<a href="mispublicaciones.html" class="btn-search">Buscar</a>
-							
-					</div>
-					
 			
-				</div>
 				<div class="clear"> </div>
 			</div>
 		</div>
