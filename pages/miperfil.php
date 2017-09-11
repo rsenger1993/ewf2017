@@ -165,25 +165,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>
 							<a id="btn-re" href="formularioeditarusuario.php" class="button">Editar</a>
 							</li>
+								<h3>Mis Pedidos</h3>
+							<li>
+							<a id="btn-re" href="misregistrospedidos.php" class="button">Mis pedidos</a>
+
+							</li>
 
 
 						</ul>
 					</div>
 
-					<div class="gallery">
-					<h3>Mis Publicaciones</h3>
-						<ul class="gallery-grid">
-								<?php
-							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario());
-							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
-							$ObjPlatilloUser = $PlatilloCollectorObj->showPlatilloById($publicacionporusuario->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
-			    			?>
-							<li><a href="miperfil.php"><img  id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="3" /></a></li>
 
-							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
-						</ul>
-                        <div class="clear"> </div>
-					</div>
 
 				</div>
 				<div class="clear"> </div>
