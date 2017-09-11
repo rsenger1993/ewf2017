@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="header-left header-left3">
 			<div class="logo">
-				<a href="index.php"><img src="../images/logo.png" alt=""></a>
+				<a href="home.php"><img src="../images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav">
 				<ul >
@@ -121,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul>
 
 								<li><span > <a href="#"> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
-								<li><span>/<?php echo ($publicacion->getFechaPublicacion())?> </span> <a href="#"   class="btn-search">Editar</a></li>
+								<li><span>/<?php echo ($publicacion->getFechaPublicacion())?> </span> <a href="../publicacionfiles/editarPublicacion.php"   class="btn-search">Editar</a></li>
 
 
 							</ul>
