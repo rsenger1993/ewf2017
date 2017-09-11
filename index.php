@@ -20,7 +20,6 @@
 <link href="css/style-index2.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
-
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
