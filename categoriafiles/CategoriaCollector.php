@@ -23,6 +23,7 @@ class CategoriaCollector extends Collector
 
     return $ObjCategoria;        
   }
+
      function showCategoriaByName($categoria) {
     $row = self::$db->getRows("SELECT * FROM categoria WHERE categoriadescripcion= ?",array("{$categoria}"));
     $ObjCategoria= new Categoria($row[0]{'idcategoria'}, $row[0]{'categoriadescripcion'});
@@ -49,7 +50,7 @@ class CategoriaCollector extends Collector
   }
 
       function updateCategoria($idcategoria,$categoriadescripcion) {
-    $insertrow = self::$db->updateRow("UPDATE public.categoria SET categoriadescripcion = ? WHERE idcategoria = ?", array("{$categoriadescripcion}",$idcategoria));  
+    $insertrow = self::$db->updateRow("UPDATE categoria SET categoriadescripcion = ? WHERE idcategoria = ?", array("{$categoriadescripcion}",$idcategoria));  
       
   }
 

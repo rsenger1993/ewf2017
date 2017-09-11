@@ -45,13 +45,13 @@ class PublicacionCollector extends Collector
     return $arrayPublicacion;        
   }
 
-      function updatePublicacion($idpublicacion,$fechapublicacion,$estado,$usuario_id,$platillo_id,$formadepago_id) {
-    $insertrow = self::$db->updateRow("UPDATE public.publicacion SET fechapublicacion = ? , estado = ? , usuario_id = ? , platillo_id = ? , formadepago_id = ? WHERE idpublicacion = ?", array("{$fechapublicacion}", "{$estado}", "{$usuario_id}", "{$platillo_id}", "{$formadepago_id}",$idpublicacion));  
+      function updatePublicacion($idpublicacion,$fechapublicacion) {
+    $insertrow = self::$db->updateRow("UPDATE publicacion SET fechapublicacion = ?  WHERE idpublicacion = ?", array("{$fechapublicacion}",$idpublicacion));  
       
   }
 
       function deletePublicacion($idpublicacion) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.publicacion WHERE idpublicacion=?",array("{$idpublicacion}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM publicacion WHERE idpublicacion=?",array("{$idpublicacion}"));
       
   }
 
