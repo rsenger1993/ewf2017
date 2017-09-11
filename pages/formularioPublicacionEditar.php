@@ -100,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  });
 						});
 					</script>
-
+<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>
 					<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>

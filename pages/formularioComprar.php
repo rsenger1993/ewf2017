@@ -4,7 +4,6 @@
 <?php
 
  if (isset(($_SESSION['MiSesion']))){
-
 $idpublicacion= $_GET["idpublicacion"];
 //print_r($idpublicacion);
 include_once("../publicacionfiles/PublicacionCollector.php");
@@ -152,7 +151,7 @@ $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId()
 					<h3>Datos Platillo </h3>
 					<input readonly name="idpublicacion" value="<?php echo $idpublicacion?>" style="display:none;"> <!-- ENVIO EL ID DE LA PUBLICACION -->
 						<ul class="likes">
-							<li><p><i > </i><?php echo "Platillo: ".($ObjPlatillo->getNombrePlatillo())?></p>
+							<li><p><i> </i><?php echo "Platillo: ".($ObjPlatillo->getNombrePlatillo())?></p>
 							</li>
 							<li><p><i > </i><?php echo "Categoria: ".($ObjPlatillo->getCategoriaDescripcion())?></p>
 							</li>

@@ -152,7 +152,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$ruta1= '../imgpublicacion/'.$us->getNombreUsuario().'-'.$urlimg['imagen']['name'];
 		move_uploaded_file($urlimg['imagen']['tmp_name'],$ruta1);
 		//RUTA QUE SE GUARDARA EN LA BASE
+
 		$rutabase = 'imgpublicacion/'.$us->getNombreUsuario().'-'.$urlimg['imagen']['name'];
+				print_r($rutabase);
 		$PlatilloCollectorObj->updatePlatilloWithImg($publicacion->getPlatilloId(),$nombreplatillo,$platillodescripcion,$cantidad,$precio,$categoria->getIdCategoria(),$rutabase);
 		$PublicacionCollectorObj->UpdatePUblicacion($publicacion->getIdPublicacion(), $fecha);
 
