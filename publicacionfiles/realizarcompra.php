@@ -1,7 +1,5 @@
  <?php
  session_start();
-
-
  $idpublicacion= $_POST["idpublicacion"];
  $cantidad= $_POST["cantidad"];
  $formadepago= $_POST["formadepago"];

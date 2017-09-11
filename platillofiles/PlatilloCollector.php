@@ -33,17 +33,20 @@ class PlatilloCollector extends Collector
     return $arrayPlatillo;        
   }
 
-    function updatePlatillo($idplatillo,$nombreplatillo,$platillodescripcion,$cantidad,$precio,$imgplatillo,$categoria_id,$categoriadescripcion) {
-    $insertrow = self::$db->updateRow("UPDATE public.platillo SET nombreplatillo = ? , platillodescripcion = ? , cantidad = ? , precio = ?  , imgplatillo = ? , categoria_id = ? , categoriadescripcion = ?  WHERE idplatillo = ?", array("{$nombreplatillo}", "{$platillodescripcion}", "{$cantidad}", "{$precio}", "{$imgplatillo}", "{$categoria_id}", "{$categoriadescripcion}",$idplatillo));  
+    function updatePlatilloNoImg($idplatillo, $nombreplatillo,$platillodescripcion, $cantidad, $precio, $categoria_id) {
+    $insertrow = self::$db->updateRow("UPDATE platillo SET nombreplatillo = ? , platillodescripcion = ? , cantidad = ? , precio = ? , categoria_id = ?  WHERE idplatillo = ?", array("{$nombreplatillo}", "{$platillodescripcion}", "{$cantidad}", "{$precio}", "{$categoria_id}",$idplatillo));  
       
   }
-    function updatePlatilloById($idplatillo, $cantidad) {
+      function updatePlatilloWithImg($idplatillo, $nombreplatillo,$platillodescripcion, $cantidad, $precio, $categoria_id, $imgplatillo) {
+    $insertrow = self::$db->updateRow("UPDATE platillo SET nombreplatillo = ? , platillodescripcion = ? , cantidad = ? , precio = ? , categoria_id = ? , imgplatillo = ? WHERE idplatillo = ?", array("{$nombreplatillo}", "{$platillodescripcion}", "{$cantidad}", "{$precio}", "{$categoria_id}","{$imgplatillo}",$idplatillo));      
+  }
+    function updatePlatilloById($idplatillo, $cantidad) { //METODO USADO PARA CUANDO SE COMPRA UN PLATILLO
     $insertrow = self::$db->updateRow("UPDATE platillo SET cantidad = cantidad -? WHERE idplatillo = ?",array("{$cantidad}","{$idplatillo}"));  
       
   }
 
     function deletePlatillo($idplatillo) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.platillo WHERE idplatillo=?",array("{$idplatillo}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM platillo WHERE idplatillo=?",array("{$idplatillo}"));
       
   }
 
