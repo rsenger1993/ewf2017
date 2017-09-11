@@ -287,7 +287,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Porfavor selecciona una imagen para el platillo</h3>
+				<h3>Porfavor selecciona una imagen para el Usuario</h3>
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">
@@ -319,7 +319,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		//GUARDAR IMAGEN EN LA RUTA ESTABLECIDA  "imgperfil/"
 		 $ruta1= '../imgperfil/'.$nombreusuario.'-'.$urlimg['imagen']['name'];
 		 move_uploaded_file($urlimg['imagen']['tmp_name'],$ruta1);
-
 		//RUTA QUE SE GUARDARA EN LA BASE
 		 $rutabase= 'imgperfil/'.$nombreusuario.'-'.$urlimg['imagen']['name'];
 	 	 $dirId = $DireccionCollectorObj->insertarDireccion($direccion); //INSERTO DIRECCION
@@ -368,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Solo se permiten imagenes jpg, png y con un peso menor a 200kb</h3>
+				<h3>Solo se permiten imagenes jpg, jpeg, png y con un peso menor a 200kb</h3>
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">

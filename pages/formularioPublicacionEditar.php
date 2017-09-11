@@ -4,14 +4,10 @@
 <?php
 
  if (isset(($_SESSION['MiSesion']))){
-
 $idpublicacion= $_GET["idpublicacion"];
-//print_r($idpublicacion);
 
-include_once("PublicacionCollector.php");
-include_once("../usuariofiles/UsuarioCollector.php");
+include_once("../publicacionfiles/PublicacionCollector.php");
 include_once("../platillofiles/PlatilloCollector.php");
-$UsuarioCollectorObj = new UsuarioCollector();
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $publicacion = $PublicacionCollectorObj->showPublicacionById($idpublicacion); //OBTENGO DATOS DE LA PUBLICACION
@@ -50,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
-					<li class="active"><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
+					<li><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
@@ -74,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > AMIGOS</a></li>
 					<li><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
-					<li class="active"><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
+					<li><a href="nuevapublicacion.php" class="black2" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
@@ -91,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!---->
 		<div class="content">
 			<div class="work">
-				<form  action="../publicacionfiles/crearPublicacion.php" enctype="multipart/form-data" method="post">
+				<form  action="../publicacionfiles/editarmiPublicacion.php" enctype="multipart/form-data" method="post">
 				<div class="work-top">
 				<script src="js/responsiveslides.min.js"></script>
 					<script>
@@ -104,10 +100,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  });
 						});
 					</script>
-					
+
+					<div class="callbacks_container">
+						  <ul class="rslides" id="slider">
+							<li>
+							  <img id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>">
+							</li>
+						  </ul>
+					  </div>
 				   <div class="your-single">
 					
-						<label>Subir Imagen</label>
+						<label>Cambiar Imagen dePlatillo</label>
 						<input  type="file" name="imagen">
 					
 														
@@ -119,10 +122,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="work-in">
 					<div class="info">
-					<h3>Datos Platillo</h3>
+					<h3>Datos Publicacion</h3>
 						<ul class="likes">
+							<input readonly name="idpublicacion" value="<?php echo $idpublicacion?>" style="display:none;"> <!-- ENVIO EL ID DE LA PUBLICACION -->
 							<li><a><i > </i>Platillo</a>
-							<input type="text" id="nombre" name="nombreplatillo" placeholder="Nombre del platillo"></li>
+							<input type="text" id="nombre" name="nombreplatillo" value="<?php echo ($ObjPlatillo->getNombrePlatillo())?>"></li>
 							<li><a><i > </i>Categoria</a>
 							<p>Seleccione una categoria
 							<select name="categoria">
@@ -143,11 +147,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<option value="5">5</option>
 							</select>
 							</p>
-							<li><i class="comment"> </i>Precio $<input type="text" id="precio" name="precio" placeholder="0"></li>
+							<li><i class="comment"> </i>Precio $<input type="text" id="precio" name="precio" value="<?php echo ($ObjPlatillo->getPrecio())?>">Ejemplo: 1 ó 1.50</li>
 							<li><a><i > </i>Forma de Pago</a>
 							<p>Seleccione una opcion
 							<select name="formadepago">
-							<option value="paypal" selected>Paypal</option>
 							<option value="efectivo">Efectivo</option>
 							</select>
 							</p>
@@ -155,7 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<br>
 							<div class="grid-single-in">
 	
-  							<input type="submit" name="Enviar" id="btn-re"  class="button" value="Publicar" >
+  							<input type="submit" name="Enviar" id="btn-re"  class="button" value="Editar Publicacion" >
 
                     		</div>
 						</ul>
