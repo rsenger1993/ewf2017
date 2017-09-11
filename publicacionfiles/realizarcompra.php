@@ -3,6 +3,7 @@
  $idpublicacion= $_POST["idpublicacion"];
  $cantidad= $_POST["cantidad"];
  $formadepago= $_POST["formadepago"];
+ $fecha = getdate()['year'].'-'.getdate()['mon'].'-'.getdate()['mday'];
 ?>
 
 <?php
@@ -12,11 +13,14 @@ include_once("../usuariofiles/UsuarioCollector.php");
 include_once("../platillofiles/PlatilloCollector.php");
 include_once("../categoriafiles/CategoriaCollector.php");
 include_once("../formadepagofiles/FormaDePagoCollector.php");
+include_once("../registropedidofiles/RegistropedidoCollector.php");
 include_once("PublicacionCollector.php");
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
+$registroPedidoCollectorObj = new RegistropedidoCollector();
 $publicacion = $PublicacionCollectorObj->showPublicacionById($idpublicacion);
 $PlatilloCollectorObj->updatePlatilloById($publicacion->getPlatilloId(), $cantidad);
+$registroPedidoCollectorObj->insertarRegistroPedido($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'], $cantidad);
  ?>
 
 <!DOCTYPE html>
