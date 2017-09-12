@@ -165,9 +165,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>
 							<a id="btn-re" href="formularioeditarusuario.php" class="button">Editar</a>
 							</li>
-								<h3>Mis Pedidos</h3>
+								<h3>Mis Pedidos / Ventas</h3>
 							<li>
-							<a id="btn-re" href="misregistrospedidos.php" class="button">Mis pedidos</a>
+							<a id="btn-re" href="misregistrospedidos.php" class="button">Acceder</a>
 
 							</li>
 
