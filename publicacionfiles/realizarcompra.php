@@ -14,16 +14,24 @@ include_once("../platillofiles/PlatilloCollector.php");
 include_once("../categoriafiles/CategoriaCollector.php");
 include_once("../formadepagofiles/FormaDePagoCollector.php");
 include_once("../registropedidofiles/RegistropedidoCollector.php");
+include_once("../registroventafiles/RegistroVentaCollector.php");
 include_once("../facturafiles/FacturaCollector.php");
 include_once("PublicacionCollector.php");
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $registroPedidoCollectorObj = new RegistropedidoCollector();
+$registroventaCollectorObj = new RegistroVentaCollector();
 $FacturaCollectorObj = new FacturaCollector();
 $FormaDePagoCollectorObj = new FormaDePagoCollector();
+$UsuarioCollectorObj = new UsuarioCollector();
+
 $publicacion = $PublicacionCollectorObj->showPublicacionById($idpublicacion);
 $PlatilloCollectorObj->updatePlatilloById($publicacion->getPlatilloId(), $cantidad);
+$us = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());
+
 $registroPedidoCollectorObj->insertarRegistroPedido($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'], $cantidad);
+
+$registroventaCollectorObj->insertarRegistroVenta($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'],$us->getNombreUsuario() ,$cantidad);
 $ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());
 
 $iva=1.12;
