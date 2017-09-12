@@ -7,13 +7,16 @@ include_once("../publicacionfiles/PublicacionCollector.php");
 include_once("../usuariofiles/UsuarioCollector.php");
 include_once("../platillofiles/PlatilloCollector.php");
 include_once("../registropedidofiles/RegistropedidoCollector.php");
+include_once("../registroventafiles/RegistroVentaCollector.php");
 $UsuarioCollectorObj = new UsuarioCollector();
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $registroPedidoCollectorObj = new RegistropedidoCollector();
+$registroventaCollectorObj = new RegistroVentaCollector();
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
 //$arrayPublicacion = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario());
 $arrayRegistroPedido=$registroPedidoCollectorObj->showRegistroPedidosByUser($_SESSION['MiSesion']);
+$arrayRegistroVenta=$registroventaCollectorObj->showRegistroVentasByUser($_SESSION['MiSesion']);
 
 
 	?>
@@ -131,6 +134,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</center>
 			
 				<li>Fecha <p><?php echo ($pedidos->getFechaPedido())?></p></li>
+						
+								</ul>
+					
+						<div class="clear"> </div>
+					</div>
+
+					<?php  } ?>
+				
+				</div>
+					<br></br>
+
+
+								<div class="comment-grid-top">
+					<h3>Mis Ventas</h3>
+					
+					<?php
+					foreach ($arrayRegistroVenta as $ventas){
+					$publicacion= $PublicacionCollectorObj->showPublicacionById($ventas->getPublicacionId());
+					$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());
+																 
+																  ?>
+
+					<div class="projects">
+				
+					
+				<ul>
+
+				<li> <p> <?php echo ($ObjPlatillo->getNombrePlatillo())?></p></li>
+				<center>
+				<li>Categoria <p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p></li>
+				
+					 <li>Cantidad <p><?php echo ($ventas->getCantidadVenta())?></p></li>	
+
+				</center>
+			
+				<li>Fecha <p><?php echo ($ventas->getFechaVenta())?></p></li>
 						
 								</ul>
 					
