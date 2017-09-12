@@ -14,13 +14,23 @@ include_once("../platillofiles/PlatilloCollector.php");
 include_once("../categoriafiles/CategoriaCollector.php");
 include_once("../formadepagofiles/FormaDePagoCollector.php");
 include_once("../registropedidofiles/RegistropedidoCollector.php");
+include_once("../facturafiles/FacturaCollector.php");
 include_once("PublicacionCollector.php");
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $registroPedidoCollectorObj = new RegistropedidoCollector();
+$FacturaCollectorObj = new FacturaCollector();
+$FormaDePagoCollectorObj = new FormaDePagoCollector();
 $publicacion = $PublicacionCollectorObj->showPublicacionById($idpublicacion);
 $PlatilloCollectorObj->updatePlatilloById($publicacion->getPlatilloId(), $cantidad);
 $registroPedidoCollectorObj->insertarRegistroPedido($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'], $cantidad);
+$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());
+
+$iva=1.12;
+$subtotal= $ObjPlatillo->getPrecio()* $cantidad;
+$total= $subtotal*$iva;
+
+$FacturaId = $FacturaCollectorObj->insertarFactura($fecha, $ObjPlatillo->getPrecio(),$total,$publicacion->getFormaDePagoId(), $publicacion->getUsuarioId(), $publicacion->getplatilloId(), $cantidad);
  ?>
 
 <!DOCTYPE html>
@@ -61,9 +71,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="grid-single">	
 				<div id="espacio"></div>
 				<div class="clear">
-					</br>
+					<br></br>
 					<center> 
 					<a href="../pages/muro.php" class="button">Volver</a>
+					<br></br>
+					<br></br>
+			<?php echo "</br> <a class='button' href='../pages/formularioFactura.php?idfactura=".$FacturaId["idfactura"]."'>Generar Factura </a>"; ?>
 					</center>
 					</br>				     
 				</div>
