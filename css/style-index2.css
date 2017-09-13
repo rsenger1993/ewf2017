@@ -77,6 +77,7 @@ p#nosotros{
 }
 #centrar-boton{
 text-align: center;
+   float: center;
 }
 #lbl1{
   font-family: 'Roboto', sans-serif;
@@ -144,6 +145,10 @@ header#index-header{
 #btn-menu{
 	display: none;
 	
+}
+#btn-re{
+		color: white;
+	text-align: center;
 }
 
 .menu ul{
@@ -1277,7 +1282,7 @@ label.arrow-in {
 }
 .grid-single,.grid-single-in  {
   width: 49%;
-  float: left;
+  float: center;
 }
 .grid-single {
   margin: 0 2% 0 25%;

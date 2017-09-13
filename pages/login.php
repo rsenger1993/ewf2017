@@ -42,9 +42,9 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
 				<h3> <?php echo "Bienvenido: ".$_POST['nombreusuario'];?> </h3>
 				<div class="grid-single">	
 				<div class="clear">
-					<div id="centrar-boton">
-					<a href="home.php" class="button">Continuar</a>
-					</div>			     
+				
+					<a id="btn-re"  class="button"  href="home.php" class="button">Continuar</a>
+							     
 				</div>
 				</div>
 				<div class="clear"> </div>

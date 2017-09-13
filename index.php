@@ -52,9 +52,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="password" name="clave" placeholder="clave">
 							<div class="clear"> </div>
 						</div>
-	                   	 <div class="grid-single-in">
-	                   	 <input type="submit" name="Enviar" value="Enviar">
+						 
+	                   	 <div >
+	                   	 <input  id="btn-re"  class="button"  type="submit" name="Enviar" value="Enviar">
 				    	</div>
+						
 						</div>
 				     	</form>
 				</div>
