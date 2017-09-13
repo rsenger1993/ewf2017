@@ -51,18 +51,9 @@ if (count($ArrayFavorito)>0){
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Ya tienes esa publicacion agregada</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/muro.php" class="button">Volver</a>
-					</center>
-					</br>				     
+				<div id="centrar-boton">
+					<a href="../pages/muro.php" class="button">Volver</a>			     
 				</div>
-				<div id="espacio"></div>
-				</div>
-
 				<div class="clear"> </div>
 			</div>
            </div>
@@ -84,18 +75,9 @@ else{
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Publicacion Agregada como favorita</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/muro.php" class="button">Volver</a>
-					</center>
-					</br>				     
+				<div id="centrar-boton">
+					<a href="../pages/muro.php" class="button">Volver</a>			     
 				</div>
-				<div id="espacio"></div>
-				</div>
-
 				<div class="clear"> </div>
 			</div>
            </div>

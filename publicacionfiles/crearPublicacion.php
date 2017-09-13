@@ -69,18 +69,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> Porfavor llenar todos los campos </h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
-					</center>
-					</br>				     
+				<div id="centrar-boton">
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>			     
 				</div>
-				<div id="espacio"></div>
-				</div>
-
 				<div class="clear"> </div>
 			</div>
            </div>
@@ -102,16 +93,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> Porfavor selecciona una imagen para el platillo </h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+				<div id="centrar-boton">
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -135,16 +118,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                <div class="top-single">
 				<h3> Porfavor Ingresa un valor correcto para el precio </h3>
 				<h3> Ejemplo: 1 o 1.50 </h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+				<div id="centrar-boton">
+					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -183,16 +158,8 @@ else {
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> Publicacion creada correctamente </h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/muro.php" class="button">Continuar</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+				<div id="centrar-boton">
+					<a href="../pages/muro.php" class="button">Continuar</a>			     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -215,16 +182,8 @@ else {
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> Solo se permiten imagenes jpg, png y con un peso menor a 200kb </h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
+				<div id="centrar-boton">
 					<a href="../pages/nuevapublicacion.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
 				</div>
 				<div class="clear"> </div>
 			</div>
