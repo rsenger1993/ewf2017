@@ -75,7 +75,9 @@ body a{
 p#nosotros{
 	margin:5px;
 }
-
+#centrar-boton{
+text-align: center;
+}
 #lbl1{
   font-family: 'Roboto', sans-serif;
   background: none;
