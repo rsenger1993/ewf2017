@@ -40,10 +40,8 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> <?php echo "Bienvenido: ".$_POST['nombreusuario'];?> </h3>
-				<div class="grid-single">	
-				
-					 <button id="btn-re"  class="button"  href="home.php" class="button">Continuar</buttpn>
-							     
+				<div id="centrar-boton">	
+					<a  class="button"  href="home.php" >Continuar</a>     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -64,13 +62,8 @@ $_SESSION['MiSesion']=$_POST['nombreusuario'];
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3> Usuario o contraseña Incorrecta </h3>
-					<div></div>
-				<div class="grid-single">	
-				<div class="clear">
-					<a href="../index.php" class="button">Volver</a>				     
-				</div>
-					<div></div>
-				<div id="espacio"></div>
+				<div id="centrar-boton">	
+					<a class="button"  href="../index.php" >Volver</a>				     
 				</div>
 				<div class="clear"> </div>
 			</div>

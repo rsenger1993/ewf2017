@@ -77,7 +77,6 @@ p#nosotros{
 }
 #centrar-boton{
 text-align: center;
-   float: center;
 }
 #lbl1{
   font-family: 'Roboto', sans-serif;
@@ -145,10 +144,6 @@ header#index-header{
 #btn-menu{
 	display: none;
 	
-}
-#btn-re{
-		color: white;
-	text-align: center;
 }
 
 .menu ul{
