@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Porfavor llene todos los campos</h3>	
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Ese usuario ya existe</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>	     
 				</div>
 				<div class="clear"> </div>
@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Ese correo ya existe</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>				     
 				</div>
 				<div class="clear"> </div>
@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
                	<h3> <?php echo "Esta dirección de correo: ".$correo."es invalida";?> </h3>	
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
@@ -139,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Ingresa solo numeros en el campo edad</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
@@ -162,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Ingresa un numero de telefono valido</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>
 				</div>
 				<div class="clear"> </div>
@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>El numero de telefono debe tener 8 digitos sin contar el 0</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
@@ -208,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Porfavor selecciona una imagen para el Usuario</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
@@ -248,7 +248,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                	 echo "<h3> Usuario: ".$nombreusuario." creado correctamente </h3>";
                	?>
 				<div class="grid-single">	
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../index.php" class="button">Logearse</a>				     
 				</div>
 				<div class="clear"> </div>
@@ -271,7 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Solo se permiten imagenes jpg, jpeg, png y con un peso menor a 200kb</h3>
-				<div id="boton-centrar">
+				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>				     
 				</div>
 				<div class="clear"> </div>
