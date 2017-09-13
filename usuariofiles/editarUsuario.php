@@ -46,17 +46,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Porfavor llene todos los campos</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+				<h3>Porfavor llene todos los campos</h3>	
+				<div id="centrar-boton">
+					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>			     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -79,17 +71,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Ingresa solo numeros en el campo edad</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+				<h3>Ingresa solo numeros en el campo edad</h3>	
+				<div id="centrar-boton">
+					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>			     
 				</div>
 
 				<div class="clear"> </div>
@@ -112,17 +96,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single" id="index-login">
                <div class="top-single">
 				<h3>Ingresa un numero de telefono valido</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
-				</div>
+				<div id="centrar-boton">	
+					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>				     
+				</div>				</div>
 
 				<div class="clear"> </div>
 			</div>
@@ -143,17 +119,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>El numero de telefono debe tener 8 digitos sin contar el 0</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+				<h3>El numero de telefono debe tener 8 digitos sin contar el 0</h3>	
+				<div id="centrar-boton">
+					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>				     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -178,19 +146,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Sus datos han sido actualizados</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
+				<h3>Sus datos han sido actualizados</h3>	
+				<div id="centrar-boton">
 					<a href="../pages/miperfil.php" class="button">Mi perfil</a>
-					</center>
-					</br>				     
 				</div>
-				<div id="espacio"></div>
-				</div>
-
 				<div class="clear"> </div>
 			</div>
            </div>
@@ -222,17 +181,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-               	 <h3>Sus datos han sido actualizados</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/miperfil.php" class="button">Mi perfil</a>
-					</center>
-					</br>				     
-				</div>
-				<div id="espacio"></div>
+               	 <h3>Sus datos han sido actualizados</h3>	
+				<div id="centrar-boton">
+					<a href="../pages/miperfil.php" class="button">Mi perfil</a>			     
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -253,19 +204,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>Solo se permiten imagenes jpg, png y con un peso menor a 200kb</h3>
-				<div class="grid-single">	
-				<div id="espacio"></div>
-				<div class="clear">
-					</br>
-					<center> 
-					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>
-					</center>
-					</br>				     
+				<h3>Solo se permiten imagenes jpg, png y con un peso menor a 200kb</h3>	
+				<div id="centrar-boton">
+					<a href="../pages/formularioeditarusuario.php" class="button">Volver</a>			     
 				</div>
-				<div id="espacio"></div>
-				</div>
-
 				<div class="clear"> </div>
 			</div>
            </div>
