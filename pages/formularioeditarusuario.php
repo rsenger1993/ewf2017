@@ -1,4 +1,4 @@
- <?php
+<?php
  session_start();
 ?>
 <?php
@@ -26,7 +26,6 @@ $ArrayAmigo=$AmigoCollectorObj->showAmigosByUser($_SESSION['MiSesion']);
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-<!--VALIDAR INGRESAR SOLO NUMEROS-->
 <script>
 function valida(e){
     tecla = (document.all) ? e.keyCode : e.which;
@@ -64,7 +63,6 @@ function valida(e){
 			</ul>
 			<p class="footer-class">Copyright © 2017 Easy Worthy Food</p>
 		</div>
-		<!---->
 		<div class="header-top">
 			<div class="logo-in">
 				<a href="home.php"><img src="../images/logo.png" alt=""></a>
@@ -141,7 +139,6 @@ function valida(e){
                     		</li>
 						</ul>
 					</div>
-
 				</div>
 				 </form>
 				<div class="clear"> </div>
@@ -153,8 +150,8 @@ function valida(e){
 </body>
 </html>
 <?php
- }
- else{
+ 									}
+ 								else{
 header('Location: ../index.php'); //REDIRECCIONA AL INDEX
-}
+									}
  ?>

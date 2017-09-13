@@ -1,4 +1,4 @@
- <?php
+<?php
  session_start();
 ?>
 <?php
@@ -9,30 +9,21 @@ include_once("../platillofiles/PlatilloCollector.php");
 $UsuarioCollectorObj = new UsuarioCollector();
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
-
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
 $arrayPublicacion = $PublicacionCollectorObj->showPublicacionByIdUser($us->getIdUsuario()); //TRAIGO DATOS DE LA PUBLICACION DE ESE USUARIO
-
-	?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>EWF | Mis Publicaciones</title>
-<!-- jQuery-->
 <script src="../js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-
 </head>
 <body>
 	<div class="header">
@@ -54,11 +45,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-
 			</ul>
 			<p class="footer-class"> Copyright © 2017 Easy Worthy Food </p>
 		</div>
-		<!---->
 		<div class="header-top">
 			<div class="logo-in">
 				<a href="index.php"><img src="../images/logo.png" alt=""></a>
@@ -82,15 +71,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					});
 			</script>
-
 			</div>
 			<div class="clear"> </div>
 		</div>
-			<!---->
 <?php if(count($arrayPublicacion)>0) { ?>  <!-- Busco si existen mis publicaciones -->
 		<div id="scroll-publi">
 			<div class="single">
-		
 					<script src="js/responsiveslides.min.js"></script>
 					<script>
 						$(function () {
@@ -102,62 +88,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  });
 						});
 					</script>
-		
-				
 					<div class="comment-grid-top">
 					<h3>Mis publicaciones</h3>
-					
-					<?php
+<?php
 					foreach ($arrayPublicacion as $publicacion){
-					$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
-																 
-																  ?>
-
+					$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO										 
+?>
 					<div class="comments-top-top">
 						<div class="top-comment-left">
 							<img id="mis-publicaciones" src="<?php echo '../'.($ObjPlatillo->getImgPlatillo())?>">
 						</div>
 						<div class="top-comment-right">
 							<ul>
-
 								<li><span > <a> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
 								 <li><a><?php echo ($publicacion->getFechaPublicacion())?></a></li>
 							  <?php echo "<li> <a class='btn-search' href='../pages/formularioPublicacionEditar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Editar </a></li>"; ?>
 							  <?php echo "<li> <a class='btn-search' href='../publicacionfiles/eliminarmiPublicacion.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Eliminar </a></li>"; ?>
-
 							</ul>
 							<p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p>
-							
 						</div>
 						<div class="clear"> </div>
 					</div>
-
-					<?php  } ?>
-				
+														<?php  } ?>
 				</div>
-		
-			
 				<div class="clear"> </div>
 			</div>
 		</div>
-<?php  } //FIN DEL IF COUNT PUBLICACIONES FAVORITOS
-else{
- ?>
+<?php  								 } //FIN DEL IF COUNT PUBLICACIONES FAVORITOS
+								 else{
+?>
 			<div id="scroll-publi">
 				<div class="work">
 					<p>No hay publicaciones</p>
 				</div>
 			</div>
-<?php  } ?>
+							  <?php  } ?>
 		<div class="clear"> </div>
 				<p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
-
 	</div>
 </body>
 </html>
 <?php
- }
- else{
+ 									}
+ 								else{
 header('Location: ../index.php'); //REDIRECCIONA AL INDEX
-}
+									}
  ?>

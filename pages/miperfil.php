@@ -1,4 +1,4 @@
- <?php
+<?php
  session_start();
 ?>
 <?php
@@ -13,28 +13,19 @@ $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
 $ArrayAmigo=$AmigoCollectorObj->showAmigosByUser($_SESSION['MiSesion']);
-
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>EWF | Mi Perfil</title>
-<!-- jQuery-->
 <script src="../js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-
 </head>
 <body>
 	<div class="header">
@@ -56,12 +47,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-
 			</ul>
-			<!--modificado copyright a ewf-2017-->
 			<p class="footer-class">Copyright © 2017 Easy Worthy Food</p>
 		</div>
-		<!---->
 		<div class="header-top">
 			<div class="logo-in">
 				<a href="home.php"><img src="../images/logo.png" alt=""></a>
@@ -89,7 +77,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clear"> </div>
 		</div>
-			<!---->
 		<div class="content">
 			<div class="work">
 				<div class="work-top">
@@ -105,36 +92,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					</script>
 					<div>
-
-						<?php
-						//print_r($us->getImgUsuario());
-						?>
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
 							  <img src="<?php echo '../'.$us->getImgUsuario();?>" alt="" height="200" width="350">
-
 							</li>
 						  </ul>
 					  </div>
 					</div>
 					<h2><a href="single.html">¿QUIEN SOY?</a></h2>
-					
 					<p id="lbl-descrip"><?php echo $us->getUsuarioDescripcion()?></p>
-
 				<div id="scroll-publi"> <!-- DIV SCROLL -->
 				<div class="projects">
 					<h3>Ewf Favoritos</h3>
 					<ul>
-				<?php
+<?php
 				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
-			    ?>
+?>
 			    <?php echo "<li><a href='../pages/publicacionesamigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'> <img id='img-perfilamigo' src='../".$ObjUsuario->getImgUsuario()."' alt='wo' /></a></li>"; ?>
-
-
-
-				<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
+										<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
 					</ul>
                     <div class="clear"> </div>
 				</div>
@@ -168,28 +145,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<h3>Mis Pedidos / Ventas</h3>
 							<li>
 							<a id="btn-re" href="misregistrospedidos.php" class="button">Acceder</a>
-
 							</li>
-
-
 						</ul>
 					</div>
-
-
-
 				</div>
 				<div class="clear"> </div>
 			</div>
 		</div>
 		<div class="clear"> </div>
-		<!--modificado copyright a ewf-2017-->
 		<p class="footer-class-in">Copyright © 2017 Easy Worthy Food</p>
 	</div>
 </body>
 </html>
 <?php
- }
- else{
+ 									}
+ 								else{
 header('Location: ../index.php'); //REDIRECCIONA AL INDEX
-}
- ?>
+									}
+?>

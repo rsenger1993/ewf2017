@@ -4,9 +4,9 @@
 <?php
  if (isset(($_SESSION['MiSesion']))){
 	header('Location: pages/home.php'); //REDIRECCIONA AL HOME
- }
- else{
- ?>
+ 									}
+ 								else{
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,4 +73,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </body>
 </html>
-<?php } ?>
+<?php 								}
+?>

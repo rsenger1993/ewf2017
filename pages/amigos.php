@@ -8,25 +8,19 @@ include_once("../usuariofiles/UsuarioCollector.php");
 $AmigoCollectorObj = new AmigoCollector();
 $UsuarioCollectorObj = new UsuarioCollector();
 $ArrayAmigo=$AmigoCollectorObj->showAmigosByUser($_SESSION['MiSesion']);
-	?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>EWF | Amigos</title>
-<!-- jQuery-->
 <script src="../js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-<!--//fonts-->
 </head>
 <body>
 	<div class="header">
@@ -35,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="home.php"><img src="../images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav">
-				<ul >
+				<ul>
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li  ><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
@@ -48,18 +42,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-
 			</ul>
 			<p class="footer-class"> Copyright © 2017 Easy Worthy Food </p>
 		</div>
-		<!---->
 		<div class="header-top">
 			<div class="logo-in">
 				<a href="home.php"><img src="../images/logo.png" alt=""></a>
 			</div>
 			<div class="top-nav-in">
 			<span class="menu"><img src="../images/menu.png" alt=""> </span>
-				<ul >
+				<ul>
 					<li><a>Hola: <?php echo $_SESSION['MiSesion'] ?></a></li>
 					<li><a href="home.php" >HOME</a></li>
 					<li><a href="muro.php" class="black" > MURO</a></li>	
@@ -76,19 +68,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					});
 			</script>
-
 			</div>
 			<div class="clear"> </div>
 		</div>
-			<!---->
-<?php if(count($ArrayAmigo)>0) { ?>  <!-- Busco si existen publicaciones de amigos -->
+<?php if(count($ArrayAmigo)>0) { 
+?>  <!-- Busco si existen publicaciones de amigos -->
 		<div id="scroll-publi">
 			<div class="blog">
-				<?php
+<?php
 				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
-			    ?>
-					
+?>
 					<div class="blog-top">
 					<div class="col-d">
 						<img  src="<?php echo '../'.$ObjUsuario->getImgUsuario();?>" alt="pi5" />
@@ -116,33 +106,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<?php  } ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
-
+<?php  										} 
+?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
 				<div class="clear"> </div>
-				</div>
+		</div>
 			<div class="arrow arrow-at">
-				
 			</div>
 	</div>
-<?php  } //FIN DEL IF COUNT PUBLICACIONES FAVORITOS
-else{
- ?>
+<?php  							} //FIN DEL IF COUNT PUBLICACIONES FAVORITOS
+							else{
+?>
 			<div id="scroll-publi">
 				<div class="work">
 					<p>No hay Amigos Agregados</p>
 				</div>
 			</div>
-<?php  } ?>
-			
-		<div class="clear">  </div>
+<?php  							}
+?>	
+			<div class="clear">  </div>
 				<p class="footer-class-in">Copyright © 2017 Easy Worthy Food</p>
-
 	</div>
 </body>
 </html>
 <?php
- }
- else{
+ 				}
+ 			else{
 header('Location: ../index.php'); //REDIRECCIONA AL INDEX
-}
- ?>
+	 			}
+?>

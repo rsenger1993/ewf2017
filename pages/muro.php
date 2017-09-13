@@ -1,4 +1,4 @@
- <?php
+<?php
  session_start();
 ?>
 <?php
@@ -9,31 +9,20 @@ include_once("../platillofiles/PlatilloCollector.php");
 $UsuarioCollectorObj = new UsuarioCollector();
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
-
-//$us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
 $arrayPublicacion = $PublicacionCollectorObj->showPublicaciones(); //TRAIGO DATOS DE TODAS LAS PUBLICACIONES
-
-
-	?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>EWF | Muro</title>
-<!-- jQuery-->
 <script src="../js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-<!--//fonts-->
-
 </head>
 <body>
 	<div class="header" >
@@ -55,11 +44,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<ul class="social-in">
-
 			</ul>
 			<p class="footer-class"> Copyright © 2017 EWF </p>
 		</div>
-		<!---->
 		<div class="header-top">
 			<div class="logo-in">
 				<a href="home.php"><img src="../images/logo.png" alt=""></a>
@@ -83,20 +70,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					});
 			</script>
-
 			</div>
 			<div class="clear"> </div>
 		</div>
-
 		<div id="scroll-publi">
-			<!---->
 			<?php
 				foreach ($arrayPublicacion as $publicacion){ //TODAS LAS PUBLICACIONES
 				$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
-			    ?>
-
-		
+			?>
 			<div class="work">
 				<div class="work-top">
 					<?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) { 
@@ -106,12 +88,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					echo "<h2><a>".$ObjPlatillo->getNombrePlatillo()."</a> </h2>";
 							}
 						?>
-
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
 							  <a href="<?php echo "../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion() ?>"><img id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt=""></a>
-
 							</li>
 						  </ul>
 					  </div>
@@ -123,9 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="work-in">
 					<div class="info"> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE AGREGAR AMIGO A TODOS MENOS AL USUARIO ACTIVO -->
 					<h3>Posteado Por: <?php echo ($ObjUsuario->getNombreUsuario())?> <?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) {echo "<a id='btn-agregar' class='button' href='../amigofiles/agregaramigo.php?idusuario=".$ObjUsuario->getIdUsuario()."'>Agregar EWF</a>"; }?></h3>
-
 						<ul class="likes">
-
 							<li>Contacto<span><i class="comment"> </i>Correo: <?php echo ($ObjUsuario->getCorreo())?></span></li>
 							<li><span><i class="comment"> </i>Telefono: <?php echo ($ObjUsuario->getTelefono())?></span></li>
 							<li>Comprar<span><i class="comment"> </i>Precio: $ <?php echo ($ObjPlatillo->getPrecio())?></span></li>
@@ -139,11 +117,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     		<?php } ?>
 						</ul>
 					</div>
-					
 					<div class="gallery">
 					<h3>Publicaciones de <?php echo ($ObjUsuario->getNombreUsuario())?></h3>
 						<ul class="gallery-grid">
-
 							<?php
 							$arrayPublicacionPorUsuario = $PublicacionCollectorObj->showPublicacionByIdUser($ObjUsuario->getIdUsuario()); //PUBLICACIONES POR USUARIO
 							foreach ($arrayPublicacionPorUsuario as $publicacionporusuario){
@@ -151,20 +127,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    			?>
 							<li><a href="<?php echo "formularioComprar.php?idpublicacion=".$publicacionporusuario->getIdPublicacion(); ?>"><img id="mini-publicacion" src="<?php echo '../'.$ObjPlatilloUser->getImgPlatillo();?>" alt="pi" /></a></li>
 							<?php  } ?> <!-- FIN DEL FOREACH PUBLICACIONES POR USUARIO-->
-
-
 						</ul>
                         <div class="clear"> </div>
 					</div>
 				</div>
 				<div class="clear"> </div>
 			</div>
-	
 					<?php  } ?> <!-- FIN DEL FOREACH TODAS LAS PUBLICACIONES -->
 		</div>
 		<div class="clear"> </div>
 				<p class="footer-class-in">Copyright © 2017 EWF </p>
-
 	</div>
 </body>
 </html>
