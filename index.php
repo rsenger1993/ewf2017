@@ -53,8 +53,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clear"> </div>
 						</div>
 						 
-	                   	 <div >
-	                   	 <input  id="btn-re"  class="button"  type="submit" name="Enviar" value="Enviar">
+	                   	 <div>
+	                   	 <input  id="btn-re"  class="button" type="submit" name="Enviar" value="Enviar">
+	                   	
 				    	</div>
 						
 						</div>
