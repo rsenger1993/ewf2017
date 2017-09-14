@@ -103,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
-							  <a href="<?php echo "../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion() ?>"><img href="muro.php" id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt=""></a>
+							  <a href="<?php echo "../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion() ?>"><img href="muro.php" id="img-publicacion" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>" alt=""></a>
 
 							</li>
 						  </ul>
@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><span><i class="comment"> </i>Cantidad disponible: <?php echo ($ObjPlatillo->getCantidad())?></span></li>
 							 <?php if ($ObjUsuario->getNombreUsuario() != $_SESSION['MiSesion']) { ?> <!-- VALIDO QUE SOLO SE MUESTRE EL BOTON DE COMPRAR A TODOS MENOS AL USUARIO ACTIVO -->
 							<li class="grid-single-in">
-						    <?php echo "<a id='btn-re' class='button' href='../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Comprar </a>"; ?>
+						    <?php echo "<a id='btn-re' class='button' href='../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Comprar </a>"; ?>
                     		</li>
                     		</br>
 							</br>

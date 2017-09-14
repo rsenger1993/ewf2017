@@ -108,13 +108,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <textarea id="area-perfil"  name="descripcion">Ejemplo: Me llamo Juan vivo en Guayaquil, soy ayudante de chef en el restaurante "La Milanesa"...</textarea>
 						<div class="clear"> </div>	
                     </div>
-                    <p id="label-login">Imagen de Perfil</p>
+                    <div id="label-login">
+                    <p>Imagen de Perfil</p>
                       <div class="your-single">
-                      	<a id="label-login">Seleccione su imagen de perfil - solo imagenes jpg o png menor a 200kb </a>
-						<input id="label-login" type="file" name="imagen">							
+                      	<p >Seleccione su imagen de perfil - solo imagenes jpg o png menor a 200kb </p>
+						<input  type="file" name="imagen">							
 						<div class="clear"> </div>
                     </div>
-
+                    </div>
                     <div class="grid-single-in">
   					<input  type="submit" name="Enviar" value="Enviar" >
                     </div>
