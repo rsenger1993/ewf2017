@@ -14,6 +14,7 @@
 <script src="js/jquery.min.js"></script>
 <link href="css/style-index2.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -73,6 +74,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li> <img src="images/slide/slide1.jpg" alt=""></li>
 				</ul>
 			</div>
+			<a href="https://www.facebook.com/Easy-Worthy-Food-1909652592590399/" class="fa fa-facebook" target="_blank"></a>
+			<a href="https://twitter.com/ew_food" class="fa fa-twitter" target="_blank"></a>
+			
     </div>
 </body>
 </html>
