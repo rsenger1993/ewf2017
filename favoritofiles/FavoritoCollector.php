@@ -47,8 +47,8 @@ class FavoritoCollector extends Collector
       
   }
 
-      function deleteFavorito($idfavorito) {
-    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE idfavorito = ? ",array("{$idfavorito}"));
+      function deleteFavorito($f_usuario, $publicacion_id) {
+    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE f_usuario=? AND publicacion_id = ?",array("{$f_usuario}","{$publicacion_id}"));
       
   }
 
