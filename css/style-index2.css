@@ -2298,7 +2298,14 @@ h4.author {
 .map iframe {
   min-height: 569px;
 }
- 
+
+.imprimir{
+background:#C63;
+color:#FFF;
+padding-left:8px;
+padding-right:8px;
+padding-bottom:7px;
+padding-top:7px;}
 
 
 }
