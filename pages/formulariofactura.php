@@ -200,5 +200,8 @@
          <a href="../pages/misregistrospedidos.php" class="button">Ver mis pedidos</a>
         </div>
 
+<a class="imprimir" alt="Click para Imprimir esta página" title="Click para Imprimir esta página" 
+href=javascript:window.print();>Imprimir esta página</a>
+
 </body>
 </html>
