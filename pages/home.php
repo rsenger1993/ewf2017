@@ -17,6 +17,7 @@ $arrayPublicacion = $PublicacionCollectorObj->showPublicaciones(); //TRAIGO DATO
 <title>EWF | Home</title>
 <script src="../js/jquery.min.js"></script>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Kappe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -41,9 +42,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="nuevapublicacion.php" class="black4" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black3" > SALIR</a></li>
+			
 				</ul>
 			</div>
 			<ul class="social-in">
+				<li><a href="https://www.facebook.com/Easy-Worthy-Food-1909652592590399/" target="_blank"><i 						class="facebook"> </i></a></li>
+				<li><a href="https://twitter.com/ew_food" target="_blank"><i class="twitter"> </i></a></li>
 			</ul>
 			<p class="footer-class">Copyright © 2017 Easy Worthy Food </p>
 		</div>
