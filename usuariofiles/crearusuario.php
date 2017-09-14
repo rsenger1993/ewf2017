@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </html>
  		<?php
 	}
-	elseif (strlen($telefono) != 8) {
+	elseif (strlen($telefono) != 9) {
 		?>
  						<ul>
 					<li> <a >Error</a></li>
@@ -184,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>El numero de telefono debe tener 8 digitos sin contar el 0</h3>
+				<h3>El numero de telefono debe tener 9 digitos sin contar el 0</h3>
 				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>

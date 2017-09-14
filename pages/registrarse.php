@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="telefono" placeholder="telefono - 8 digitos sin contar el 0" maxlength="8" onkeypress="return valida(event)">								
+						<input type="text" name="telefono" placeholder="telefono - 9 digitos sin contar el 0" maxlength="9" onkeypress="return valida(event)">								
 						<div class="clear"> </div>	
                     </div>
                         <div class="your-single">
