@@ -84,7 +84,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clear"> </div>
 		</div>
-<?php if(count($arrayRegistroPedido)>0 or $arrayRegistroVenta>0) { ?>  <!-- Busco si existen mis publicaciones -->
 		<div id="scroll-publi">
 			<div class="single">
 					<script src="js/responsiveslides.min.js"></script>
@@ -98,6 +97,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  });
 						});
 					</script>
+
+					<?php if(count($arrayRegistroPedido)>0) { ?>  <!-- Busco si existen mis Pedidos -->
 					<div class="comment-grid-top">
                         <h3>Mis Pedidos</h3>
                         <?php
@@ -116,44 +117,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         <div class="clear"> </div>
                         </div>
-                        <?php  
-                        } ?>
+                       									 <?php   } ?>
 				    </div>
-					<br></br>
-                    <div class="comment-grid-top">
-					<h3>Mis Ventas</h3>
-					
-					<?php
-					foreach ($arrayRegistroVenta as $ventas){
-					$publicacion= $PublicacionCollectorObj->showPublicacionById($ventas->getPublicacionId());
-					$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());
-                    ?>
-					<div class="projects">	
-                        <ul>
-                        <li> <p> <?php echo ($ObjPlatillo->getNombrePlatillo())?></p></li>
+													 <?php  } //FIN DEL IF MIS PEDIDOS 
+													 	else{
+													 ?>
+
+					<div id="scroll-publi">
+					<div class="work">
+						<p>No hay registro de Pedidos</p>
+					</div>
+					</div>
+												<?php 	  }   ?>
+				<?php echo	"<br></br>" ?>
+
+			<?php if(count($arrayRegistroVenta)>0) { ?>  <!-- Busco si existen mis Pedidos -->
+					<div class="comment-grid-top">
+                        <h3>Mis Ventas</h3>
+                        <?php
+                		foreach ($arrayRegistroVenta as $ventas){
+						$publicacion= $PublicacionCollectorObj->showPublicacionById($ventas->getPublicacionId());
+						$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());
+						?>
+                        <div class="projects">	
+                            <ul>
+      				    <li> <p> <?php echo ($ObjPlatillo->getNombrePlatillo())?></p></li>
                         <li id="centrar-boton">Cantidad <p><?php echo ($ventas->getCantidadVenta())?></p></li>	
                         <li>Comprado por <p><?php echo ($ventas->getCUsuario())?></p></li>
-                        <li>Fecha <p><?php echo ($ventas->getFechaVenta())?></p></li>
-                        </ul>
+                        <li>Fecha <p><?php echo ($ventas->getFechaVenta())?></p></li>	
+                            </ul>
                         <div class="clear"> </div>
+                        </div>
+                       									 <?php   } ?>
+				    </div>
+													 <?php  } //FIN DEL IF MIS PEDIDOS 
+													 	else{
+													 ?>
+
+					<div id="scroll-publi">
+					<div class="work">
+						<p>No hay registro de Ventas</p>
 					</div>
-					<?php  } ?>
-				</div>
-				<div class="clear"> </div>
-			</div>
-		</div>
-<?php  } //FIN DEL IF COUNT PUBLICACIONES FAVORITOS
-else{
- ?>
-			<div id="scroll-publi">
-				<div class="work">
-					<p>No hay registro de pedidos</p>
-				</div>
-			</div>
-<?php } ?>
+					</div>
+												<?php 	  }   ?>								
+  			</div>
+    	 </div>
 		<div class="clear"> </div>
     <p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
-    </div>
+</div>
 </body>
 </html>
 <?php
