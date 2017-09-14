@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="publicacionesfavoritas.php" class="black2" > PUBLICACIONES FAVORITAS</a></li>
-					<li class="active"><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
+					<li ><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black3" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black3" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black4" > SALIR</a></li>
@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="muro.php" class="black" > MURO</a></li>	
 					<li><a href="amigos.php" class="black2" > EWF FAVORITOS</a></li>
 					<li><a href="publicacionesfavoritas.php" class="black2" > PUBLICACIONES FAVORITAS</a></li>
-					<li class="active"><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
+					<li ><a href="mispublicaciones.php" class="black2" > MISPUBLICACIONES</a></li>
 					<li><a href="nuevapublicacion.php" class="black3" > NUEVAPUBLICACION</a></li>
 					<li><a href="miperfil.php" class="black3" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black4" > SALIR</a></li>
@@ -104,6 +104,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h3>Mis Pedidos</h3>
                         <?php
                         foreach ($arrayRegistroPedido as $pedidos){
+
+                        $arraypublicacion= $PublicacionCollectorObj->countPublicacionById($pedidos->getPublicacionId());
+                    	if(count($arraypublicacion)>0){
+
+                        
                         $publicacion= $PublicacionCollectorObj->showPublicacionById($pedidos->getPublicacionId());
                         $ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());	
                         $ObjFactura = $FacturaCollectorObj->showFacturaById($pedidos->getFacturaId());
@@ -118,8 +123,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         <div class="clear"> </div>
                         </div>
-                       									 <?php   } ?>
+                       						  <?php  }            } ?>
 				    </div>
+
+
 													 <?php  } //FIN DEL IF MIS PEDIDOS 
 													 	else{
 													 ?>

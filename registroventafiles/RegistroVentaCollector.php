@@ -34,6 +34,16 @@ class RegistroVentaCollector extends Collector
     }
     return $arrayRegistroVenta;        
   }
+  function showRegistroVentasByUserAndPubliID($v_usuario, $publicacion_id) {
+    $rows = self::$db->getRows("SELECT * FROM registroventa WHERE v_usuario= ? and publicacion_id= ?",array("{$v_usuario}","{$publicacion_id}"));        
+   // $arrayRegistroVenta= array();
+    foreach ($rows as $c){
+      $aux = new RegistroVenta($c{'idregistroventa'},$c{'fechaventa'},$c{'publicacion_id'},$c{'v_usuario'},$c{'c_usuario'},$c{'cantidadventa'});
+     // array_push($arrayRegistroVenta, $aux);
+    }
+    return $aux;        
+  }
+
 
       function updateRegistroVenta($idregistroventa, $fechaventa, $publicacion_id, $v_usuario, $c_usuario, $cantidadventa) {
     $insertrow = self::$db->updateRow("UPDATE registroventa SET fechaventa = ?, publicacion_id = ?, v_usuario = ?, c_usuario = ?, cantidadventa = ?    WHERE idregistroventa = ?", array("{$fechaventa}","{$publicacion_id}","{$v_usuario}","{$c_usuario}","{$cantidadventa}","{$idregistroventa}"));  

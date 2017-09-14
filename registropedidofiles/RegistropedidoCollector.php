@@ -40,8 +40,8 @@ class RegistropedidoCollector extends Collector
       
   }
 
-      function deleteRegistroPedido($f_usuario, $publicacion_id) {
-    $insertrow = self::$db->deleteRow("DELETE FROM registropedido WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
+      function deleteRegistroPedido($r_usuario, $publicacion_id) {
+    $insertrow = self::$db->deleteRow("DELETE FROM registropedido WHERE r_usuario=? AND publicacion_id=?",array("{$r_usuario}", "{$publicacion_id}"));
       
   }
 

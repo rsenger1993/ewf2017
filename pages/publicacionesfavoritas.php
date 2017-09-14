@@ -12,6 +12,7 @@ $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $FavoritoCollectorObj = new FavoritoCollector();
 $arrayFavoritos = $FavoritoCollectorObj->showFavoritosByUser($_SESSION['MiSesion']); //TRAIGO DATOS DE LAS PUBLICACIONES Favoritos
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,6 +83,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="scroll-publi">
 <?php
 				foreach ($arrayFavoritos as $favorito){ //TODAS LAS PUBLICACIONES
+				$arraypubli = $PublicacionCollectorObj->countPublicacionById($favorito->getPublicacionId()); //VERIFICAR SI ESA PUBLICACION FUE ELIMINADA
+				if(count($arraypubli)>0){
+
 				$publicacion = $PublicacionCollectorObj->showPublicacionById($favorito->getPublicacionId());
 				$ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());// CARGO LOS DATOS DEL PLATILLO
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
@@ -134,7 +138,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clear"> </div>
 			</div>
-											   <?php  } ?> <!-- FIN DEL FOREACH TODAS LAS PUBLICACIONES -->
+								<?php  }
+								   else{ ?>
+
+						<div id="scroll-publi">
+							<div class="work">
+								<p> publicacion Eliminada por el propietario</p>
+							</div>
+					    </div>
+							<?php
+									    }
+
+
+											    }?> <!-- FIN DEL FOREACH TODAS LAS PUBLICACIONES FAVORITAS-->
 		</div>
 <?php  								} //FIN DEL IF COUNT PUBLICACIONES FAVORITOS
 								else{
