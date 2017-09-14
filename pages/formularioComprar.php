@@ -173,8 +173,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 </body>
 </html>
-<?php}
- else{
+<?php 
+										}
+ 									else{
 header('Location: ../index.php'); //REDIRECCIONA AL INDEX
-	}
+										}
 ?>

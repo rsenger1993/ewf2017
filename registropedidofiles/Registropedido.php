@@ -7,15 +7,17 @@ class Registropedido
     private $publicacion_id;
     private $r_usuario;
     private $cantidadpedido;
+    private $factura_id;
 
 
-      function __construct($idregistropedido, $fechapedido, $publicacion_id,$r_usuario, $cantidadpedido) {
+      function __construct($idregistropedido, $fechapedido, $publicacion_id,$r_usuario, $cantidadpedido, $factura_id) {
 
        $this->idregistropedido = $idregistropedido;
        $this->fechapedido = $fechapedido;
        $this->publicacion_id = $publicacion_id;
        $this->r_usuario = $r_usuario;
        $this->cantidadpedido = $cantidadpedido;
+       $this->factura_id = $factura_id;
 
      }
     
@@ -48,6 +50,12 @@ class Registropedido
      } 
      function getCantidadPedido(){
        return $this->cantidadpedido;
+     }
+     function setFacturaId($factura_id){
+       $this->factura_id = $factura_id;
+     } 
+     function getFacturaId(){
+       return $this->factura_id;
      }
 }
 

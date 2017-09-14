@@ -52,6 +52,9 @@ img.resize1 {
     margin-top:5px;
 
 }
+#centrar-boton{
+text-align: center;
+}
 #lbl-descrip{
 	color: black;
 }

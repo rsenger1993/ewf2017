@@ -16,20 +16,20 @@ class RegistropedidoCollector extends Collector
     }
     return $aux;        
   }
-    function showRegistroPedidoByIdandPubli($f_usuario, $publicacion_id) {
-    $rows = self::$db->getRows("SELECT * FROM favorito WHERE f_usuario= ? AND publicacion_id= ?",array("{$f_usuario}","{$publicacion_id}"));        
-    $arrayPublicacion= array();        
+    function showRegistroPedidoByIdFactura($factura_id) {
+    $rows = self::$db->getRows("SELECT * FROM registropedido WHERE factura_id= ?",array("{$factura_id}"));        
+    $arrayRegistroPedido= array();        
     foreach ($rows as $c){
-      $aux = new Favorito($c{'idfavorito'},$c{'f_usuario'},$c{'publicacion_id'});
-      array_push($arrayPublicacion, $aux);
+      $aux = new RegistroPedido($c{'idregistropedido'},$c{'fechapedido'},$c{'publicacion_id'},$c{'r_usuario'},$c{'cantidadpedido'},$c{'factura_id'});
+      array_push($arrayRegistroPedido, $aux);
     }
-    return $arrayPublicacion;        
+    return $arrayRegistroPedido;        
   }
     function showRegistroPedidosByUser($r_usuario) {
     $rows = self::$db->getRows("SELECT * FROM registropedido WHERE r_usuario= ?",array("{$r_usuario}"));        
     $arrayRegistroPedido= array();
     foreach ($rows as $c){
-      $aux = new RegistroPedido($c{'idregistropedido'},$c{'fechapedido'},$c{'publicacion_id'},$c{'r_usuario'},$c{'cantidadpedido'});
+      $aux = new RegistroPedido($c{'idregistropedido'},$c{'fechapedido'},$c{'publicacion_id'},$c{'r_usuario'},$c{'cantidadpedido'},$c{'factura_id'});
       array_push($arrayRegistroPedido, $aux);
     }
     return $arrayRegistroPedido;        
@@ -52,9 +52,9 @@ class RegistropedidoCollector extends Collector
       
   }
 
-      function insertarRegistroPedido($fechapedido,$publicacion_id,$r_usuario, $cantidadpedido) {
+      function insertarRegistroPedido($fechapedido,$publicacion_id,$r_usuario, $cantidadpedido, $factura_id) {
 
-    $insertrow = self::$db->insertRow("INSERT INTO registropedido (fechapedido, publicacion_id, r_usuario, cantidadpedido) VALUES (?,?,?,?)",array("{$fechapedido}","{$publicacion_id}","{$r_usuario}","{$cantidadpedido}"));
+    $insertrow = self::$db->insertRow("INSERT INTO registropedido (fechapedido, publicacion_id, r_usuario, cantidadpedido, factura_id) VALUES (?,?,?,?,?)",array("{$fechapedido}","{$publicacion_id}","{$r_usuario}","{$cantidadpedido}","{$factura_id}"));
       
   }
 

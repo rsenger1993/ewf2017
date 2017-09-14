@@ -18,7 +18,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title>Generar Factura</title>
     <style>
     .invoice-box{
         max-width:800px;
@@ -190,7 +190,13 @@
                 </td>
             </tr>
         </table>
-            <a href="../pages/muro.php" class="button">Comprar otro producto</a>
     </div>
+        <div class="invoice-box">
+         <a href="../pages/muro.php" class="button">Comprar otro producto</a>
+        </div>
+        <div class="invoice-box">
+         <a href="../pages/misregistrospedidos.php" class="button">Ver mis pedidos</a>
+        </div>
+
 </body>
 </html>

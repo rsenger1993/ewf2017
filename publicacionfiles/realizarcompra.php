@@ -28,15 +28,16 @@ $UsuarioCollectorObj = new UsuarioCollector();
 $publicacion = $PublicacionCollectorObj->showPublicacionById($idpublicacion);
 $PlatilloCollectorObj->updatePlatilloById($publicacion->getPlatilloId(), $cantidad);
 $us = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());
-
-$registroPedidoCollectorObj->insertarRegistroPedido($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'], $cantidad);
-
-$registroventaCollectorObj->insertarRegistroVenta($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'],$us->getNombreUsuario() ,$cantidad);
 $ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());
 
 $iva=1.12;
 $subtotal= $ObjPlatillo->getPrecio()* $cantidad;
 $total= $subtotal*$iva;
+$FacturaId = $FacturaCollectorObj->insertarFactura($fecha, $ObjPlatillo->getPrecio(),$total,$publicacion->getFormaDePagoId(), $publicacion->getUsuarioId(), $publicacion->getplatilloId(), $cantidad);
+
+$registroPedidoCollectorObj->insertarRegistroPedido($fecha,$publicacion->getIdPublicacion(),$_SESSION['MiSesion'], $cantidad, $FacturaId["idfactura"]);
+
+$registroventaCollectorObj->insertarRegistroVenta($fecha,$publicacion->getIdPublicacion(),$us->getNombreUsuario(), $_SESSION['MiSesion'] ,$cantidad);
 
 $FacturaId = $FacturaCollectorObj->insertarFactura($fecha, $ObjPlatillo->getPrecio(),$total,$publicacion->getFormaDePagoId(), $publicacion->getUsuarioId(), $publicacion->getplatilloId(), $cantidad);
  ?>

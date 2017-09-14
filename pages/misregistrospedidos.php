@@ -7,12 +7,15 @@ include_once("../publicacionfiles/PublicacionCollector.php");
 include_once("../usuariofiles/UsuarioCollector.php");
 include_once("../platillofiles/PlatilloCollector.php");
 include_once("../registropedidofiles/RegistropedidoCollector.php");
+include_once("../facturafiles/FacturaCollector.php");
 include_once("../registroventafiles/RegistroVentaCollector.php");
 $UsuarioCollectorObj = new UsuarioCollector();
 $PublicacionCollectorObj = new PublicacionCollector();
 $PlatilloCollectorObj = new PlatilloCollector();
 $registroPedidoCollectorObj = new RegistropedidoCollector();
 $registroventaCollectorObj = new RegistroVentaCollector();
+$FacturaCollectorObj = new FacturaCollector();
+
 $us = $UsuarioCollectorObj->showUsuarioByName($_SESSION['MiSesion']);
 $arrayRegistroPedido=$registroPedidoCollectorObj->showRegistroPedidosByUser($_SESSION['MiSesion']);
 $arrayRegistroVenta=$registroventaCollectorObj->showRegistroVentasByUser($_SESSION['MiSesion']);
@@ -81,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clear"> </div>
 		</div>
-<?php if(count($arrayRegistroPedido)>0) { ?>  <!-- Busco si existen mis publicaciones -->
+<?php if(count($arrayRegistroPedido)>0 or $arrayRegistroVenta>0) { ?>  <!-- Busco si existen mis publicaciones -->
 		<div id="scroll-publi">
 			<div class="single">
 					<script src="js/responsiveslides.min.js"></script>
@@ -100,14 +103,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <?php
                         foreach ($arrayRegistroPedido as $pedidos){
                         $publicacion= $PublicacionCollectorObj->showPublicacionById($pedidos->getPublicacionId());
-                        $ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());	?>
+                        $ObjPlatillo = $PlatilloCollectorObj->showPlatilloById($publicacion->getPlatilloId());	
+                        $ObjFactura = $FacturaCollectorObj->showFacturaById($pedidos->getFacturaId());
+						?>
                         <div class="projects">	
                             <ul>
                             <li> <p> <?php echo ($ObjPlatillo->getNombrePlatillo())?></p></li>
-                            <center>
-                                <li>Categoria <p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p></li>
-                                <li>Cantidad <p><?php echo ($pedidos->getCantidadPedido())?></p></li>	
-                            </center>
+                            <li id="centrar-boton">Cantidad <p><?php echo ($pedidos->getCantidadPedido())?></p></li>
+                            <li>Categoria <p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p></li>
+                           <?php echo "</br> <a class='button' id='btn-regresar' href='../pages/formularioFactura.php?idfactura=".$ObjFactura->getIdFactura()."'>Generar Factura </a>"; ?>
                             <li>Fecha <p><?php echo ($pedidos->getFechaPedido())?></p></li>		
                             </ul>
                         <div class="clear"> </div>
@@ -127,10 +131,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="projects">	
                         <ul>
                         <li> <p> <?php echo ($ObjPlatillo->getNombrePlatillo())?></p></li>
-                        <center>
-                            <li>Categoria <p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p></li>
-                            <li>Cantidad <p><?php echo ($ventas->getCantidadVenta())?></p></li>	
-                        </center>
+                        <li id="centrar-boton">Cantidad <p><?php echo ($ventas->getCantidadVenta())?></p></li>	
+                        <li>Comprado por <p><?php echo ($ventas->getCUsuario())?></p></li>
                         <li>Fecha <p><?php echo ($ventas->getFechaVenta())?></p></li>
                         </ul>
                         <div class="clear"> </div>
