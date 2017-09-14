@@ -96,11 +96,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 
+
 				</div>
+
 				</div>
+<ul class="social-in">
+				<li><a href="https://www.facebook.com/Easy-Worthy-Food-1909652592590399/" target="_blank"><i 						class="facebook"> </i></a></li>
+				<li><a href="https://twitter.com/ew_food" target="_blank"><i class="twitter"> </i></a></li>
+			</ul>
 </div>
 
+
         </div>
+
 
 
 </body>
