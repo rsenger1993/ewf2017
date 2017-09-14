@@ -62,6 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
+
 				<script>
 					$("span.menu").click(function(){
 						$(".top-nav-in ul").slideToggle(500, function(){

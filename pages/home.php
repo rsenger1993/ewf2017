@@ -64,6 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="miperfil.php" class="black4" > MIPERFIL</a></li>
 					<li><a href="logout.php" class="black3" > SALIR</a></li>
 				</ul>
+				
 				<script>
 					$("span.menu").click(function(){
 						$(".top-nav-in ul").slideToggle(500, function(){
@@ -96,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="clear"> </div>
 		<!--modificado copyright a ewf-2017-->
-		<p class="footer-class-in">Copyright © 2017 Easy Worthy Food </p>
+		<p class="footer-class-in">Copyright © 2017 Easy Worthy Food</p>
 	</div>
 </body>
 </html>
