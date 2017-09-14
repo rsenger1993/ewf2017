@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul>
                             <li> <p> <?php echo ($ObjPlatillo->getNombrePlatillo())?></p></li>
                             <li id="centrar-boton">Cantidad <p><?php echo ($pedidos->getCantidadPedido())?></p></li>
-                            <li>Categoria <?php echo "<a class='button' id='btn-regresar' href='../pages/formularioFactura.php?idfactura=".$ObjFactura->getIdFactura()."'>Generar Factura </a>"; ?>
+                            <li>Categoria <?php echo "<a class='button' id='btn-regresar' href='../pages/formulariofactura.php?idfactura=".$ObjFactura->getIdFactura()."'>Generar Factura </a>"; ?>
 							<p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p></li>
                             <li>Fecha <p><?php echo ($pedidos->getFechaPedido())?></p></li>		
                             </ul>

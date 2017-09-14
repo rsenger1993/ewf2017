@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clear">
 					</br>
 					<center>
-					<?php echo "<a class='button' href='../pages/formularioPublicacionEditar.php?idpublicacion=".$idpublicacion."'>Volver </a>"; ?>
+					<?php echo "<a class='button' href='../pages/formulariopublicacioneditar.php?idpublicacion=".$idpublicacion."'>Volver </a>"; ?>
 					</center>
 					</br>				     
 				</div>
@@ -92,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clear">
 					</br>
 					<center> 
-					<?php echo "<a class='button' href='../pages/formularioPublicacionEditar.php?idpublicacion=".$idpublicacion."'>Volver </a>"; ?>
+					<?php echo "<a class='button' href='../pages/formulariopublicacioneditar.php?idpublicacion=".$idpublicacion."'>Volver </a>"; ?>
 					</center>
 					</br>				     
 				</div>
@@ -202,7 +202,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clear">
 					</br>
 					<center> 
-					<?php echo "<a class='button' href='../pages/formularioPublicacionEditar.php?idpublicacion=".$idpublicacion."'>Volver </a>"; ?>
+					<?php echo "<a class='button' href='../pages/formulariopublicacioneditar.php?idpublicacion=".$idpublicacion."'>Volver </a>"; ?>
 					</center>
 					</br>				     
 				</div>

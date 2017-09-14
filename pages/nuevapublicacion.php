@@ -74,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="content">
 			<div class="work">
-				<form  action="../publicacionfiles/crearPublicacion.php" enctype="multipart/form-data" method="post">
+				<form  action="../publicacionfiles/crearpublicacion.php" enctype="multipart/form-data" method="post">
 				<div class="work-top">
 				<script src="js/responsiveslides.min.js"></script>
 					<script>

@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="../pages/muro.php" class="button">Volver</a>
 					<br></br>
 					<br></br>
-			<?php echo "</br> <a class='button' href='../pages/formularioFactura.php?idfactura=".$FacturaId["idfactura"]."'>Generar Factura </a>"; ?>
+			<?php echo "</br> <a class='button' href='../pages/formulariofactura.php?idfactura=".$FacturaId["idfactura"]."'>Generar Factura </a>"; ?>
 					</center>
 					</br>				     
 				</div>

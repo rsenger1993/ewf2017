@@ -91,7 +91,7 @@ function valida(e){
 		</div>
 		<div class="content">
 			<div class="work">
-				<form  action="../usuariofiles/editarUsuario.php" enctype="multipart/form-data" method="post">
+				<form  action="../usuariofiles/editarusuario.php" enctype="multipart/form-data" method="post">
 				<div class="work-top">
 					<div>
 						<div class="callbacks_container">

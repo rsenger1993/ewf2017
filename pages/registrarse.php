@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>Registrarse</h3>
 
 				<div class="grid-single">
-					<form  action="../usuariofiles/crearUsuario.php" enctype="multipart/form-data" method="post">
+					<form  action="../usuariofiles/crearusuario.php" enctype="multipart/form-data" method="post">
 					<div class="your-single">
 						<i> </i>
 						<input type="text" name="nombrecompleto" placeholder="nombre completo">								

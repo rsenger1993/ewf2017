@@ -102,8 +102,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul>
 								<li><span > <a> <?php echo ($ObjPlatillo->getNombrePlatillo())?></a></span></li>
 								 <li><a><?php echo ($publicacion->getFechaPublicacion())?></a></li>
-							  <?php echo "<li> <a class='btn-search' href='../pages/formularioPublicacionEditar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Editar </a></li>"; ?>
-							  <?php echo "<li> <a class='btn-search' href='../publicacionfiles/eliminarmiPublicacion.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Eliminar </a></li>"; ?>
+							  <?php echo "<li> <a class='btn-search' href='../pages/formulariopublicacioneditar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Editar </a></li>"; ?>
+							  <?php echo "<li> <a class='btn-search' href='../publicacionfiles/eliminarmipublicacion.php?idpublicacion=".$publicacion->getIdPublicacion()."'>Eliminar </a></li>"; ?>
 							</ul>
 							<p><?php echo ($ObjPlatillo->getCategoriaDescripcion())?></p>
 						</div>

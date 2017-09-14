@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($publicacion->getUsuarioId());// CARGO LOS DATOS DEL USUARIO
 			    ?>
 			<div class="content-grid">
-			<?php echo "<a class='b-link-stripe b-animate-go  thickbox' href='../pages/formularioComprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>"; ?>
+			<?php echo "<a class='b-link-stripe b-animate-go  thickbox' href='../pages/formulariocomprar.php?idpublicacion=".$publicacion->getIdPublicacion()."'>"; ?>
 
 					<img  id="img-muro" src="<?php echo '../'.$ObjPlatillo->getImgPlatillo();?>"/>
 						<div class="b-wrapper">
