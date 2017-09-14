@@ -1,5 +1,7 @@
  <?php
  session_start();
+ ?>
+ <?php
  $idfactura= $_GET["idfactura"];
  include_once("../facturafiles/FacturaCollector.php");
  include_once("../usuariofiles/UsuarioCollector.php");
