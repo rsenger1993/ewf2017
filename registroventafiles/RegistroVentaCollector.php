@@ -20,7 +20,7 @@ class RegistroVentaCollector extends Collector
     $rows = self::$db->getRows("SELECT * FROM favorito WHERE f_usuario= ? AND publicacion_id= ?",array("{$f_usuario}","{$publicacion_id}"));        
     $arrayPublicacion= array();        
     foreach ($rows as $c){
-      $aux = new Favorito($c{'idfavorito'},$c{'f_usuario'},$c{'publicacion_id'});
+      $aux = new RegistroVenta($c{'idfavorito'},$c{'f_usuario'},$c{'publicacion_id'});
       array_push($arrayPublicacion, $aux);
     }
     return $arrayPublicacion;        
@@ -35,20 +35,13 @@ class RegistroVentaCollector extends Collector
     return $arrayRegistroVenta;        
   }
 
-    function showFavorito($idfavorito) {
-    $row = self::$db->getRows("SELECT * FROM favorito WHERE idfavorito= ?",array("{$idfavorito}"));
-    $ObjFavorito= new Favorito($row[0]{'idfavorito'},$row[0]{'$f_usuario'},$row[0]{'$publicacion_id'});
-
-    return $ObjFavorito;
-
-  }
-      function updateFavorito($idfavorito, $f_usuario, $publicacion_id) {
-    $insertrow = self::$db->updateRow("UPDATE favorito SET arrayusuario_id = arrayusuario_id || ?  WHERE usuarioamigo = ?", array("{$idamigo}","{$usuario}"));  
+      function updateRegistroVenta($idregistroventa, $fechaventa, $publicacion_id, $v_usuario, $c_usuario, $cantidadventa) {
+    $insertrow = self::$db->updateRow("UPDATE registroventa SET fechaventa = ?, publicacion_id = ?, v_usuario = ?, c_usuario = ?, cantidadventa = ?    WHERE idregistroventa = ?", array("{$fechaventa}","{$publicacion_id}","{$v_usuario}","{$c_usuario}","{$cantidadventa}","{$idregistroventa}"));  
       
   }
 
-      function deleteFavorito($f_usuario, $publicacion_id) {
-    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
+      function deleteRegistroVenta($f_usuario, $publicacion_id) {
+    $insertrow = self::$db->deleteRow("DELETE FROM registroventa WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
       
   }
 

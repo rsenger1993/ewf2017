@@ -46,12 +46,12 @@ class FormaDePagoCollector extends Collector
   }
 
       function updateFormaDePago($idformadepago,$formadepagodescripcion) {
-    $insertrow = self::$db->updateRow("UPDATE public.formadepago SET formadepagodescripcion = ? WHERE idformadepago = ?", array("{$formadepagodescripcion}",$idformadepago));  
+    $insertrow = self::$db->updateRow("UPDATE formadepago SET formadepagodescripcion = ? WHERE idformadepago = ?", array("{$formadepagodescripcion}",$idformadepago));  
       
   }
 
       function deleteFormaDePago($idformadepago) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.formadepago WHERE idformadepago=?",array("{$idformadepago}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM formadepago WHERE idformadepago=?",array("{$idformadepago}"));
       
   }
 

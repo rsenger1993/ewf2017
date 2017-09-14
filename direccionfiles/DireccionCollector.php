@@ -51,7 +51,7 @@ class DireccionCollector extends Collector
   }
 
       function deleteDireccion($iddireccion) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.direccion WHERE iddireccion=?",array("{$iddireccion}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM direccion WHERE iddireccion=?",array("{$iddireccion}"));
       
   }
 

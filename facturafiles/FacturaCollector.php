@@ -26,13 +26,13 @@ class FacturaCollector extends Collector
     return $aux;
   }
 
-      function updateFavorito($idfavorito, $f_usuario, $publicacion_id) {
-    $insertrow = self::$db->updateRow("UPDATE favorito SET arrayusuario_id = arrayusuario_id || ?  WHERE usuarioamigo = ?", array("{$idamigo}","{$usuario}"));  
+      function updateFactura($idfactura) {
+    $insertrow = self::$db->updateRow("UPDATE factura SET fechafactura =  ? , valorunitario =  ? ,total =  ? , fechafactura =  ? , formapago_id =  ? , usuario_id =  ? , platillo_id =  ? , cantidadpedido =  ? WHERE idfactura = ?", array("{$fechafactura}","{$valorunitario}","{$total}","{$formapago_id}","{$usuario_id}","{$platillo_id}","{$cantidadpedido}", "{$idfactura}"));  
       
   }
 
-      function deleteFavorito($f_usuario, $publicacion_id) {
-    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
+      function deleteFactura($idfactura) {
+    $insertrow = self::$db->deleteRow("DELETE FROM factura WHERE idfactura = ? ",array("{$idfactura}"));
       
   }
 

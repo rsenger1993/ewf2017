@@ -35,20 +35,13 @@ class RegistropedidoCollector extends Collector
     return $arrayRegistroPedido;        
   }
 
-    function showFavorito($idfavorito) {
-    $row = self::$db->getRows("SELECT * FROM favorito WHERE idfavorito= ?",array("{$idfavorito}"));
-    $ObjFavorito= new Favorito($row[0]{'idfavorito'},$row[0]{'$f_usuario'},$row[0]{'$publicacion_id'});
-
-    return $ObjFavorito;
-
-  }
-      function updateFavorito($idfavorito, $f_usuario, $publicacion_id) {
-    $insertrow = self::$db->updateRow("UPDATE favorito SET arrayusuario_id = arrayusuario_id || ?  WHERE usuarioamigo = ?", array("{$idamigo}","{$usuario}"));  
+      function updateRegistroPedido($idregistropedido, $fechapedido, $publicacion_id, $r_usuario, $cantidadpedido, $factura_id) {
+    $insertrow = self::$db->updateRow("UPDATE registropedido SET fechapedido = ?, publicacion_id = ?, r_usuario = ?, cantidadpedido = ?, factura_id = ?  WHERE idregistropedido = ?", array("{$fechapedido}","{$publicacion_id}","{$r_usuario}","{$cantidadpedido}","{$factura_id}","{$idregistropedido}"));  
       
   }
 
-      function deleteFavorito($f_usuario, $publicacion_id) {
-    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
+      function deleteRegistroPedido($f_usuario, $publicacion_id) {
+    $insertrow = self::$db->deleteRow("DELETE FROM registropedido WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
       
   }
 

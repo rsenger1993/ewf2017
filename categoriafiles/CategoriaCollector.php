@@ -55,7 +55,7 @@ class CategoriaCollector extends Collector
   }
 
       function deleteCategoria($idcategoria) {
-    $insertrow = self::$db->deleteRow("DELETE FROM public.categoria WHERE idcategoria=?",array("{$idcategoria}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM categoria WHERE idcategoria=?",array("{$idcategoria}"));
       
   }
 

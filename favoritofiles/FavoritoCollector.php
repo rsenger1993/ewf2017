@@ -43,12 +43,12 @@ class FavoritoCollector extends Collector
 
   }
       function updateFavorito($idfavorito, $f_usuario, $publicacion_id) {
-    $insertrow = self::$db->updateRow("UPDATE favorito SET arrayusuario_id = arrayusuario_id || ?  WHERE usuarioamigo = ?", array("{$idamigo}","{$usuario}"));  
+    $insertrow = self::$db->updateRow("UPDATE favorito SET f_usuario = ? ,publicacion_id = ? WHERE idfavorito = ?", array("{$f_usuario}","{$publicacion_id}","{$idfavorito}"));  
       
   }
 
-      function deleteFavorito($f_usuario, $publicacion_id) {
-    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE f_usuario=? AND publicacion_id=?",array("{$f_usuario}", "{$publicacion_id}"));
+      function deleteFavorito($idfavorito) {
+    $insertrow = self::$db->deleteRow("DELETE FROM favorito WHERE idfavorito = ? ",array("{$idfavorito}"));
       
   }
 

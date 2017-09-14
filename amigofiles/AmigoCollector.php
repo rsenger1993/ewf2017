@@ -42,8 +42,8 @@ class AmigoCollector extends Collector
     return $ObjAmigo;
 
   }
-      function updateAmigo($usuario,$idamigo) {
-    $insertrow = self::$db->updateRow("UPDATE amigo SET arrayusuario_id = arrayusuario_id || ?  WHERE usuarioamigo = ?", array("{$idamigo}","{$usuario}"));  
+      function updateAmigo($a_usuario,$usuario_id) {
+    $insertrow = self::$db->updateRow("UPDATE amigo SET usuario_id  WHERE a_usuario = ?", array("{$usuario_id}","{$a_usuario}"));  
       
   }
 
