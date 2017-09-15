@@ -51,7 +51,7 @@ class FormaDePagoCollector extends Collector
   }
 
       function deleteFormaDePago($idformadepago) {
-    $insertrow = self::$db->deleteRow("DELETE FROM formadepago WHERE idformadepago=?",array("{$idformadepago}"));
+    $insertrow = self::$db->deleteRow("DELETE FROM formapago WHERE idformadepago=?",array("{$idformadepago}"));
       
   }
 
