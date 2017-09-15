@@ -128,7 +128,7 @@ function valida(e){
 							<input type="text" name="clave" value="<?php echo $us->getClave() ?>" >
 							</li>
 							<li><p href="#"><i class="comment"> </i>Telefono</p>
-							<input type="text" name="telefono" maxlength="8" onkeypress="return valida(event)" value="<?php echo $us->getTelefono() ?>" >
+							<input type="text" name="telefono" maxlength="9" onkeypress="return valida(event)" value="<?php echo $us->getTelefono() ?>" >
 							</li>
 							<li><p href="#"><i class="comment"> </i>Direccion</p>
 							<input type="text" name="direccion" value="<?php echo $us->getDireccionDescripcion() ?>" >
