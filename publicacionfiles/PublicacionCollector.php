@@ -54,6 +54,10 @@ class PublicacionCollector extends Collector
     $insertrow = self::$db->deleteRow("DELETE FROM publicacion WHERE idpublicacion=?",array("{$idpublicacion}"));
       
   }
+   function deletePublicacionByIdUser($usuario_id) {
+    $insertrow = self::$db->deleteRow("DELETE FROM publicacion WHERE usuario_id=?",array("{$usuario_id}"));
+      
+  }
 
       function insertarPublicacion($fechapublicacion,$estado,$usuario_id,$platillo_id,$formadepago_id) {
         

@@ -8,11 +8,12 @@ class UsuarioCollector extends Collector
 {
   
   function showUsuarios() {
-    $rows = self::$db->getRows("SELECT * FROM usuario ");        
+    $rows = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.idpersona)
+      INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) ");        
     //echo "linea 1";
     $arrayUsuario= array();        
     foreach ($rows as $c){
-      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'descripcion'},$c{'persona_id'});
+      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
@@ -50,6 +51,16 @@ class UsuarioCollector extends Collector
     function countUsuarioByName($nombreusuario) {
     $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.idpersona)
       INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE nombreusuario= ?",array("{$nombreusuario}"));
+   $arrayUsuario= array();        
+    foreach ($row as $c){
+      $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});
+      array_push($arrayUsuario, $aux);
+    }
+    return $arrayUsuario;        
+  }
+    function countUsuarioById($idusuario) {
+    $row = self::$db->getRows("SELECT * FROM usuario INNER JOIN persona ON (usuario.persona_id = persona.idpersona)
+      INNER JOIN direccion ON (persona.direccion_id = direccion.iddireccion) WHERE idusuario= ?",array("{$idusuario}"));
    $arrayUsuario= array();        
     foreach ($row as $c){
       $aux = new Usuario($c{'idusuario'},$c{'nombreusuario'},$c{'clave'},$c{'usuariodescripcion'},$c{'persona_id'},$c{'nombrecompleto'},$c{'correo'},$c{'edad'},$c{'telefono'},$c{'direccion_id'},$c{'direcciondescripcion'},$c{'imgusuario'});

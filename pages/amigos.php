@@ -80,7 +80,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="blog">
 <?php
 				foreach ($ArrayAmigo as $amigo){ //TODOS LOS AMIGOS
-			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());// CARGO LOS DATOS DEL USUARIO
+				 $arrayUs = $UsuarioCollectorObj->countUsuarioById($amigo->getUSuarioId());
+				 if(count($arrayUs)>0){
+			    $ObjUsuario = $UsuarioCollectorObj->showUsuarioById($amigo->getUSuarioId());
+			
 ?>
 					<div class="blog-top">
 					<div class="col-d">
@@ -109,7 +112,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-<?php  										} 
+<?php  						}
+							else{
+								?>
+							<div class="blog-top">
+								<div class="col-d">
+							<div class="blog-in">
+
+
+								<p>Usuario Eliminado</p>
+							</div>
+								</div>
+									</div>
+						<?php
+							}
+
+										} 
 ?> <!-- FIN DEL FOREACH TODOS LOS AMIGOS -->
 				<div class="clear"> </div>
 		</div>
