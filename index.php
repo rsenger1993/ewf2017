@@ -21,21 +21,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body >
 		<header id="index-header">
 			<input type="checkbox" id ="btn-menu">
 			<label for="btn-menu"> <img src="../images/menu.png" alt="menu"></label>
 			<nav class="menu">
 				<ul>
-          <li> <a href="pages/registrarse.php">Registrarse</a></li>
-					<li> <a href="pages/quienessomos.php">Nosotros</a></li>
+          			<li> <a href="pages/registrarse.php">Registrarse</a></li>
 				</ul>
 			</nav>
 		</header>
-	 <div class="container">
+	 <div class="container-fluid">
                <!--FORMULARIO DE LOGIN -->
         <div class="single" id="index-login">
           <div class="top-single">
+          	<center><img src="images/logo.png"></center>
 				<h3>Iniciar sesión</h3>
 				<div class="grid-single">
 					<form action="pages/login.php" method="post">
@@ -43,13 +43,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p>Usuario</p>
 						<div class="your-single">
 							<i> </i>
-							<input type="text" name="nombreusuario" placeholder="nombre de usuario">
+							<input type="text" name="nombreusuario">
 							<div class="clear"> </div>
 						</div>
-						<p>Clave</p>
+						<p>Contraseña</p>
 						<div class="your-single">
 							<i> </i>
-							<input type="password" name="clave" placeholder="clave">
+							<input type="password" name="clave" >
 							<div class="clear"> </div>
 						</div>
 						 
@@ -62,22 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				     	</form>
 				</div>
 				<div class="clear"> </div>
-			</div>
-        <div class="clear"> </div>
-           </div>
-			<div class="slider">
-				<ul>
-					<li> <img src="images/slide/slide4.jpg" alt=""></li>
-					<li> <img src="images/slide/slide2.jpg" alt=""></li>
-					<li> <img src="images/slide/slide3.jpg" alt=""></li>
-					<li> <img src="images/slide/slide1.jpg" alt=""></li>
-				</ul>
-			</div>
-			<ul class="social-in">
-				<li><a href="https://www.facebook.com/Easy-Worthy-Food-1909652592590399/" target="_blank"><i 						class="facebook"> </i></a></li>
-				<li><a href="https://twitter.com/ew_food" target="_blank"><i class="twitter"> </i></a></li>
-			</ul>
-			
+			</div>			
     </div>
 </body>
 </html>

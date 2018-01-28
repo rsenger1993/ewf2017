@@ -184,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
         <div class="single" id="index-login">
                <div class="top-single">
-				<h3>El numero de telefono debe tener 9 digitos sin contar el 0</h3>
+				<h3>El numero de telefono debe tener 10</h3>
 				<div id="centrar-boton">
 					<a href="../pages/registrarse.php" class="button">Volver</a>			     
 				</div>
@@ -223,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  	 
 	else{
 
-		 if((($urlimg["imagen"]["type"] == "image/png") || ($urlimg["imagen"]["type"] == "image/jpg") || ($urlimg["imagen"]["type"] == "image/jpeg")) && ($urlimg["imagen"]["size"] < 200000))
+		 if((($urlimg["imagen"]["type"] == "image/png") || ($urlimg["imagen"]["type"] == "image/jpg") || ($urlimg["imagen"]["type"] == "image/jpeg")) && ($urlimg["imagen"]["size"] < 5000000))
  		 {
  		 //SI TODO ESTA CORRECTO PASAMOS A CREAR EL USUARIO
 		

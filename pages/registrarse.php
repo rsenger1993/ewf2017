@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</header>
     
- <div class="container">   
+ <div class="container-fluid">   
 	       
               <!--FORMULARIO DE REGISTRO -->
                 <div class="single" id="index-login">  
@@ -66,57 +66,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="grid-single">
 					<form  action="../usuariofiles/crearusuario.php" enctype="multipart/form-data" method="post">
 					<div class="your-single">
-						<i> </i>
-						<input type="text" name="nombrecompleto" placeholder="nombre completo">								
+						<i> </i>	
+						<input type="text" name="nombrecompleto" placeholder="Ingrese su nombre completo">								
 						<div class="clear"> </div>
 					</div>
 					<div class="your-single">
 						<i> </i>
-						<input type="text" name="nombreusuario" placeholder="nombre de usuario">								
+						<input type="text" name="nombreusuario" placeholder="Ingrese un nombre de Usuario (los demás lo reconoceran con este)">								
 						<div class="clear"> </div>
 					</div>
 					<div class="your-single">
 						<i> </i>
-						<input type="password" name="clave" placeholder="clave">								
+						<input type="password" name="clave" placeholder="Ingrese su Contraseña">								
 						<div class="clear"> </div>
 					</div>
                     <div class="your-single">
 					<i class="email"> </i>
-						<input type="text" name="correo" placeholder="correo - ejemplo@hotmail.com">								
+						<input type="text" name="correo" placeholder="Ingrese un correo electrónico válido">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="edad" placeholder="edad" minlength="2" maxlength="2" onkeypress="return valida(event)">								
+						<input type="text" name="edad" placeholder="Ingrese su edad" minlength="2" maxlength="2" onkeypress="return valida(event)">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">
 					<i> </i>
-						<input type="text" name="telefono" placeholder="telefono - 9 digitos sin contar el 0" maxlength="9" onkeypress="return valida(event)">								
+						<input type="text" name="telefono" placeholder="Ingrese un número de celular válido" maxlength="10" onkeypress="return valida(event)">								
 						<div class="clear"> </div>	
                     </div>
                         <div class="your-single">
 					<i> </i>
-						<input type="text" name="direccion" placeholder="direccion">								
+						<input type="text" name="direccion" placeholder="Ingrese su dirección">								
 						<div class="clear"> </div>	
                     </div>
                     <div class="your-single">
 					<i> </i>
-					<a id ="lbl1" >descripcion</a>
-					  <textarea id="area-perfil"  name="descripcion">Ejemplo: Me llamo Juan vivo en Guayaquil, soy ayudante de chef en el restaurante "La Milanesa"...</textarea>
+					<a id ="lbl1" >Descripcion</a>
+					  <textarea id="area-perfil"  name="descripcion" placeholder="Ejemplo: Me llamo Carlos soy Cheff profesional, soy experto en comida japonesa..."></textarea>
 						<div class="clear"> </div>	
                     </div>
                     <div id="label-login">
                     <p>Imagen de Perfil</p>
                       <div class="your-single">
-                      	<p >Seleccione su imagen de perfil - solo imagenes jpg o png menor a 200kb </p>
 						<input  type="file" name="imagen">							
 						<div class="clear"> </div>
                     </div>
                     </div>
-                    <div class="grid-single-in">
+                    <center><div class="grid-single-in">
   					<input  type="submit" name="Enviar" value="Enviar" >
-                    </div>
+                    </div></center>
                     </form>
        
 				</div>
