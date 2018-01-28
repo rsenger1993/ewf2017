@@ -36,6 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                <!--FORMULARIO DE LOGIN -->
         <div class="single" id="index-login">
           <div class="top-single">
+		  <center><img src="images/logo.png"></center>
 				<h3>Iniciar sesión</h3>
 				<div class="grid-single">
 					<form action="pages/login.php" method="post">
@@ -43,13 +44,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p>Usuario</p>
 						<div class="your-single">
 							<i> </i>
-							<input type="text" name="nombreusuario" placeholder="nombre de usuario">
+							<input type="text" name="nombreusuario" placeholder="Usuario">
 							<div class="clear"> </div>
 						</div>
-						<p>Clave</p>
+						<p>Contraseña</p>
 						<div class="your-single">
 							<i> </i>
-							<input type="password" name="clave" placeholder="clave">
+							<input type="password" name="clave" placeholder="Contraseña">
 							<div class="clear"> </div>
 						</div>
 						 
